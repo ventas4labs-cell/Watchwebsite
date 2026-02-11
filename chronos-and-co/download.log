@@ -1,0 +1,77 @@
++ mkdir -p public/watches
++ echo 'Downloading PRX Powermatic 80 (Tissot PRX 40mm)...'
+Downloading PRX Powermatic 80 (Tissot PRX 40mm)...
++ mkdir -p public/watches/tissot-prx
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwa2ce0f04/product-pictures/d102160b-bf40-4582-a545-910f29536ad9_T137-407-11-091-01_Shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-prx/main.jpg
++ echo 'Downloading Le Locle Automatique (Tissot Le Locle Gold 39mm)...'
+Downloading Le Locle Automatique (Tissot Le Locle Gold 39mm)...
++ mkdir -p public/watches/tissot-le-locle
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwecb8830a/product-pictures/8f6ca206-c41c-4b8e-906f-1ffa41611c22_T932-408-46-043-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-le-locle/main.jpg
++ echo 'Downloading Gentleman Powermatic (Tissot Gentleman Open Heart 40mm)...'
+Downloading Gentleman Powermatic (Tissot Gentleman Open Heart 40mm)...
++ mkdir -p public/watches/tissot-gentleman
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw3c842f00/product-pictures/28a3c5b8-c5de-4b24-8cf1-bd63fd8713b1_T127-407-11-031-01_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-gentleman/main.jpg
++ echo 'Downloading Seastar 1000 Powermatic 80 (Tissot Seastar 1000 GMT 40mm)...'
+Downloading Seastar 1000 Powermatic 80 (Tissot Seastar 1000 GMT 40mm)...
++ mkdir -p public/watches/tissot-seastar-1000
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw578c1aaf/product-pictures/212f7c68-7add-4b70-96fd-f152d3dcc78f_T120-852-22-051-00_Shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-seastar-1000/main.jpg
++ echo 'Downloading Supersport Chrono (Tissot Supersport Chrono 45.5mm)...'
+Downloading Supersport Chrono (Tissot Supersport Chrono 45.5mm)...
++ mkdir -p public/watches/tissot-supersport-chrono
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw087ee41b/product-pictures/1ab75cfe-7d38-4139-838e-9db1eb30ad1e_T125-617-16-041-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-supersport-chrono/main.jpg
++ echo 'Downloading Heritage 1938 Automatic (TISSOT HERITAGE 1938 39mm)...'
+Downloading Heritage 1938 Automatic (TISSOT HERITAGE 1938 39mm)...
++ mkdir -p public/watches/tissot-heritage-1938
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwccbe84a6/product-pictures/4f1a7e29-5e45-45e5-8871-6d1fdfa183f2_T142-464-16-032-00_Shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-heritage-1938/main.jpg
++ echo 'Downloading Telemeter 1938 (Tissot Telemeter 1938 42mm)...'
+Downloading Telemeter 1938 (Tissot Telemeter 1938 42mm)...
++ mkdir -p public/watches/tissot-telemeter-1938
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwba5e5bf4/product-pictures/610c55ae-c2dd-42ae-bcbe-db2f5185db71_T142-462-16-032-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-telemeter-1938/main.jpg
++ echo 'Downloading Chrono XL Vintage (Tissot Chrono XL Vintage 45mm)...'
+Downloading Chrono XL Vintage (Tissot Chrono XL Vintage 45mm)...
++ mkdir -p public/watches/tissot-chrono-xl
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dweccdbfee/product-pictures/85039ccc-1f90-4910-a9ec-714ec1c5c55f_T116-617-36-052-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-chrono-xl/main.jpg
++ echo 'Downloading Chemin des Tourelles (Tissot Chemin Des Tourelles Skeleton 39mm)...'
+Downloading Chemin des Tourelles (Tissot Chemin Des Tourelles Skeleton 39mm)...
++ mkdir -p public/watches/tissot-chemin-des-tourelles
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw4744ecc8/product-pictures/03695d3b-4272-4733-9afc-ef9d1fc636ba_T139-836-16-261-00_Shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-chemin-des-tourelles/main.jpg
++ echo 'Downloading PR 100 Quartz (Tissot PR 100 40mm)...'
+Downloading PR 100 Quartz (Tissot PR 100 40mm)...
++ mkdir -p public/watches/tissot-pr-100
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw8bd6bc1a/product-pictures/ef0f8482-1d02-4b7a-b99a-634eec1314d3_T150-410-22-041-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-pr-100/main.jpg
++ echo 'Downloading Classic Dream (Tissot Classic Dream 40mm)...'
+Downloading Classic Dream (Tissot Classic Dream 40mm)...
++ mkdir -p public/watches/tissot-classic-dream
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwce2f8bfc/product-pictures/905932ec-1d6b-4a79-a4ec-20676dc97c86_T158-407-16-041-00_Shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-classic-dream/main.jpg
++ echo 'Downloading Ballade Powermatic 80 COSC (Tissot Ballade 39mm)...'
+Downloading Ballade Powermatic 80 COSC (Tissot Ballade 39mm)...
++ mkdir -p public/watches/tissot-ballade
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw4e591088/product-pictures/b2a2e0a9-a1ad-4977-9d4d-67856c904a72_T156-408-22-033-00_Shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-ballade/main.jpg
++ echo 'Downloading PR516 Chronograph (Tissot PR516 40mm)...'
+Downloading PR516 Chronograph (Tissot PR516 40mm)...
++ mkdir -p public/watches/tissot-pr516-chrono
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw74eeb457/product-pictures/af9c79e3-529f-447f-a428-61ff5afa701c_T149-417-11-051-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-pr516-chrono/main.jpg
++ echo 'Downloading Carson Premium (Tissot Carson Premium 40mm)...'
+Downloading Carson Premium (Tissot Carson Premium 40mm)...
++ mkdir -p public/watches/tissot-carson-premium
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw27094719/product-pictures/4cd178f3-0de0-4972-8aea-4030bc7b345f_T122-423-16-043-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-carson-premium/main.jpg
++ echo 'Downloading Tradition Quartz (Tissot Tradition 42mm)...'
+Downloading Tradition Quartz (Tissot Tradition 42mm)...
++ mkdir -p public/watches/tissot-tradition
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw5a84420c/product-pictures/8b2fba7d-062a-4c1b-869a-2e8a9dfdfa31_T063-617-16-057-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-tradition/main.jpg
++ echo 'Downloading Everytime Quartz (Tissot Everytime 34mm)...'
+Downloading Everytime Quartz (Tissot Everytime 34mm)...
++ mkdir -p public/watches/tissot-everytime
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw187b041c/product-pictures/4c2172f7-9197-4f91-8cae-5c44beebe458_T143-210-11-041-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-everytime/main.jpg
++ echo 'Downloading T-Touch Connect Solar (Tissot T-Touch Connect Sport 43.75mm)...'
+Downloading T-Touch Connect Solar (Tissot T-Touch Connect Sport 43.75mm)...
++ mkdir -p public/watches/tissot-t-touch-solar
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw7a082726/product-pictures/a3c11398-6f0b-45c6-b61a-2a784eef0873_T153-420-47-051-04_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-t-touch-solar/main.jpg
++ echo 'WARNING: No image found for Heritage Visodate'
+WARNING: No image found for Heritage Visodate
++ echo 'Downloading PRC 200 Chronograph (Tissot PRC 200 43mm)...'
+Downloading PRC 200 Chronograph (Tissot PRC 200 43mm)...
++ mkdir -p public/watches/tissot-prc-200
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwd506a4f3/product-pictures/594e7868-9388-4924-9114-05d173462c5e_T114-417-17-057-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-prc-200/main.jpg
++ echo 'WARNING: No image found for Couturier Chronograph'
+WARNING: No image found for Couturier Chronograph

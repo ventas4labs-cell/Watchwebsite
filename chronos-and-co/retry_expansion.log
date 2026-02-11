@@ -1,0 +1,260 @@
++ '[' '!' -f public/watches/tissot-prx-titanium-38mm/main.jpg ']'
+++ wc -c
++ '[' 360557 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-le-locle-39-3mm/main.jpg ']'
+++ wc -c
++ '[' 302687 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-classic-dream-40mm/main.jpg ']'
+++ wc -c
++ '[' 272341 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-ballade-39mm/main.jpg ']'
+++ wc -c
++ '[' 270399 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prx-damascus-steel-38mm/main.jpg ']'
+++ wc -c
++ '[' 344037 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-pr-100-40mm/main.jpg ']'
+++ wc -c
++ '[' 315130 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prx-40mm/main.jpg ']'
+++ wc -c
++ '[' 425438 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-pr516-41mm/main.jpg ']'
+++ wc -c
++ '[' 340904 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-classic-dream-42mm/main.jpg ']'
+++ wc -c
++ '[' 274062 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-ballade-40mm/main.jpg ']'
+++ wc -c
++ '[' 381304 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-chrono-xl-vintage-45mm/main.jpg ']'
+++ wc -c
++ '[' 365213 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-chemin-des-tourelles-skeleton-39mm/main.jpg ']'
+++ wc -c
++ '[' 308010 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-seastar-1000-45-5mm/main.jpg ']'
+++ wc -c
++ '[' 351259 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-seastar-wilson-wnba-40mm/main.jpg ']'
+++ wc -c
++ '[' 364446 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prx-35mm/main.jpg ']'
+++ wc -c
++ '[' 292651 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-seastar-1000-gmt-40mm/main.jpg ']'
+++ wc -c
++ '[' 303995 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-t-race-45mm/main.jpg ']'
+++ wc -c
++ '[' 381003 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prc-200-43mm/main.jpg ']'
+++ wc -c
++ '[' 330785 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-seastar-1000-43mm/main.jpg ']'
+++ wc -c
++ '[' 310643 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-t-touch-connect-sport-43-75mm/main.jpg ']'
+++ wc -c
++ '[' 269300 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-t-touch-connect-sport-jungfraubahn-43-75mm/main.jpg ']'
+++ wc -c
++ '[' 332424 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-savonnette-49-4mm/main.jpg ']'
+++ wc -c
++ '[' 392839 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prc-100-solar-39mm/main.jpg ']'
+++ wc -c
++ '[' 259490 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-gentleman-open-heart-40mm/main.jpg ']'
+++ wc -c
++ '[' 288619 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-pr516-40mm/main.jpg ']'
+++ wc -c
++ '[' 318246 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-supersport-chrono-45-5mm/main.jpg ']'
+++ wc -c
++ '[' 334772 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-chrono-xl-classic-45mm/main.jpg ']'
+++ wc -c
++ '[' 377417 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-t-touch-connect-solar-47-5mm/main.jpg ']'
+++ wc -c
++ '[' 318975 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-tradition-42mm/main.jpg ']'
+++ wc -c
++ '[' 364432 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-seastar-1000-40mm/main.jpg ']'
+++ wc -c
++ '[' 283627 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-savonnette-48-5mm/main.jpg ']'
+++ wc -c
++ '[' 382409 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-pr-100-34mm/main.jpg ']'
+++ wc -c
++ '[' 248956 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-gentleman-40mm/main.jpg ']'
+++ wc -c
++ '[' 279690 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-seastar-1000-38mm/main.jpg ']'
+++ wc -c
++ '[' 212128 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-carson-premium-41mm/main.jpg ']'
+++ wc -c
++ '[' 294634 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-pr516-38mm/main.jpg ']'
+++ wc -c
++ '[' 283637 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-gentleman-gold-bezel-40mm/main.jpg ']'
+++ wc -c
++ '[' 333959 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-t-race-38mm/main.jpg ']'
+++ wc -c
++ '[' 403817 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-pr-100-jungfraubahn-34mm/main.jpg ']'
+++ wc -c
++ '[' 242065 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-seastar-1000-quartz-chronograph-38mm/main.jpg ']'
+++ wc -c
++ '[' 285252 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-pr-100-vuelta-40mm/main.jpg ']'
+++ wc -c
++ '[' 331795 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-heritage-1938-39mm/main.jpg ']'
+++ wc -c
++ '[' 346580 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prx-ufo-robot-grendizer-40mm/main.jpg ']'
+++ wc -c
++ '[' 388246 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-le-locle-gold-39-3mm/main.jpg ']'
+++ wc -c
++ '[' 370889 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-seastar-1000-36mm/main.jpg ']'
+++ wc -c
++ '[' 257556 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-seastar-2000-46mm/main.jpg ']'
+++ wc -c
++ '[' 327142 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-le-locle-open-heart-39-3mm/main.jpg ']'
+++ wc -c
++ '[' 328028 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-telemeter-1938-42mm/main.jpg ']'
+++ wc -c
++ '[' 404142 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-t-race-41mm/main.jpg ']'
+++ wc -c
++ '[' 298541 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-lepine-49mm/main.jpg ']'
+++ wc -c
++ '[' 321667 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-chrono-xl-classic/main.jpg ']'
+++ wc -c
++ '[' 299221 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prx-42mm/main.jpg ']'
+++ wc -c
++ '[' 364076 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prx-gold-35mm/main.jpg ']'
+++ wc -c
++ '[' 331115 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-t-complication-squelette-43mm/main.jpg ']'
+++ wc -c
++ '[' 373762 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prc-100-solar-34mm/main.jpg ']'
+++ wc -c
++ '[' 268050 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-prx-gold-40mm/main.jpg ']'
+++ wc -c
++ '[' 336432 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-chemin-des-tourelles-42mm/main.jpg ']'
+++ wc -c
++ '[' 343787 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-goldrun-gold-38mm/main.jpg ']'
+++ wc -c
++ '[' 229159 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-pendants-30-1mm/main.jpg ']'
+++ wc -c
++ '[' 173792 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-goldrun-hesalite-gold-33-7mm/main.jpg ']'
+++ wc -c
++ '[' 269250 -lt 1000 ']'
++ '[' '!' -f public/watches/tissot-le-locle-gold-39mm/main.jpg ']'
++ echo 'Retrying Le Locle Gold 39mm...'
+Retrying Le Locle Gold 39mm...
++ mkdir -p public/watches/tissot-le-locle-gold-39mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwecb8830a/product-pictures/8f6ca206-c41c-4b8e-906f-1ffa41611c22_T932-408-46-043-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-le-locle-gold-39mm/main.jpg
++ '[' '!' -f public/watches/tissot-infirmi-egrave-res/main.jpg ']'
++ echo 'Retrying Infirmi&egrave;res...'
+Retrying Infirmi&egrave;res...
++ mkdir -p public/watches/tissot-infirmi-egrave-res
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw4a8e668e/product-pictures/6999d27f-fabd-4de7-bcaf-ed0e69242954_T81-7-223-92_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-infirmi-egrave-res/main.jpg
++ '[' '!' -f public/watches/tissot-classic-dream-swissmatic/main.jpg ']'
++ echo 'Retrying Classic Dream Swissmatic...'
+Retrying Classic Dream Swissmatic...
++ mkdir -p public/watches/tissot-classic-dream-swissmatic
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw11d2bcdc/product-pictures/777b9cb8-ca72-4e1f-85b6-fb5df334c26e_T129-407-11-031-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-classic-dream-swissmatic/main.jpg
++ '[' '!' -f public/watches/tissot-seastar-1000-powermatic-80-gmt/main.jpg ']'
++ echo 'Retrying Seastar 1000 Powermatic 80 GMT...'
+Retrying Seastar 1000 Powermatic 80 GMT...
++ mkdir -p public/watches/tissot-seastar-1000-powermatic-80-gmt
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw91637088/product-pictures/b1ab59b7-47b6-43d6-b5a9-06120c12bf5d_T120-429-11-051-01_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-seastar-1000-powermatic-80-gmt/main.jpg
++ '[' '!' -f public/watches/tissot-prx-ufo-robot-grendizer-50th-anniversary-40mm/main.jpg ']'
++ echo 'Retrying PRX UFO Robot Grendizer 50th Anniversary 40mm...'
+Retrying PRX UFO Robot Grendizer 50th Anniversary 40mm...
++ mkdir -p public/watches/tissot-prx-ufo-robot-grendizer-50th-anniversary-40mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwe931905e/product-pictures/2672bb1a-58ec-4ca0-aa4f-1b299fc802b2_T137-407-33-051-01_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-prx-ufo-robot-grendizer-50th-anniversary-40mm/main.jpg
++ '[' '!' -f public/watches/tissot-heritage-1973/main.jpg ']'
++ echo 'Retrying Heritage 1973...'
+Retrying Heritage 1973...
++ mkdir -p public/watches/tissot-heritage-1973
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwfe85ac0c/product-pictures/20fea027-bc85-465e-b206-69e0804c8955_T124-427-16-031-01_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-heritage-1973/main.jpg
++ '[' '!' -f public/watches/tissot-t-touch-connect-solar-jungfraubahn-47-5mm/main.jpg ']'
++ echo 'Retrying T-Touch Connect Solar Jungfraubahn 47.5mm...'
+Retrying T-Touch Connect Solar Jungfraubahn 47.5mm...
++ mkdir -p public/watches/tissot-t-touch-connect-solar-jungfraubahn-47-5mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw63a6e7df/product-pictures/b7ae5add-d31b-4ac0-aff1-705a26613981_T121-420-47-051-05_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-t-touch-connect-solar-jungfraubahn-47-5mm/main.jpg
++ '[' '!' -f public/watches/tissot-rockwatch-38mm/main.jpg ']'
++ echo 'Retrying Rockwatch 38mm...'
+Retrying Rockwatch 38mm...
++ mkdir -p public/watches/tissot-rockwatch-38mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw495beb78/product-pictures/d32bf492-906e-48bf-903a-d76f89649a07_T147-409-96-510-00_Shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-rockwatch-38mm/main.jpg
++ '[' '!' -f public/watches/tissot-le-locle-20th-anniversary-39-3mm/main.jpg ']'
++ echo 'Retrying Le Locle 20th Anniversary 39.3mm...'
+Retrying Le Locle 20th Anniversary 39.3mm...
++ mkdir -p public/watches/tissot-le-locle-20th-anniversary-39-3mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwd5f3c032/product-pictures/081f190e-c331-497b-9d9d-3bcbdd48aee4_T006-407-11-033-03_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-le-locle-20th-anniversary-39-3mm/main.jpg
++ '[' '!' -f public/watches/tissot-pr-100-41mm/main.jpg ']'
++ echo 'Retrying PR 100 41mm...'
+Retrying PR 100 41mm...
++ mkdir -p public/watches/tissot-pr-100-41mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwdaf00fbb/product-pictures/5d4cf7b8-91e0-42bc-8d59-7d270e794890_T101-417-23-061-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-pr-100-41mm/main.jpg
++ '[' '!' -f public/watches/tissot-savonnette-49-5mm/main.jpg ']'
++ echo 'Retrying Savonnette 49.5mm...'
+Retrying Savonnette 49.5mm...
++ mkdir -p public/watches/tissot-savonnette-49-5mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw22223aba/product-pictures/84738ca3-a0fe-4fb8-bdb1-c4d53971f89b_T862-410-29-013-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-savonnette-49-5mm/main.jpg
++ '[' '!' -f public/watches/tissot-prx-carbon-40-5mm/main.jpg ']'
++ echo 'Retrying PRX Carbon 40.5mm...'
+Retrying PRX Carbon 40.5mm...
++ mkdir -p public/watches/tissot-prx-carbon-40-5mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw627b1daa/product-pictures/ee3811c6-6d9e-44e1-889f-b0e6182bbc36_T137-907-97-201-00_Shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-prx-carbon-40-5mm/main.jpg
++ '[' '!' -f public/watches/tissot-pr-100-jungfraubahn-40mm/main.jpg ']'
++ echo 'Retrying PR 100 Jungfraubahn 40mm...'
+Retrying PR 100 Jungfraubahn 40mm...
++ mkdir -p public/watches/tissot-pr-100-jungfraubahn-40mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dweebfa1e0/product-pictures/cdaeacce-40a6-4c83-934c-015cad2c73ce_T150-410-11-041-02_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-pr-100-jungfraubahn-40mm/main.jpg
++ '[' '!' -f public/watches/tissot-everytime-34mm/main.jpg ']'
++ echo 'Retrying Everytime 34mm...'
+Retrying Everytime 34mm...
++ mkdir -p public/watches/tissot-everytime-34mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw187b041c/product-pictures/4c2172f7-9197-4f91-8cae-5c44beebe458_T143-210-11-041-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-everytime-34mm/main.jpg
++ '[' '!' -f public/watches/tissot-prx-damian-lillard-special-edition-40mm/main.jpg ']'
++ echo 'Retrying PRX Damian Lillard Special Edition 40mm...'
+Retrying PRX Damian Lillard Special Edition 40mm...
++ mkdir -p public/watches/tissot-prx-damian-lillard-special-edition-40mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwf4dd9736/product-pictures/a56e8842-e93e-482a-b6bb-fb5dc223c496_T137-407-33-051-00_Shadow-png.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-prx-damian-lillard-special-edition-40mm/main.jpg
++ '[' '!' -f public/watches/tissot-supersport-nba-special-edition-45-5mm/main.jpg ']'
++ echo 'Retrying Supersport NBA Special Edition 45.5mm...'
+Retrying Supersport NBA Special Edition 45.5mm...
++ mkdir -p public/watches/tissot-supersport-nba-special-edition-45-5mm
++ curl -s -L -A Mozilla/5.0 'https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw34f6a1d1/product-pictures/280924a1-358f-4f8b-ae0d-6124ebbf2cde_T125-617-37-067-00_shadow.png?sm=fit&sw=800&sh=800,gravity=center' -o public/watches/tissot-supersport-nba-special-edition-45-5mm/main.jpg
