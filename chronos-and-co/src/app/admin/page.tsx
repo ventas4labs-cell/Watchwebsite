@@ -11,6 +11,7 @@ export default function AdminPage() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
+    const [selectedStatus, setSelectedStatus] = useState<OrderStatus | 'Todos'>('Todos');
 
     useEffect(() => {
         if (localStorage.getItem('isAdmin') === 'true') {
@@ -75,40 +76,62 @@ export default function AdminPage() {
 
     if (!isAuthenticated) return null;
 
+    const filteredOrders = selectedStatus === 'Todos'
+        ? orders
+        : orders.filter(order => order.status === selectedStatus);
+
+    const getStatusCount = (status: OrderStatus | 'Todos') => {
+        if (status === 'Todos') return orders.length;
+        return orders.filter(order => order.status === status).length;
+    };
+
     return (
         <main className="min-h-screen bg-rich-black text-white pb-20">
             <Navbar />
 
             <div className="container mx-auto px-6 pt-32">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
                     <div>
                         <h2 className="text-gold-500 font-bold tracking-[0.2em] uppercase text-xs mb-2">Panel de Control</h2>
                         <h1 className="text-5xl font-display text-white">Gestión de <span className="text-gold-500">Colecciones</span></h1>
                     </div>
-                    <div className="flex items-center gap-6">
-                        <div className="text-right">
-                            <p className="text-white/40 text-[10px] uppercase tracking-widest">Total Pedidos</p>
-                            <p className="text-2xl font-display text-gold-500">{orders.length}</p>
-                        </div>
-                        <div className="h-10 w-[1px] bg-white/10" />
-                        <div className="text-right">
-                            <p className="text-white/40 text-[10px] uppercase tracking-widest">Estado Sistema</p>
-                            <p className="text-sm font-medium text-green-400 flex items-center gap-2 justify-end">
-                                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-                                Live
-                            </p>
-                        </div>
+                    <div className="text-right">
+                        <p className="text-white/40 text-[10px] uppercase tracking-widest">Estado Sistema</p>
+                        <p className="text-sm font-medium text-green-400 flex items-center gap-2 justify-end">
+                            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+                            Live
+                        </p>
                     </div>
                 </div>
 
+                {/* Status Tabs */}
+                <div className="flex flex-wrap gap-2 mb-8 border-b border-white/10 pb-1">
+                    {['Todos', ...statusOrder].map((status) => (
+                        <button
+                            key={status}
+                            onClick={() => setSelectedStatus(status as OrderStatus | 'Todos')}
+                            className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all rounded-t-sm border-b-2 flex items-center gap-2 ${selectedStatus === status
+                                ? 'border-gold-500 text-white bg-white/5'
+                                : 'border-transparent text-white/40 hover:text-white hover:bg-white/5'
+                                }`}
+                        >
+                            {status}
+                            <span className={`px-2 py-0.5 rounded-full text-[9px] ${selectedStatus === status ? 'bg-gold-500 text-black' : 'bg-white/10 text-white/60'
+                                }`}>
+                                {getStatusCount(status as OrderStatus | 'Todos')}
+                            </span>
+                        </button>
+                    ))}
+                </div>
+
                 <div className="space-y-6">
-                    {orders.length === 0 ? (
+                    {filteredOrders.length === 0 ? (
                         <div className="bg-white/5 border border-white/10 rounded-sm p-20 text-center space-y-4">
                             <Package className="w-12 h-12 text-white/10 mx-auto" />
-                            <p className="text-white/40 font-light truncate">No hay pedidos registrados en el sistema por el momento.</p>
+                            <p className="text-white/40 font-light truncate">No hay pedidos en esta categoría.</p>
                         </div>
                     ) : (
-                        orders.map((order) => {
+                        filteredOrders.map((order) => {
                             const StatusIcon = statusConfig[order.status].icon;
                             return (
                                 <div key={order.id} className="bg-white/5 border border-white/10 rounded-sm overflow-hidden backdrop-blur-sm hover:border-white/20 transition-all group">

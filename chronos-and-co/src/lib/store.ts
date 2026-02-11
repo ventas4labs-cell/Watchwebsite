@@ -100,7 +100,6 @@ export const useStore = create<StoreState>()(
                     return {
                         orders: [newOrder, ...state.orders],
                         cart: [],
-                        isCartOpen: false,
                     };
                 });
                 return newOrder;

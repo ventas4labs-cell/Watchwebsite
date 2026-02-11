@@ -3,6 +3,8 @@ import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -34,6 +36,7 @@ export default function RootLayout({
         lato.variable
       )}>
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

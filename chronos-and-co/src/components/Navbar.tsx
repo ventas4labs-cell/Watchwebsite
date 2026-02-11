@@ -7,7 +7,7 @@ import { useStore } from '@/lib/store';
 import { MobileMenu } from './MobileMenu';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const BRANDS = ['Tissot', 'Seiko', 'Orient', 'Bulova', 'Stauer', 'Timex'];
+const BRANDS = ['Tissot', 'Seiko', 'Orient'];
 
 export function Navbar() {
     const { cart, toggleCart } = useStore();
