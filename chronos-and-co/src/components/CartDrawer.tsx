@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Minus, Plus, Trash2, CheckCircle2, ChevronLeft, Send, Package } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import { sendOrderEmail } from '@/lib/email-actions';
+import { submitOrderToSupabase } from '@/lib/supabase';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -26,6 +27,16 @@ export function CartDrawer() {
             });
 
             if (newOrder) {
+                // Submit to Supabase - Fire and forget or await? The user accepted "Inject... after validation... but before success message".
+                // We'll await it to ensure we catch errors if we wanted to (but the prompt said "before success message is shown").
+                await submitOrderToSupabase({
+                    customer_name: newOrder.customerName,
+                    customer_email: newOrder.email,
+                    order_items: newOrder.items,
+                    total_amount: newOrder.total,
+                    status: 'Recibido' // Default logic status matches 'Recibido'
+                });
+
                 setLastOrderId(newOrder.id);
                 setStep('success');
 

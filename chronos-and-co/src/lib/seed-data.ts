@@ -1906,7 +1906,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-srpl61",
         brand: "Seiko",
         model: "Presage Cocktail Time SRPL61",
-        price: 880,
+        price: 550,
         description: "Una pieza que captura la sofisticación de la coctelería clásica. Con un dial texturizado 'Frozen Skydiving' que evoca el brillo del hielo, este modelo hereda la maestría artesanal de Seiko.",
         image: "/watches/seiko-srpl61/default.png",
         details: {
@@ -1920,7 +1920,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-srpl63",
         brand: "Seiko",
         model: "Presage Cocktail Time SRPL63",
-        price: 880,
+        price: 550,
         description: "El modelo 'Frozen Mojito' destaca por su dial verde texturizado y elegancia refinada. Ofrece una precisión automática impecable en un diseño atemporal inspirado en la alta coctelería.",
         image: "/watches/seiko-srpl63/default.png",
         details: {
@@ -1934,7 +1934,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-srpl64",
         brand: "Seiko",
         model: "Presage Cocktail Time SRPL64",
-        price: 953,
+        price: 595,
         description: "Inspirado en el cóctel 'Frozen Daiquiri', este reloj combina tonos cálidos con la sofisticación de la línea Presage. Un ejemplo perfecto de la unión entre arte y relojería mecánica.",
         image: "/watches/seiko-srpl64/default.png",
         details: {
@@ -1948,7 +1948,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-sur589",
         brand: "Seiko",
         model: "Coutura SUR589",
-        price: 1593,
+        price: 995,
         description: "La colección Coutura representa la unión entre el diseño moderno y el lujo. Adornado con diamantes genuinos y protegido por cristal de zafiro, es una pieza de elegancia contemporánea.",
         image: "/watches/seiko-sur589/default.png",
         details: {
@@ -1962,7 +1962,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-sur591",
         brand: "Seiko",
         model: "Coutura SUR591",
-        price: 1593,
+        price: 995,
         description: "Elegancia y rendimiento en cada detalle. Este modelo Coutura presenta una esfera refinada con acentos de diamantes, ideal para quienes buscan un reloj joya con la fiabilidad de Seiko.",
         image: "/watches/seiko-sur591/default.png",
         details: {
@@ -1976,7 +1976,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-sur592",
         brand: "Seiko",
         model: "Coutura SUR592",
-        price: 1680,
+        price: 1050,
         description: "Un modelo bitono excepcional de la serie Coutura. Su diseño integrado, esmerada selección de diamantes y cristal de zafiro lo sitúan a la vanguardia del lujo funcional.",
         image: "/watches/seiko-sur592/default.png",
         details: {
@@ -1990,7 +1990,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-sur586",
         brand: "Seiko",
         model: "Coutura SUR586",
-        price: 793,
+        price: 495,
         description: "Este modelo de la serie Seiko Coutura destaca por su sofisticado diseño bitono y su esfera de madreperla blanca. Una joya de precisión protegida por cristal de zafiro.",
         image: "/watches/seiko-sur586/default.png",
         details: {
@@ -2004,7 +2004,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-sur588",
         brand: "Seiko",
         model: "Coutura SUR588",
-        price: 841,
+        price: 495,
         description: "Un reloj de lujo moderno con acabado dorado integral y esfera de madreperla. Su cristal de zafiro y resistencia de 100m lo hacen tan robusto como elegante.",
         image: "/watches/seiko-sur588/default.png",
         details: {
@@ -2018,7 +2018,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-swr093",
         brand: "Seiko",
         model: "Essentials Crystal SWR093",
-        price: 640,
+        price: 400,
         description: "Reloj estilo 'Tank' con 34 cristales que adornan el bisel. Un diseño clásico rectangular que combina la elegancia de la joyería con la fiabilidad de Seiko.",
         image: "/watches/seiko-swr093/default.png",
         details: {
@@ -2032,7 +2032,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-ssc939",
         brand: "Seiko",
         model: "Prospex Speedtimer SSC939",
-        price: 1200,
+        price: 750,
         description: "Cronógrafo solar inspirado en la herencia de cronometraje deportivo de Seiko. Su cristal de zafiro curvado y tecnología solar V192 lo sitúan en la cima del rendimiento.",
         image: "/watches/seiko-ssc939/default.png",
         details: {
@@ -2046,7 +2046,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-ssc929",
         brand: "Seiko",
         model: "Prospex Speedtimer SSC929",
-        price: 1200,
+        price: 900,
         description: "Un cronógrafo de alta precisión que rinde homenaje a los hitos históricos de Seiko en el deporte profesional. Equipado con carga solar y zafiro con revestimiento antirreflectante.",
         image: "/watches/seiko-ssc929/default.png",
         details: {
@@ -2060,7 +2060,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-ssc931",
         brand: "Seiko",
         model: "Prospex Speedtimer SSC931",
-        price: 1200,
+        price: 750,
         description: "Diseño robusto y tecnología avanzada se unen en este Speedtimer. Su movimiento solar elimina la necesidad de cambio de batería, ofreciendo una fiabilidad excepcional.",
         image: "/watches/seiko-ssc931/default.png",
         details: {
@@ -2074,7 +2074,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-ssc913",
         brand: "Seiko",
         model: "Prospex Speedtimer SSC913",
-        price: 1200,
+        price: 750,
         description: "Versión compacta de 39mm con dial azul 'Pepsi'. Un cronógrafo solar versátil que captura la esencia de los clásicos de los años 60 con especificaciones modernas.",
         image: "/watches/seiko-ssc913/default.png",
         details: {
@@ -2088,7 +2088,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-sur605",
         brand: "Seiko",
         model: "Prospex Sea Series SUR605",
-        price: 1273,
+        price: 795,
         description: "Este modelo Prospex combina elegancia y rendimiento deportivo en un diseño compacto. Con esfera de madreperla blanca y cristal de zafiro, ofrece una impresionante resistencia al agua de 200 metros.",
         image: "/watches/seiko-sur605/default.png",
         details: {
@@ -2102,7 +2102,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-sur607",
         brand: "Seiko",
         model: "Prospex Sea Series SUR607",
-        price: 1273,
+        price: 795,
         description: "Un reloj sumergible de alta gama con esfera de madreperla azul. Su construcción robusta y cristal de zafiro lo hacen ideal tanto para el uso diario sofisticado como para actividades acuáticas.",
         image: "/watches/seiko-sur607/default.png",
         details: {
@@ -2116,7 +2116,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-sur608",
         brand: "Seiko",
         model: "Prospex Sea Series SUR608",
-        price: 1401,
+        price: 875,
         description: "La variante bitono de la serie Prospex Sea Compact. Combina lujo y funcionalidad con una esfera de madreperla, 200m de resistencia al agua y la dureza del cristal de zafiro.",
         image: "/watches/seiko-sur608/default.png",
         details: {
@@ -2130,7 +2130,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-ssk039",
         brand: "Seiko",
         model: "Presage Cocktail Time GMT SSK039",
-        price: 1001,
+        price: 595,
         description: "Elevando la elegancia mecánica, este modelo integra la complicación GMT en la icónica estética Cocktail Time. Con dial 'Skydiving' y la precisión del calibre automático 4R34.",
         image: "/watches/seiko-ssk039/default.png",
         details: {
@@ -2144,7 +2144,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-ssk041",
         brand: "Seiko",
         model: "Presage Cocktail Time GMT SSK041",
-        price: 1001,
+        price: 625,
         description: "Inspirado en los colores del cóctel 'Acacia', este GMT combina funcionalidad para el viajero con un diseño refinado. Presenta un cristal Hardlex abovedado y fondo de caja transparente.",
         image: "/watches/seiko-ssk041/default.png",
         details: {
@@ -2158,7 +2158,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-srpk48",
         brand: "Seiko",
         model: "Presage Cocktail Time SRPK48",
-        price: 921,
+        price: 550,
         description: "Captura la luz de los bares de Tokio con este modelo en tonos dorados y esfera azul profunda. Una celebración de la precisión japonesa y la elegancia clásica de la línea Presage.",
         image: "/watches/seiko-srpk48/default.png",
         details: {
@@ -2172,7 +2172,7 @@ export const WATCHES: Watch[] = [
         id: "seiko-srpk46",
         brand: "Seiko",
         model: "Presage Cocktail Time SRPK46",
-        price: 921,
+        price: 575,
         description: "Edición especial con acabado dorado y esfera blanca radiante. Su movimiento automático es visible a través del fondo de caja, rindiendo tributo a la tradición relojera de Seiko.",
         image: "/watches/seiko-srpk46/default.png",
         details: {

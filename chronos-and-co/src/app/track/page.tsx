@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 function TrackingContent() {
     const searchParams = useSearchParams();
-    const { orders } = useStore();
+    const { orders, cancelOrder } = useStore();
     const [searchId, setSearchId] = useState('');
     const [foundOrder, setFoundOrder] = useState<any>(null);
     const [hasSearched, setHasSearched] = useState(false);
@@ -68,42 +68,44 @@ function TrackingContent() {
                         className="space-y-8"
                     >
                         {/* Status Progress Bar */}
-                        <div className="bg-white/5 border border-white/10 p-10 rounded-sm relative overflow-hidden">
-                            <div className="grid grid-cols-4 relative z-10">
-                                {statusSteps.map((step, index) => {
-                                    const isCompleted = index <= currentStepIndex;
-                                    const isActive = index === currentStepIndex;
-                                    return (
-                                        <div key={step} className="flex flex-col items-center text-center space-y-4">
-                                            <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-500 ${isCompleted ? 'bg-gold-500 border-gold-500 text-black' : 'border-white/10 text-white/20'
-                                                } ${isActive ? 'ring-4 ring-gold-500/20 scale-110' : ''}`}>
-                                                {index === 0 && <Package className="w-5 h-5" />}
-                                                {index === 1 && <Clock className="w-5 h-5" />}
-                                                {index === 2 && <Truck className="w-5 h-5" />}
-                                                {index === 3 && <CheckCircle2 className="w-5 h-5" />}
+                        {foundOrder.status !== 'Cancelado' && (
+                            <div className="bg-white/5 border border-white/10 p-10 rounded-sm relative overflow-hidden">
+                                <div className="grid grid-cols-4 relative z-10">
+                                    {statusSteps.map((step, index) => {
+                                        const isCompleted = index <= currentStepIndex;
+                                        const isActive = index === currentStepIndex;
+                                        return (
+                                            <div key={step} className="flex flex-col items-center text-center space-y-4">
+                                                <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-500 ${isCompleted ? 'bg-gold-500 border-gold-500 text-black' : 'border-white/10 text-white/20'
+                                                    } ${isActive ? 'ring-4 ring-gold-500/20 scale-110' : ''}`}>
+                                                    {index === 0 && <Package className="w-5 h-5" />}
+                                                    {index === 1 && <Clock className="w-5 h-5" />}
+                                                    {index === 2 && <Truck className="w-5 h-5" />}
+                                                    {index === 3 && <CheckCircle2 className="w-5 h-5" />}
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <span className={`text-[10px] font-bold tracking-[0.2em] uppercase ${isCompleted ? 'text-white' : 'text-white/20'}`}>
+                                                        {step}
+                                                    </span>
+                                                    {isActive && (
+                                                        <span className="block text-[9px] text-gold-500 animate-pulse">Estado Actual</span>
+                                                    )}
+                                                </div>
                                             </div>
-                                            <div className="space-y-1">
-                                                <span className={`text-[10px] font-bold tracking-[0.2em] uppercase ${isCompleted ? 'text-white' : 'text-white/20'}`}>
-                                                    {step}
-                                                </span>
-                                                {isActive && (
-                                                    <span className="block text-[9px] text-gold-500 animate-pulse">Estado Actual</span>
-                                                )}
-                                            </div>
-                                        </div>
-                                    );
-                                })}
+                                        );
+                                    })}
+                                </div>
+                                {/* Connector Line */}
+                                <div className="absolute top-[64px] left-[12.5%] right-[12.5%] h-[2px] bg-white/5">
+                                    <motion.div
+                                        initial={{ width: 0 }}
+                                        animate={{ width: `${(currentStepIndex / 3) * 100}%` }}
+                                        className="h-full bg-gold-500/30"
+                                        transition={{ duration: 1, ease: "easeOut" }}
+                                    />
+                                </div>
                             </div>
-                            {/* Connector Line */}
-                            <div className="absolute top-[64px] left-[12.5%] right-[12.5%] h-[2px] bg-white/5">
-                                <motion.div
-                                    initial={{ width: 0 }}
-                                    animate={{ width: `${(currentStepIndex / 3) * 100}%` }}
-                                    className="h-full bg-gold-500/30"
-                                    transition={{ duration: 1, ease: "easeOut" }}
-                                />
-                            </div>
-                        </div>
+                        )}
 
                         {/* Order Details Grid */}
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -143,6 +145,29 @@ function TrackingContent() {
                                         <span className="text-white/40 uppercase tracking-widest text-xs">Total de Inversión</span>
                                         <span className="text-2xl text-gold-500 font-display">${foundOrder.total.toLocaleString()}</span>
                                     </div>
+
+                                    {foundOrder.status === 'Recibido' && (
+                                        <div className="pt-4 border-t border-white/5">
+                                            <button
+                                                onClick={() => {
+                                                    if (window.confirm('¿Está seguro que desea cancelar este pedido? Esta acción no se puede deshacer.')) {
+                                                        cancelOrder(foundOrder.id);
+                                                    }
+                                                }}
+                                                className="w-full py-3 text-red-500/60 hover:text-red-500 hover:bg-red-500/10 border border-transparent hover:border-red-500/20 rounded-sm transition-all text-xs uppercase tracking-widest font-bold"
+                                            >
+                                                Cancelar Orden
+                                            </button>
+                                        </div>
+                                    )}
+
+                                    {foundOrder.status === 'Cancelado' && (
+                                        <div className="pt-4 border-t border-white/5 text-center">
+                                            <span className="inline-block px-4 py-2 bg-red-500/10 text-red-500 border border-red-500/20 rounded-sm text-xs font-bold uppercase tracking-widest">
+                                                Pedido Cancelado
+                                            </span>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 

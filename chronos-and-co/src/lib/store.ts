@@ -6,7 +6,7 @@ export interface CartItem extends Watch {
     quantity: number;
 }
 
-export type OrderStatus = 'Recibido' | 'Preparación' | 'Enviado' | 'Entregado';
+export type OrderStatus = 'Recibido' | 'Preparación' | 'Enviado' | 'Entregado' | 'Cancelado';
 
 export interface Order {
     id: string;
@@ -34,6 +34,7 @@ interface StoreState {
     // Order Actions
     placeOrder: (details: { name: string; email: string; phone: string; note?: string }) => Order | void;
     updateOrderStatus: (orderId: string, status: OrderStatus) => void;
+    cancelOrder: (orderId: string) => void;
     updateQuantity: (id: string, delta: number) => void;
 }
 
@@ -109,6 +110,13 @@ export const useStore = create<StoreState>()(
                 set((state) => ({
                     orders: state.orders.map((order) =>
                         order.id === orderId ? { ...order, status } : order
+                    ),
+                })),
+
+            cancelOrder: (orderId: string) =>
+                set((state) => ({
+                    orders: state.orders.map((order) =>
+                        order.id === orderId ? { ...order, status: 'Cancelado' } : order
                     ),
                 })),
 
