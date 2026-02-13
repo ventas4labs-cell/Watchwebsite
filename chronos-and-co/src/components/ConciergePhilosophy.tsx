@@ -40,7 +40,8 @@ export function ConciergePhilosophy() {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                {/* Process Steps: Scroll Snap on Mobile, Grid on Desktop */}
+                <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 md:gap-12 pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 no-scrollbar">
                     {[
                         {
                             icon: ShieldCheck,
@@ -64,13 +65,13 @@ export function ConciergePhilosophy() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 + index * 0.1 }}
-                            className="bg-white/5 p-10 border border-white/10 hover:border-gold-500/50 transition-colors duration-500 group text-center"
+                            className="bg-white/5 p-8 md:p-10 border border-white/10 hover:border-gold-500/50 transition-colors duration-500 group text-center min-w-[85%] md:min-w-0 snap-center rounded-sm flex flex-col items-center justify-center space-y-4"
                         >
-                            <div className="mb-6 inline-flex p-4 rounded-full bg-white/5 group-hover:bg-gold-500/10 transition-colors duration-500">
+                            <div className="mb-2 md:mb-6 inline-flex p-4 rounded-full bg-white/5 group-hover:bg-gold-500/10 transition-colors duration-500">
                                 <item.icon className="w-8 h-8 text-gold-500" strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-2xl font-display text-white mb-4 group-hover:text-gold-200 transition-colors">{item.title}</h3>
-                            <p className="text-white/50 leading-relaxed font-light">{item.description}</p>
+                            <h3 className="text-xl md:text-2xl font-display text-white mb-2 md:mb-4 group-hover:text-gold-200 transition-colors">{item.title}</h3>
+                            <p className="text-white/50 leading-relaxed font-light text-sm md:text-base">{item.description}</p>
                         </motion.div>
                     ))}
                 </div>

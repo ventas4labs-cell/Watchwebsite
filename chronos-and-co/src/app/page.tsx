@@ -5,12 +5,14 @@ import { CartDrawer } from '@/components/CartDrawer';
 import { ConciergePhilosophy } from '@/components/ConciergePhilosophy';
 import { CommissionCTA } from '@/components/CommissionCTA';
 import { FeaturedWatches } from '@/components/FeaturedWatches';
+import { MobileStickyBar } from '@/components/MobileStickyBar';
 
 export default function Home() {
   return (
     <main className="bg-black min-h-screen">
       <Navbar />
       <CartDrawer />
+      <MobileStickyBar />
 
       <Hero />
       <BrandSlider />
