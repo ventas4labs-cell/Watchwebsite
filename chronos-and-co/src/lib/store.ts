@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Watch } from './seed-data';
+import { Watch, WATCHES } from './seed-data';
 
 export interface CartItem extends Watch {
     quantity: number;
@@ -18,6 +18,7 @@ export interface Order {
     total: number;
     status: OrderStatus;
     date: string;
+    address?: string;
 }
 
 interface StoreState {
@@ -32,10 +33,16 @@ interface StoreState {
     toggleCart: (isOpen?: boolean) => void;
 
     // Order Actions
-    placeOrder: (details: { name: string; email: string; phone: string; note?: string }) => Order | void;
+    placeOrder: (details: { name: string; email: string; phone: string; note?: string; address?: string }) => Order | void;
     updateOrderStatus: (orderId: string, status: OrderStatus) => void;
     cancelOrder: (orderId: string) => void;
     updateQuantity: (id: string, delta: number) => void;
+
+    // Inventory Actions
+    inventory: Watch[];
+    deleteItem: (id: string) => void;
+    updateItemStatus: (id: string, status: 'in-stock' | 'pre-order' | 'sold') => void;
+    updateWatchDetails: (id: string, updates: Partial<Watch>) => void;
 }
 
 export const useStore = create<StoreState>()(
@@ -44,6 +51,7 @@ export const useStore = create<StoreState>()(
             cart: [],
             isCartOpen: false,
             orders: [],
+            inventory: WATCHES, // Initialize with seed data
 
             addToCart: (watch) =>
                 set((state) => {
@@ -92,6 +100,7 @@ export const useStore = create<StoreState>()(
                         email: details.email,
                         phone: details.phone,
                         note: details.note,
+                        address: details.address,
                         items: [...state.cart],
                         total,
                         status: 'Recibido',
@@ -126,6 +135,25 @@ export const useStore = create<StoreState>()(
                         item.id === id
                             ? { ...item, quantity: Math.max(1, item.quantity + delta) }
                             : item
+                    ),
+                })),
+
+            deleteItem: (id: string) =>
+                set((state) => ({
+                    inventory: state.inventory.filter((item) => item.id !== id),
+                })),
+
+            updateItemStatus: (id: string, status) =>
+                set((state) => ({
+                    inventory: state.inventory.map((item) =>
+                        item.id === id ? { ...item, availability: status as any } : item
+                    ),
+                })),
+
+            updateWatchDetails: (id, updates) =>
+                set((state) => ({
+                    inventory: state.inventory.map((item) =>
+                        item.id === id ? { ...item, ...updates } : item
                     ),
                 })),
         }),

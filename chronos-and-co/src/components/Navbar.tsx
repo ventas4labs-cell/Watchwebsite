@@ -43,7 +43,8 @@ export function Navbar() {
                         </button>
                         <div className="hidden md:flex items-center gap-6 text-sm font-medium tracking-wide text-white/80">
                             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
-                            <Link href="/#new-arrivals" className="hover:text-white transition-colors">Novedades</Link>
+                            <Link href="/shop/in-stock" className="hover:text-emerald-400 transition-colors font-semibold">Entrega Inmediata</Link>
+                            <Link href="/shop/pre-order" className="hover:text-gold-200 transition-colors">Pre-orden</Link>
                         </div>
                     </div>
 

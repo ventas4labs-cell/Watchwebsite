@@ -32,6 +32,8 @@ export function MobileMenu({ isOpen, onClose, brands }: MobileMenuProps) {
                         <nav className="flex-1 space-y-8">
                             <div>
                                 <Link href="/" onClick={onClose} className="text-3xl font-display text-white block mb-6">Inicio</Link>
+                                <Link href="/shop/in-stock" onClick={onClose} className="text-xl font-display text-emerald-400 block mb-4">Entrega Inmediata</Link>
+                                <Link href="/shop/pre-order" onClick={onClose} className="text-xl font-display text-gold-200 block mb-8">Pre-orden</Link>
                                 <div className="space-y-4 pl-4 border-l border-white/10">
                                     <span className="text-gold-500 text-xs font-bold tracking-widest uppercase block mb-4">Marcas</span>
                                     {brands.map((brand) => (

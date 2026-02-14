@@ -27,7 +27,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             <div className="container mx-auto px-6 pt-32 pb-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     {/* Left: Image */}
-                    <div className="flex flex-col gap-4 sticky top-24">
+                    <div className="flex flex-col gap-4 relative lg:sticky lg:top-24">
                         <div className="relative aspect-[3/4] lg:h-[80vh] bg-white/5 rounded-sm overflow-hidden">
                             <Image
                                 src={watch.image}

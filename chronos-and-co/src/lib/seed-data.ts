@@ -6,6 +6,7 @@ export interface Watch {
     description: string;
     image: string;
     gallery?: string[];
+    availability?: 'in-stock' | 'pre-order';
     details: {
         movement: string;
         caseSize: string;
@@ -19,6 +20,7 @@ export const WATCHES: Watch[] = [
     {
         id: "tissot-prx",
         brand: "Tissot",
+        availability: "in-stock",
         model: "PRX 40mm tiffany dial",
         price: 1161,
         description: "Una mezcla magistral de 1970s retro-chic y moderna excelencia mecánica. Si buscas un reloj delgado y suave con un auténtico toque de los años 70, no busques más.",
@@ -27,7 +29,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-gold-pvd",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Quartz 40mm Gold PVD",
         price: 921,
         description: "El Tissot PRX, el reloj para aquellos con pasión por el diseño y ojo para el ingenio. Su diseño evocador y delgado lo hace un esencial intransigente. Acabado PVD oro amarillo.",
@@ -36,7 +38,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-quartz-blue",
-        brand: "Tissot",
+        brand: "Tissot", availability: "in-stock",
         model: "PRX Quartz 40mm Blue",
         price: 720,
         description: "Descubre el nuevo Tissot PRX, su diseño evocador y delgado lo hace un esencial intransigente para todos los entusiastas del diseño.",
@@ -45,7 +47,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-quartz-green",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Quartz 40mm Green",
         price: 720,
         description: "En 1978 nació el Tissot PRX, ahora celebramos su regreso. El reloj para aquellos con pasión por el diseño.",
@@ -54,7 +56,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-quartz-black",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Quartz 40mm Black",
         price: 720,
         description: "Un diseño delgado y evocador que lo convierte en un esencial intransigente para todos los entusiastas del diseño.",
@@ -63,7 +65,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-quartz-silver",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Quartz 40mm Silver",
         price: 720,
         description: "El nuevo Tissot PRX, el reloj para aquellos con pasión por el diseño y ojo para el ingenio.",
@@ -72,7 +74,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-quartz-mint",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Quartz 40mm Mint",
         price: 720,
         description: "Descubre el nuevo Tissot PRX ahora, su diseño evocador y delgado lo hace un esencial intransigente.",
@@ -81,7 +83,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-quartz-rubber-black",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Quartz 40mm Rubber Strap",
         price: 681,
         description: "Estilo moderno con comodidad deportiva. La versión con correa de caucho del icónico PRX.",
@@ -90,7 +92,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-quartz-leather-blue",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Quartz 40mm Leather Strap",
         price: 640,
         description: "Elegancia clásica con un toque moderno. La versión con correa de piel azul para un look sofisticado.",
@@ -100,7 +102,7 @@ export const WATCHES: Watch[] = [
 
     {
         id: "tissot-le-locle",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Le Locle Automatique",
         price: 1040,
         description: "Revisando la tradición con una firma clásica de Le Locle. Elegancia personificada.",
@@ -109,7 +111,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-gentleman",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Gentleman Powermatic",
         price: 1433,
         description: "El reloj perfecto para el día a día para el caballero moderno. Versátil y robusto.",
@@ -118,7 +120,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 Powermatic 80",
         price: 1200,
         description: "Un Reloj de buceo de alto rendimiento con una reserva de marcha de 80 horas.",
@@ -127,7 +129,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-supersport-chrono",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Supersport Chrono",
         price: 921,
         description: "Un masculino, dinámico y futurista cronógrafo deportivo.",
@@ -136,7 +138,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-heritage-1938",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Heritage 1938 Automatic",
         price: 1321,
         description: "Un reloj de inspiración vintage celebrando la rica historia.",
@@ -145,7 +147,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-telemeter-1938",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Telemeter 1938",
         price: 3401,
         description: "Un cronógrafo elegante presentando una escala telemétrica en la esfera.",
@@ -154,7 +156,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-chrono-xl",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Chrono XL Vintage",
         price: 633,
         description: "Un reloj de caja grande con una estética retro vintage.",
@@ -163,7 +165,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-chemin-des-tourelles",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Chemin des Tourelles",
         price: 1321,
         description: "Nombrado en honor a la calle donde se estableció el taller de Tissot.",
@@ -172,7 +174,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr-100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR 100 Quartz",
         price: 521,
         description: "Un preciso y robusto everyday watch for any occasion.",
@@ -181,7 +183,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-classic-dream",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Classic Dream",
         price: 560,
         description: "Un diseño minimalista y atemporal for uso formal.",
@@ -190,7 +192,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-ballade",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Ballade Powermatic 80 COSC",
         price: 1520,
         description: "Precisión certificada por cronómetro con una espiral de silicio.",
@@ -199,7 +201,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr516-chrono",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR516 Chronograph",
         price: 841,
         description: "Reinterpretación moderna of a 1970s clásico de carreras.",
@@ -208,7 +210,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-carson-premium",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Carson Premium",
         price: 1161,
         description: "Un reloj de vestir elegante con una sofisticada esfera con números romanos.",
@@ -217,7 +219,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-tradition",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Tradition Quartz",
         price: 560,
         description: "Relojería ultramoderna con una toque de nostalgia.",
@@ -226,7 +228,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-everytime",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Everytime Quartz",
         price: 473,
         description: "Un diseño de esfera simple y limpio for the minimalista moderno.",
@@ -235,7 +237,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-t-touch-solar",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "T-Touch Connect Solar",
         price: 1840,
         description: "El primer reloj conectado táctil alimentado por energía solar sostenible.",
@@ -244,7 +246,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-visodate",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Heritage Visodate",
         price: 1081,
         description: "Un actualización contemporánea to the original de los años 50 Visodate.",
@@ -253,7 +255,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prc-200",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRC 200 Chronograph",
         price: 841,
         description: "Un cronógrafo deportivo with alta resistencia al agua and a taquímetro.",
@@ -262,7 +264,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-couturier",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Couturier Chronograph",
         price: 1040,
         description: "Un watch influenciado por los diseños meticulosos of diseñadores de moda de clase mundial.",
@@ -276,7 +278,7 @@ export const WATCHES: Watch[] = [
     // Orient (Classic / Value)
     {
         id: "orient-ra-ak0007s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon V3 RA-AK0007S",
         price: 550,
         description: "Un sofisticado reloj de vestir que equilibra complejidad y elegancia. Cuenta con un dial secundario único que rastrea el sol y la luna para indicar el día y la noche, junto con complicaciones de día y fecha. El cristal de zafiro garantiza una claridad duradera y resistencia a los arañazos.",
@@ -295,7 +297,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0008s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon V3 RA-AK0008S",
         price: 555,
         description: "Eternamente apreciado, un verdadero clásico. El sol y la luna trazan silenciosamente el paso del tiempo dentro de una caja meticulosamente acabada y cristal de zafiro. El diseño atemporal se acentúa sutilmente por las manecillas pulidas y el dial texturizado.",
@@ -314,7 +316,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0009t",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon V3 RA-AK0009T",
         price: 560,
         description: "Reloj de estilo clásico y sencillo con indicador de día y noche, esfera marrón y detalles en oro rosa. Presenta una pantalla de sol y luna que añade un toque romántico a la precisión mecánica.",
@@ -328,7 +330,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0010b",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon V3 RA-AK0010B",
         price: 565,
         description: "Diseño atemporal con fiabilidad moderna. Este Sun & Moon cuenta con una esfera negra profunda y correa de cuero, ideal para un look formal y sofisticado en cualquier ocasión.",
@@ -341,7 +343,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0011d",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Day & Night RA-AK0011D",
         price: 56000,
         description: "Classic & Simple Style Day & Night with esfera azul marino and correa de cuero a juego. Elegante y sofisticado.",
@@ -354,7 +356,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-as0101s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon Open Heart RA-AS0101S",
         price: 570,
         description: "Este modelo combina el romántico indicador de Sol y Luna con una ventana de \"corazón abierto\" en la posición de las 9 en punto, lo que permite vislumbrar el movimiento mecánico en funcionamiento. Ofrece un giro moderno a una estética clásica.",
@@ -366,7 +368,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-as0102s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon RA-AS0102S",
         price: 575,
         description: "Classic Sun & Moon with white dial, rose gold case, and correa de cuero marrón. Elegancia de inspiración vintage.",
@@ -378,7 +380,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-as0103a",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon Open Heart RA-AS0103A",
         price: 580,
         description: "Una mezcla perfecta de estilo clásico y maravilla mecánica. Dial azul marino profundo con complicación de Sol y Luna y ventana radial que revela el escape del movimiento.",
@@ -391,7 +393,7 @@ export const WATCHES: Watch[] = [
     // Classic Semi-Skeleton (Batch 2)
     {
         id: "orient-ra-ak0805e",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon RA-AK0805E",
         price: 550,
         description: "Una elegante adición a la colección de Orient, que combina la estética vintage con sofisticadas complicaciones mecánicas. Presenta una impresionante esfera verde con el icónico indicador de Sol y Luna.",
@@ -404,7 +406,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0806l",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon RA-AK0806L",
         price: 555,
         description: "Elegancia mecánica con una profunda esfera azul marino. Este modelo Sun & Moon destaca por su disposición clásica y la complicación día/noche que le otorga un carácter único.",
@@ -417,7 +419,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0807r",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon RA-AK0807R",
         price: 560,
         description: "Una pieza de declaración audaz con esfera color burdeos. Combina la calidez del tono vino con la precisión del movimiento automático F6B24 y el indicador de día y noche.",
@@ -429,7 +431,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0808s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Semi-Skeleton RA-AK0808S",
         price: 64000,
         description: "Edición limitada mechanical watch with white dial and correa extra. Elegante y exclusivo.",
@@ -441,7 +443,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0801s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon RA-AK0801S",
         price: 565,
         description: "Acabado en oro rosa elegante para un look vintage sofisticado. Su esfera clara resalta el subdial de Sol y Luna y el indicador de día de la semana.",
@@ -453,7 +455,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0802s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Sun & Moon RA-AK0802S",
         price: 570,
         description: "Versatilidad y elegancia en tono plateado con esfera blanca. Un clásico moderno con la complicación Sun & Moon y el refinamiento de la serie Bambino.",
@@ -465,7 +467,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0803y",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Semi-Skeleton RA-AK0803Y",
         price: 60800,
         description: "Gold plated mechanical watch with esfera color marfil. Estética vintage clásica.",
@@ -475,7 +477,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ak0804y",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Semi-Skeleton RA-AK0804Y",
         price: 57600,
         description: "Earthy brown dial mechanical watch with semi-skeleton feature. Distinctive and warm.",
@@ -488,7 +490,7 @@ export const WATCHES: Watch[] = [
     // Classic & Simple Style (Bambino Gen 2 V4 / V8)
     {
         id: "orient-ra-ac0029e",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino V4 RA-AC0029E",
         price: 320,
         description: "Famoso por su impresionante esfera con degradado verde esmeralda y su cristal abovedado de estilo vintage. El V4 mantiene la silueta clásica del Bambino pero con una caja modernizada de 40.5mm y correa de malla.",
@@ -500,7 +502,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0030l",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino RA-AC0030L",
         price: 325,
         description: "Reloj mecánico Bambino con una esfera de degradado azul claro. Fresco y contemporáneo, este modelo ofrece una elegancia atemporal con un toque de modernidad.",
@@ -512,7 +514,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0031s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino RA-AC0031S",
         price: 330,
         description: "Elegante Bambino mecánico con esfera blanca e índices simplificados. Pura sofisticación minimalista para el caballero moderno.",
@@ -524,7 +526,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0032v",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino RA-AC0032V",
         price: 335,
         description: "Unique purple gradation dial Bambino mechanical watch. Stand out with this rare color.",
@@ -534,7 +536,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0033y",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino RA-AC0033Y",
         price: 340,
         description: "Bambino de inspiración vintage con esfera color marfil y cristal abovedado. Un atractivo atemporal que celebra la herencia clásica de la relojería.",
@@ -544,7 +546,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0035e",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino RA-AC0035E",
         price: 345,
         description: "Bambino con esfera verde y números arábigos en una correa de cuero. Estética de reloj de campo en un paquete elegante y formal.",
@@ -556,7 +558,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0037r",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino RA-AC0037R",
         price: 350,
         description: "Mechanical watch with deep esfera burdeos and Unrabic numerals. Rich and elegant.",
@@ -566,7 +568,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0038s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino RA-AC0038S",
         price: 355,
         description: "Clean white dial Bambino with Unrabic numerals and black strap. High legibility and classic style.",
@@ -576,7 +578,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0039y",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino RA-AC0039Y",
         price: 360,
         description: "Ivory dial Bambino features unique Unrabic numerals and blued hands. Un collector favorite.",
@@ -590,7 +592,7 @@ export const WATCHES: Watch[] = [
     // Classic & Simple Style (Batch 4)
     {
         id: "orient-ra-ac0023e",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino V4 RA-AC0023E",
         price: 320,
         description: "Elegante reloj mecánico que presenta una rica esfera verde y un estilo clásico. Su cristal abovedado resalta el degradado único de la colección Bambino V4.",
@@ -603,7 +605,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0024l",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino V4 RA-AC0024L",
         price: 325,
         description: "Diseño atemporal con una esfera azul profundo y cristal abovedado. La colección V4 ofrece modernidad mecánica en un diseño clásico.",
@@ -617,7 +619,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0025n",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino V4 RA-AC0025N",
         price: 330,
         description: "Versátil reloj mecánico con esfera gris y una cómoda correa de cuero. El diseño elegante y minimalista de la serie Bambino V4 lo convierte en el compañero perfecto para cualquier ocasión.",
@@ -631,7 +633,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0026r",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino V4 RA-AC0026R",
         price: 335,
         description: "Sofisticado reloj con esfera roja que hace una declaración audaz. Combina la herencia mecánica de Orient con un color contemporáneo y vibrante.",
@@ -645,7 +647,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0027s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino V4 RA-AC0027S",
         price: 340,
         description: "Esfera blanca impecable con detalles plateados para un aspecto minimalista y puro. La esencia de la elegancia clásica bajo un cristal abovedado.",
@@ -659,7 +661,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-wk0001s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino Quartz RA-WK0001S",
         price: 320,
         description: "Una refinada variante de cuarzo del legendario Bambino. Captura la esencia vintage con un dial secundario de segundero pequeño y una caja más compacta de 38.4 mm.",
@@ -673,7 +675,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-wk0003g",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino Solar RA-WK0003G",
         price: 345,
         description: "Esfera color champagne con detalles en tono dorado. Representa la evolución tecnológica de un clásico con su movimiento alimentado por luz solar.",
@@ -687,7 +689,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-wk0004l",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic & Simple Style RA-WK0004L",
         price: 48000,
         description: "Deep blue sunburst dial in a compact 38mm case.",
@@ -701,7 +703,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-wk0005p",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino Solar RA-WK0005P",
         price: 350,
         description: "Modelo único con esfera color salmón que añade un toque de distinción a la colección clásica. La tecnología solar garantiza fiabilidad sin cambios de batería.",
@@ -715,7 +717,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-wk0006s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic & Simple Style RA-WK0006S",
         price: 48000,
         description: "Silver dial with mesh bracelet option. Modern meets classic.",
@@ -729,7 +731,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ap0101b",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino Small Seconds RA-AP0101B",
         price: 355,
         description: "Bambino Small Seconds con esfera negra. Un diseño retro con un dial secundario que evoca los relojes clásicos de mediados de siglo.",
@@ -743,7 +745,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ap0104s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino Small Seconds RA-AP0104S",
         price: 360,
         description: "Bambino Small Seconds con esfera blanca y detalles dorados. Pura sofisticación retro en un tamaño clásico de 38.4 mm.",
@@ -757,7 +759,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "orient-ra-ac0028s",
-        brand: "Orient",
+        brand: "Orient", availability: "pre-order",
         model: "Classic Bambino RA-AC0028S",
         price: 320,
         description: "Estilo clásico Bambino con una esfera blanca nítida y complicación de fecha. Un diseño atemporal que define el estándar de los relojes de vestir de Orient.",
@@ -770,7 +772,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-titanium-38mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Titanium 38mm",
         price: 1561,
         description: "Swiss made excellence. El Tissot PRX Titanium 38mm represents the pinnacle of Tissot craftsmanship.",
@@ -784,7 +786,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-le-locle-39-3mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Le Locle 39.3mm",
         price: 1120,
         description: "Swiss made excellence. El Tissot Le Locle 39.3mm represents the pinnacle of Tissot craftsmanship.",
@@ -798,7 +800,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-classic-dream-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Classic Dream 40mm",
         price: 880,
         description: "Swiss made excellence. El Tissot Classic Dream 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -812,7 +814,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-ballade-39mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Ballade 39mm",
         price: 1760,
         description: "Swiss made excellence. El Tissot Ballade 39mm represents the pinnacle of Tissot craftsmanship.",
@@ -826,7 +828,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-damascus-steel-38mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Damascus Steel 38mm",
         price: 1881,
         description: "Swiss made excellence. El Tissot PRX Damascus Steel 38mm represents the pinnacle of Tissot craftsmanship.",
@@ -840,7 +842,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr-100-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR 100 40mm",
         price: 681,
         description: "Swiss made excellence. El Tissot PR 100 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -854,7 +856,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 40mm",
         price: 1520,
         description: "Swiss made excellence. El Tissot PRX 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -868,7 +870,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr516-41mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR516 41mm",
         price: 3440,
         description: "Swiss made excellence. El Tissot PR516 41mm represents the pinnacle of Tissot craftsmanship.",
@@ -882,7 +884,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-classic-dream-42mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Classic Dream 42mm",
         price: 521,
         description: "Swiss made excellence. El Tissot Classic Dream 42mm represents the pinnacle of Tissot craftsmanship.",
@@ -896,7 +898,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-ballade-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Ballade 40mm",
         price: 640,
         description: "Swiss made excellence. El Tissot Ballade 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -910,7 +912,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-chrono-xl-vintage-45mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Chrono XL Vintage 45mm",
         price: 720,
         description: "Swiss made excellence. El Tissot Chrono XL Vintage 45mm represents the pinnacle of Tissot craftsmanship.",
@@ -924,7 +926,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-chemin-des-tourelles-skeleton-39mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Chemin Des Tourelles Skeleton 39mm",
         price: 1680,
         description: "Swiss made excellence. El Tissot Chemin Des Tourelles Skeleton 39mm represents the pinnacle of Tissot craftsmanship.",
@@ -938,7 +940,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000-45-5mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 45.5mm",
         price: 1001,
         description: "Swiss made excellence. El Tissot Seastar 1000 45.5mm represents the pinnacle of Tissot craftsmanship.",
@@ -952,7 +954,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-wilson-wnba-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar Wilson WNBA 40mm",
         price: 1401,
         description: "Swiss made excellence. El Tissot Seastar Wilson WNBUn 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -966,7 +968,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-35mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm",
         price: 1273,
         description: "Swiss made excellence. El Tissot PRX 35mm represents the pinnacle of Tissot craftsmanship.",
@@ -980,7 +982,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000-gmt-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 GMT 40mm",
         price: 880,
         description: "Swiss made excellence. El Tissot Seastar 1000 GMT 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -994,7 +996,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-t-race-45mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "T-Race 45mm",
         price: 1040,
         description: "Swiss made excellence. El Tissot T-Race 45mm represents the pinnacle of Tissot craftsmanship.",
@@ -1008,7 +1010,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prc-200-43mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRC 200 43mm",
         price: 953,
         description: "Swiss made excellence. El Tissot PRC 200 43mm represents the pinnacle of Tissot craftsmanship.",
@@ -1022,7 +1024,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000-43mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 43mm",
         price: 1481,
         description: "Swiss made excellence. El Tissot Seastar 1000 43mm represents the pinnacle of Tissot craftsmanship.",
@@ -1036,7 +1038,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-t-touch-connect-sport-43-75mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "T-Touch Connect Sport 43.75mm",
         price: 1840,
         description: "Swiss made excellence. El Tissot T-Touch Connect Sport 43.75mm represents the pinnacle of Tissot craftsmanship.",
@@ -1050,7 +1052,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-t-touch-connect-sport-jungfraubahn-43-75mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "T-Touch Connect Sport Jungfraubahn 43.75mm",
         price: 2073,
         description: "Swiss made excellence. El Tissot T-Touch Connect Sport Jungfraubahn 43.75mm represents the pinnacle of Tissot craftsmanship.",
@@ -1064,7 +1066,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-savonnette-49-4mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Savonnette 49.4mm",
         price: 1561,
         description: "Swiss made excellence. El Tissot Savonnette 49.4mm represents the pinnacle of Tissot craftsmanship.",
@@ -1078,7 +1080,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prc-100-solar-39mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRC 100 Solar 39mm",
         price: 921,
         description: "Swiss made excellence. El Tissot PRC 100 Solar 39mm represents the pinnacle of Tissot craftsmanship.",
@@ -1092,7 +1094,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-gentleman-open-heart-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Gentleman Open Heart 40mm",
         price: 1641,
         description: "Swiss made excellence. El Tissot Gentleman Open Heart 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1106,7 +1108,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr516-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR516 40mm",
         price: 1001,
         description: "Swiss made excellence. El Tissot PR516 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1120,7 +1122,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-supersport-chrono-45-5mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Supersport Chrono 45.5mm",
         price: 921,
         description: "Swiss made excellence. El Tissot Supersport Chrono 45.5mm represents the pinnacle of Tissot craftsmanship.",
@@ -1134,7 +1136,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-chrono-xl-classic-45mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Chrono XL Classic 45mm",
         price: 825,
         description: "Swiss made excellence. El Tissot Chrono XL Classic 45mm represents the pinnacle of Tissot craftsmanship.",
@@ -1148,7 +1150,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-t-touch-connect-solar-47-5mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "T-Touch Connect Solar 47.5mm",
         price: 2000,
         description: "Swiss made excellence. El Tissot T-Touch Connect Solar 47.5mm represents the pinnacle of Tissot craftsmanship.",
@@ -1162,7 +1164,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-tradition-42mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Tradition 42mm",
         price: 720,
         description: "Swiss made excellence. El Tissot Tradition 42mm represents the pinnacle of Tissot craftsmanship.",
@@ -1176,7 +1178,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 40mm",
         price: 1401,
         description: "Swiss made excellence. El Tissot Seastar 1000 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1190,7 +1192,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-savonnette-48-5mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Savonnette 48.5mm",
         price: 681,
         description: "Swiss made excellence. El Tissot Savonnette 48.5mm represents the pinnacle of Tissot craftsmanship.",
@@ -1204,7 +1206,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr-100-34mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR 100 34mm",
         price: 560,
         description: "Swiss made excellence. El Tissot PR 100 34mm represents the pinnacle of Tissot craftsmanship.",
@@ -1218,7 +1220,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-gentleman-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Gentleman 40mm",
         price: 1520,
         description: "Swiss made excellence. El Tissot Gentleman 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1232,7 +1234,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000-38mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 38mm",
         price: 1001,
         description: "Swiss made excellence. El Tissot Seastar 1000 38mm represents the pinnacle of Tissot craftsmanship.",
@@ -1246,7 +1248,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-carson-premium-41mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Carson Premium 41mm",
         price: 825,
         description: "Swiss made excellence. El Tissot Carson Premium 41mm represents the pinnacle of Tissot craftsmanship.",
@@ -1260,7 +1262,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr516-38mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR516 38mm",
         price: 1321,
         description: "Swiss made excellence. El Tissot PR516 38mm represents the pinnacle of Tissot craftsmanship.",
@@ -1274,7 +1276,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-gentleman-gold-bezel-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Gentleman Gold bezel 40mm",
         price: 3801,
         description: "Swiss made excellence. El Tissot Gentleman Gold bezel 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1288,7 +1290,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-t-race-38mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "T-Race 38mm",
         price: 1081,
         description: "Swiss made excellence. El Tissot T-Race 38mm represents the pinnacle of Tissot craftsmanship.",
@@ -1302,7 +1304,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr-100-jungfraubahn-34mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR 100 Jungfraubahn 34mm",
         price: 633,
         description: "Swiss made excellence. El Tissot PR 100 Jungfraubahn 34mm represents the pinnacle of Tissot craftsmanship.",
@@ -1316,7 +1318,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000-quartz-chronograph-38mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 Quartz Chronograph 38mm",
         price: 1040,
         description: "Swiss made excellence. El Tissot Seastar 1000 Quartz Chronograph 38mm represents the pinnacle of Tissot craftsmanship.",
@@ -1330,7 +1332,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr-100-vuelta-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR 100 Vuelta 40mm",
         price: 825,
         description: "Swiss made excellence. El Tissot PR 100 Vuelta 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1344,7 +1346,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-heritage-1938-39mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "HERITAGE 1938 39mm",
         price: 1593,
         description: "Swiss made excellence. El TISSOT HERITUnGE 1938 39mm represents the pinnacle of Tissot craftsmanship.",
@@ -1358,7 +1360,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-ufo-robot-grendizer-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX UFO Robot Grendizer 40mm",
         price: 1520,
         description: "Swiss made excellence. El Tissot PRX UFO Robot Grendizer 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1372,7 +1374,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-le-locle-gold-39-3mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Le Locle Gold 39.3mm",
         price: 3561,
         description: "Swiss made excellence. El Tissot Le Locle Gold 39.3mm represents the pinnacle of Tissot craftsmanship.",
@@ -1386,7 +1388,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000-36mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 36mm",
         price: 793,
         description: "Swiss made excellence. El Tissot Seastar 1000 36mm represents the pinnacle of Tissot craftsmanship.",
@@ -1400,7 +1402,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-2000-46mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 2000 46mm",
         price: 2041,
         description: "Swiss made excellence. El Tissot Seastar 2000 46mm represents the pinnacle of Tissot craftsmanship.",
@@ -1414,7 +1416,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-le-locle-open-heart-39-3mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Le Locle Open Heart 39.3mm",
         price: 1401,
         description: "Swiss made excellence. El Tissot Le Locle Open Heart 39.3mm represents the pinnacle of Tissot craftsmanship.",
@@ -1428,7 +1430,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-telemeter-1938-42mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Telemeter 1938 42mm",
         price: 3840,
         description: "Swiss made excellence. El Tissot Telemeter 1938 42mm represents the pinnacle of Tissot craftsmanship.",
@@ -1442,7 +1444,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-t-race-41mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "T-Race 41mm",
         price: 1321,
         description: "Swiss made excellence. El Tissot T-Race 41mm represents the pinnacle of Tissot craftsmanship.",
@@ -1456,7 +1458,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-lepine-49mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Lepine 49mm",
         price: 560,
         description: "Swiss made excellence. El Tissot Lepine 49mm represents the pinnacle of Tissot craftsmanship.",
@@ -1470,7 +1472,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-chrono-xl-classic",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Chrono XL Classic",
         price: 793,
         description: "Swiss made excellence. El Tissot Chrono XL Classic represents the pinnacle of Tissot craftsmanship.",
@@ -1484,7 +1486,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-42mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 42mm",
         price: 3440,
         description: "Swiss made excellence. El Tissot PRX 42mm represents the pinnacle of Tissot craftsmanship.",
@@ -1498,7 +1500,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-gold-35mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Gold 35mm",
         price: 3440,
         description: "Swiss made excellence. El Tissot PRX Gold 35mm represents the pinnacle of Tissot craftsmanship.",
@@ -1512,7 +1514,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-t-complication-squelette-43mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "T-Complication Squelette 43mm",
         price: 3673,
         description: "Swiss made excellence. El Tissot T-Complication Squelette 43mm represents the pinnacle of Tissot craftsmanship.",
@@ -1526,7 +1528,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prc-100-solar-34mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRC 100 Solar 34mm",
         price: 1001,
         description: "Swiss made excellence. El Tissot PRC 100 Solar 34mm represents the pinnacle of Tissot craftsmanship.",
@@ -1540,7 +1542,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-gold-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Gold 40mm",
         price: 3801,
         description: "Swiss made excellence. El Tissot PRX Gold 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1554,7 +1556,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-chemin-des-tourelles-42mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Chemin des Tourelles 42mm",
         price: 1401,
         description: "Swiss made excellence. El Tissot Chemin des Tourelles 42mm represents the pinnacle of Tissot craftsmanship.",
@@ -1568,7 +1570,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-goldrun-gold-38mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Goldrun Gold 38mm",
         price: 6080,
         description: "Swiss made excellence. El Tissot Goldrun Gold 38mm represents the pinnacle of Tissot craftsmanship.",
@@ -1582,7 +1584,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pendants-30-1mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Pendants 30.1mm",
         price: 441,
         description: "Swiss made excellence. El Tissot Pendants 30.1mm represents the pinnacle of Tissot craftsmanship.",
@@ -1596,7 +1598,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-goldrun-hesalite-gold-33-7mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Goldrun Hesalite Gold 33.7mm",
         price: 4841,
         description: "Swiss made excellence. El Tissot Goldrun Hesalite Gold 33.7mm represents the pinnacle of Tissot craftsmanship.",
@@ -1610,7 +1612,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-le-locle-gold-39mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Le Locle Gold 39mm",
         price: 3561,
         description: "Swiss made excellence. El Tissot Le Locle Gold 39mm represents the pinnacle of Tissot craftsmanship.",
@@ -1624,7 +1626,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-infirmi-egrave-res",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Infirmi&egrave;res",
         price: 473,
         description: "Swiss made excellence. El Tissot Infirmi&egrave;res represents the pinnacle of Tissot craftsmanship.",
@@ -1638,7 +1640,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-classic-dream-swissmatic",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Classic Dream Swissmatic",
         price: 880,
         description: "Swiss made excellence. El Tissot Classic Dream Swissmatic represents the pinnacle of Tissot craftsmanship.",
@@ -1652,7 +1654,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000-powermatic-80-gmt",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 Powermatic 80 GMT",
         price: 2201,
         description: "Swiss made excellence. El Tissot Seastar 1000 Powermatic 80 GMT represents the pinnacle of Tissot craftsmanship.",
@@ -1666,7 +1668,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-ufo-robot-grendizer-50th-anniversary-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX UFO Robot Grendizer 50th Anniversary 40mm",
         price: 1760,
         description: "Swiss made excellence. El Tissot PRX UFO Robot Grendizer 50th Anniversary 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1680,7 +1682,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-heritage-1973",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Heritage 1973",
         price: 4121,
         description: "Swiss made excellence. El Tissot Heritage 1973 represents the pinnacle of Tissot craftsmanship.",
@@ -1694,7 +1696,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-t-touch-connect-solar-jungfraubahn-47-5mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "T-Touch Connect Solar Jungfraubahn 47.5mm",
         price: 2000,
         description: "Swiss made excellence. El Tissot T-Touch Connect Solar Jungfraubahn 47.5mm represents the pinnacle of Tissot craftsmanship.",
@@ -1708,7 +1710,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-rockwatch-38mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Rockwatch 38mm",
         price: 1961,
         description: "Swiss made excellence. El Tissot Rockwatch 38mm represents the pinnacle of Tissot craftsmanship.",
@@ -1722,7 +1724,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-le-locle-20th-anniversary-39-3mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Le Locle 20th Anniversary 39.3mm",
         price: 1401,
         description: "Swiss made excellence. El Tissot Le Locle 20th Anniversary 39.3mm represents the pinnacle of Tissot craftsmanship.",
@@ -1736,7 +1738,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr-100-41mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR 100 41mm",
         price: 953,
         description: "Swiss made excellence. El Tissot PR 100 41mm represents the pinnacle of Tissot craftsmanship.",
@@ -1750,7 +1752,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-savonnette-49-5mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Savonnette 49.5mm",
         price: 681,
         description: "Swiss made excellence. El Tissot Savonnette 49.5mm represents the pinnacle of Tissot craftsmanship.",
@@ -1764,7 +1766,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-carbon-40-5mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Carbon 40.5mm",
         price: 1840,
         description: "Swiss made excellence. El Tissot PRX Carbon 40.5mm represents the pinnacle of Tissot craftsmanship.",
@@ -1778,7 +1780,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-pr-100-jungfraubahn-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PR 100 Jungfraubahn 40mm",
         price: 633,
         description: "Swiss made excellence. El Tissot PR 100 Jungfraubahn 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1792,7 +1794,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-everytime-34mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Everytime 34mm",
         price: 560,
         description: "Swiss made excellence. El Tissot Everytime 34mm represents the pinnacle of Tissot craftsmanship.",
@@ -1806,7 +1808,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-damian-lillard-special-edition-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Damian Lillard Special Edition 40mm",
         price: 1520,
         description: "Swiss made excellence. El Tissot PRX Damian Lillard Edición Especial 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1820,7 +1822,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-supersport-nba-special-edition-45-5mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Supersport NBA Special Edition 45.5mm",
         price: 880,
         description: "Swiss made excellence. El Tissot Supersport NBUn Edición Especial 45.5mm represents the pinnacle of Tissot craftsmanship.",
@@ -1834,7 +1836,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-savonnette-49-55mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Savonnette 49.55mm",
         price: 1561,
         description: "Swiss made excellence. El Tissot Savonnette 49.55mm represents the pinnacle of Tissot craftsmanship.",
@@ -1848,7 +1850,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-carson-premium-40mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Carson Premium 40mm",
         price: 793,
         description: "Swiss made excellence. El Tissot Carson Premium 40mm represents the pinnacle of Tissot craftsmanship.",
@@ -1862,7 +1864,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-supersport-chrono-basketball-edition-45-5mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Supersport Chrono Basketball Edition 45.5mm",
         price: 880,
         description: "Swiss made excellence. El Tissot Supersport Chrono Basketball Edition 45.5mm represents the pinnacle of Tissot craftsmanship.",
@@ -1876,7 +1878,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-le-locle-39mm",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Le Locle 39mm",
         price: 1120,
         description: "Swiss made excellence. El Tissot Le Locle 39mm represents the pinnacle of Tissot craftsmanship.",
@@ -1890,7 +1892,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-seastar-1000-chronograph",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "Seastar 1000 Chronograph",
         price: 1040,
         description: "Swiss made excellence. El Tissot Seastar 1000 Chronograph represents the pinnacle of Tissot craftsmanship.",
@@ -1904,7 +1906,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-srpl61",
-        brand: "Seiko",
+        brand: "Seiko", availability: "in-stock",
         model: "Presage Cocktail Time SRPL61",
         price: 550,
         description: "Una pieza que captura la sofisticación de la coctelería clásica. Con un dial texturizado 'Frozen Skydiving' que evoca el brillo del hielo, este modelo hereda la maestría artesanal de Seiko.",
@@ -1918,7 +1920,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-srpl63",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Presage Cocktail Time SRPL63",
         price: 550,
         description: "El modelo 'Frozen Mojito' destaca por su dial verde texturizado y elegancia refinada. Ofrece una precisión automática impecable en un diseño atemporal inspirado en la alta coctelería.",
@@ -1932,7 +1934,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-srpl64",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Presage Cocktail Time SRPL64",
         price: 595,
         description: "Inspirado en el cóctel 'Frozen Daiquiri', este reloj combina tonos cálidos con la sofisticación de la línea Presage. Un ejemplo perfecto de la unión entre arte y relojería mecánica.",
@@ -1946,7 +1948,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-sur589",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Coutura SUR589",
         price: 995,
         description: "La colección Coutura representa la unión entre el diseño moderno y el lujo. Adornado con diamantes genuinos y protegido por cristal de zafiro, es una pieza de elegancia contemporánea.",
@@ -1960,7 +1962,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-sur591",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Coutura SUR591",
         price: 995,
         description: "Elegancia y rendimiento en cada detalle. Este modelo Coutura presenta una esfera refinada con acentos de diamantes, ideal para quienes buscan un reloj joya con la fiabilidad de Seiko.",
@@ -1974,7 +1976,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-sur592",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Coutura SUR592",
         price: 1050,
         description: "Un modelo bitono excepcional de la serie Coutura. Su diseño integrado, esmerada selección de diamantes y cristal de zafiro lo sitúan a la vanguardia del lujo funcional.",
@@ -1988,7 +1990,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-sur586",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Coutura SUR586",
         price: 495,
         description: "Este modelo de la serie Seiko Coutura destaca por su sofisticado diseño bitono y su esfera de madreperla blanca. Una joya de precisión protegida por cristal de zafiro.",
@@ -2002,7 +2004,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-sur588",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Coutura SUR588",
         price: 495,
         description: "Un reloj de lujo moderno con acabado dorado integral y esfera de madreperla. Su cristal de zafiro y resistencia de 100m lo hacen tan robusto como elegante.",
@@ -2016,7 +2018,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-swr093",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Essentials Crystal SWR093",
         price: 400,
         description: "Reloj estilo 'Tank' con 34 cristales que adornan el bisel. Un diseño clásico rectangular que combina la elegancia de la joyería con la fiabilidad de Seiko.",
@@ -2030,7 +2032,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-ssc939",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Prospex Speedtimer SSC939",
         price: 750,
         description: "Cronógrafo solar inspirado en la herencia de cronometraje deportivo de Seiko. Su cristal de zafiro curvado y tecnología solar V192 lo sitúan en la cima del rendimiento.",
@@ -2044,7 +2046,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-ssc929",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Prospex Speedtimer SSC929",
         price: 900,
         description: "Un cronógrafo de alta precisión que rinde homenaje a los hitos históricos de Seiko en el deporte profesional. Equipado con carga solar y zafiro con revestimiento antirreflectante.",
@@ -2058,7 +2060,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-ssc931",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Prospex Speedtimer SSC931",
         price: 750,
         description: "Diseño robusto y tecnología avanzada se unen en este Speedtimer. Su movimiento solar elimina la necesidad de cambio de batería, ofreciendo una fiabilidad excepcional.",
@@ -2072,7 +2074,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-ssc913",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Prospex Speedtimer SSC913",
         price: 750,
         description: "Versión compacta de 39mm con dial azul 'Pepsi'. Un cronógrafo solar versátil que captura la esencia de los clásicos de los años 60 con especificaciones modernas.",
@@ -2086,7 +2088,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-sur605",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Prospex Sea Series SUR605",
         price: 795,
         description: "Este modelo Prospex combina elegancia y rendimiento deportivo en un diseño compacto. Con esfera de madreperla blanca y cristal de zafiro, ofrece una impresionante resistencia al agua de 200 metros.",
@@ -2100,7 +2102,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-sur607",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Prospex Sea Series SUR607",
         price: 795,
         description: "Un reloj sumergible de alta gama con esfera de madreperla azul. Su construcción robusta y cristal de zafiro lo hacen ideal tanto para el uso diario sofisticado como para actividades acuáticas.",
@@ -2114,7 +2116,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-sur608",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Prospex Sea Series SUR608",
         price: 875,
         description: "La variante bitono de la serie Prospex Sea Compact. Combina lujo y funcionalidad con una esfera de madreperla, 200m de resistencia al agua y la dureza del cristal de zafiro.",
@@ -2128,7 +2130,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-ssk039",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Presage Cocktail Time GMT SSK039",
         price: 595,
         description: "Elevando la elegancia mecánica, este modelo integra la complicación GMT en la icónica estética Cocktail Time. Con dial 'Skydiving' y la precisión del calibre automático 4R34.",
@@ -2142,7 +2144,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-ssk041",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Presage Cocktail Time GMT SSK041",
         price: 625,
         description: "Inspirado en los colores del cóctel 'Acacia', este GMT combina funcionalidad para el viajero con un diseño refinado. Presenta un cristal Hardlex abovedado y fondo de caja transparente.",
@@ -2156,7 +2158,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-srpk48",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Presage Cocktail Time SRPK48",
         price: 550,
         description: "Captura la luz de los bares de Tokio con este modelo en tonos dorados y esfera azul profunda. Una celebración de la precisión japonesa y la elegancia clásica de la línea Presage.",
@@ -2170,7 +2172,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "seiko-srpk46",
-        brand: "Seiko",
+        brand: "Seiko", availability: "pre-order",
         model: "Presage Cocktail Time SRPK46",
         price: 575,
         description: "Edición especial con acabado dorado y esfera blanca radiante. Su movimiento automático es visible a través del fondo de caja, rindiendo tributo a la tradición relojera de Seiko.",
@@ -8063,7 +8065,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1378079608100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Damascus Steel 38mm",
         price: 1881,
         description: "Un icono renacido con material de vanguardia: Acero de Damasco jaspeado. Si buscas un reloj delgado y suave con un auténtico toque de los años 70, no busques más.",
@@ -8072,7 +8074,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1378074406100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Titanium 38mm Grey",
         price: 1561,
         description: "Un icono renacido con material de vanguardia: Titanio. Ultraligero y resistente, manteniendo el auténtico diseño de los 70.",
@@ -8081,7 +8083,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1378074404100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Titanium 38mm Blue",
         price: 1561,
         description: "Esfera azul profundo en una caja de Titanio de alta tecnología. Estilo y sustancia con un peso pluma.",
@@ -8090,7 +8092,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071104102",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX UFO Robot Grendizer",
         price: 1520,
         description: "Edición especial colaborativa. Un homenaje a la cultura pop y la relojería suiza.",
@@ -8099,7 +8101,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071135100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Ice Blue",
         price: 1360,
         description: "El codiciado dial azul hielo. Fresco, moderno y distintivo, con la fiabilidad del Powermatic 80.",
@@ -8108,7 +8110,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374073305101",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Grendizer 50th Anniversary",
         price: 1760,
         description: "Celebrando 50 años de un icono. Acabado PVD negro y detalles exclusivos de Grendizer.",
@@ -8117,7 +8119,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374073304100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Blue PVD",
         price: 1520,
         description: "Todo en azul. Caja de acero y brazalete con revestimiento PVD azul para un look impactante.",
@@ -8126,7 +8128,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374073302100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Gold PVD",
         price: 1520,
         description: "El clásico dorado. Caja de acero inoxidable 316L con revestimiento PVD oro amarillo.",
@@ -8135,7 +8137,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071104100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Blue",
         price: 1360,
         description: "El superventas. Dial azul texturizado y brazalete integrado en acero 316L.",
@@ -8144,7 +8146,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071105100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Black",
         price: 1360,
         description: "Elegancia discreta. Dial negro profundo con textura en relieve.",
@@ -8153,7 +8155,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1379079720100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Carbon 40.5mm",
         price: 1840,
         description: "Vanguardia tecnológica. Caja y dial de carbono forjado jaspeado, ligero y duradero.",
@@ -8162,7 +8164,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372071135100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Ice Blue",
         price: 1273,
         description: "El color del momento, ahora en 35mm. Perfecto para muñecas más delgadas.",
@@ -8171,7 +8173,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372073302100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Gold PVD",
         price: 1520,
         description: "Todo el estilo del PRX Gold, en un tamaño clásico de 35mm. PVD oro amarillo.",
@@ -8180,7 +8182,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374073305100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Damian Lillard Edition",
         price: 1520,
         description: "Diseñado con la estrella de la NBA. Estilo audaz en PVD oro con detalles únicos.",
@@ -8189,7 +8191,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071109100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Green",
         price: 1360,
         description: "Dial verde profundo. Una elección elegante y contemporánea.",
@@ -8198,7 +8200,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372071105100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Black",
         price: 1273,
         description: "El clásico negro en 35mm. Atemporal y versátil.",
@@ -8207,7 +8209,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071109101",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Mint",
         price: 1360,
         description: "Un toque de frescura con el dial verde menta.",
@@ -8216,7 +8218,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372071109100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Green",
         price: 1273,
         description: "Verde vibrante en formato compacto.",
@@ -8225,7 +8227,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071105101",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Black (Detail)",
         price: 1360,
         description: "Variación con detalles sutiles en el dial negro.",
@@ -8234,7 +8236,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374072103100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Silver/Rose",
         price: 1360,
         description: "Acero y detalles en PVD oro rosa. Una combinación sofisticada.",
@@ -8243,7 +8245,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374271101100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Chronograph Panda",
         price: 3440,
         description: "Cronógrafo automático con dial tipo panda. Estilo deportivo retro con el prestigio del Valjoux.",
@@ -8252,7 +8254,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374271109100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Chronograph Green (Pre-order)",
         price: 3440,
         description: "Cronógrafo automático con dial verde profundo. Potencia y precisión Valjoux.",
@@ -8261,7 +8263,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374271104100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Chronograph Blue",
         price: 3440,
         description: "El cronógrafo PRX en su versión azul clásica. Movimiento Valjoux de alto rendimiento.",
@@ -8270,7 +8272,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372071104100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Blue",
         price: 1273,
         description: "El favorito de todos en 35mm. Perfecto acabado y movimiento Powermatic 80.",
@@ -8280,7 +8282,7 @@ export const WATCHES: Watch[] = [
 
     {
         id: "tissot-T1378074406100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Titanium 38mm Grey",
         price: 1561,
         description: "Ultraligero y resistente. La versión de titanio del icónico PRX para un confort absoluto.",
@@ -8289,7 +8291,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1378074404100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Titanium 38mm Blue",
         price: 1561,
         description: "Esfera azul profundo en una caja de titanio de alta tecnología. Estilo y sustancia.",
@@ -8298,7 +8300,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071104102",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX UFO Robot Grendizer",
         price: 1520,
         description: "Edición especial colaborativa. Un homenaje a la cultura pop y la relojería suiza.",
@@ -8307,7 +8309,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071135100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Ice Blue",
         price: 1360,
         description: "El codiciado dial azul hielo. Fresco, moderno y distintivo.",
@@ -8316,7 +8318,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374073305101",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Grendizer 50th Anniversary",
         price: 1760,
         description: "Celebrando 50 años de un icono. Acabado PVD negro y detalles exclusivos.",
@@ -8325,7 +8327,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374073304100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Blue PVD",
         price: 1520,
         description: "Todo en azul. Caja y brazalete con revestimiento PVD para un look impactante.",
@@ -8334,7 +8336,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374073302100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Gold PVD",
         price: 1520,
         description: "El clásico dorado, ahora con movimiento automático. Lujo y precisión.",
@@ -8343,7 +8345,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071104100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Blue",
         price: 1360,
         description: "El superventas. Dial azul texturizado y brazalete integrado.",
@@ -8352,7 +8354,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071105100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Black",
         price: 1360,
         description: "Elegancia discreta. Dial negro profundo para cualquier ocasión.",
@@ -8361,7 +8363,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1379079720100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Carbon 40.5mm",
         price: 1840,
         description: "Vanguardia tecnológica. Caja y dial de carbono forjado.",
@@ -8370,7 +8372,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372071135100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Ice Blue",
         price: 1273,
         description: "El color del momento, ahora en 35mm. Perfecto para muñecas más delgadas.",
@@ -8379,7 +8381,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372073302100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Gold PVD",
         price: 1520,
         description: "Todo el estilo del PRX Gold, en un tamaño clásico de 35mm.",
@@ -8388,7 +8390,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374073305100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Damian Lillard Edition",
         price: 1520,
         description: "Diseñado con la estrella de la NBA. Estilo audaz y detalles únicos.",
@@ -8397,7 +8399,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071109100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Green",
         price: 1360,
         description: "Dial verde profundo. Una elección elegante y contemporánea.",
@@ -8406,7 +8408,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372071105100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Black",
         price: 1273,
         description: "El clásico negro en 35mm. Atemporal y versátil.",
@@ -8415,7 +8417,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071109101",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Mint",
         price: 1360,
         description: "Un toque de frescura con el dial verde menta.",
@@ -8424,7 +8426,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372071109100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Green",
         price: 1273,
         description: "Verde vibrante en formato compacto.",
@@ -8433,7 +8435,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374071105101",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Black (Detail)",
         price: 1360,
         description: "Variación con detalles sutiles en el dial negro.",
@@ -8442,7 +8444,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374072103100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Powermatic 80 Silver/Rose",
         price: 1360,
         description: "Acero y detalles en oro rosa. Una combinación sofisticada.",
@@ -8451,7 +8453,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374271101100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Chronograph Panda",
         price: 3440,
         description: "Cronógrafo automático con dial tipo panda. Estilo deportivo retro.",
@@ -8460,7 +8462,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374271109100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Chronograph Green (Pre-order)",
         price: 3440,
         description: "Cronógrafo automático con dial verde profundo. Potencia y precisión.",
@@ -8469,7 +8471,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1374271104100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Chronograph Blue",
         price: 3440,
         description: "El cronógrafo PRX en su versión azul clásica.",
@@ -8478,7 +8480,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-T1372071104100",
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX 35mm Blue",
         price: 1273,
         description: "El favorito de todos en 35mm.",
@@ -8487,7 +8489,7 @@ export const WATCHES: Watch[] = [
     },
     {
         id: "tissot-prx-collection-end", // Marker to ensure proper comma handling
-        brand: "Tissot",
+        brand: "Tissot", availability: "pre-order",
         model: "PRX Collection End Marker",
         price: 0,
         description: "Hidden marker",
