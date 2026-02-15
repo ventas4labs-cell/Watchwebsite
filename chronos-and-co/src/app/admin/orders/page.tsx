@@ -1,13 +1,56 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useStore, OrderStatus } from '@/lib/store';
-import { Package, Truck, CheckCircle2, Clock, Mail, Phone, MessageSquare, ChevronRight } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
+import { Package, Truck, CheckCircle2, Clock, Mail, Phone, MessageSquare, ChevronRight, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function OrdersPage() {
-    const { orders, updateOrderStatus } = useStore();
+    const [orders, setOrders] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
     const [selectedStatus, setSelectedStatus] = useState<OrderStatus | 'Todos'>('Todos');
+
+    useEffect(() => {
+        const fetchOrders = async () => {
+            if (!supabase) return;
+            const { data, error } = await supabase
+                .from('orders')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (data) {
+                const mappedOrders = data.map(order => ({
+                    ...order,
+                    id: order.id, // Assuming ID is preserved or generated
+                    customerName: order.customer_name,
+                    email: order.customer_email,
+                    phone: order.customer_phone || '', // Handle potential missing field
+                    items: order.order_items || [],
+                    total: order.total_amount,
+                    status: order.status as OrderStatus,
+                    date: order.created_at,
+                    note: order.note // Assuming note helps
+                }));
+                setOrders(mappedOrders);
+            }
+            setLoading(false);
+        };
+
+        fetchOrders();
+    }, []);
+
+    const handleUpdateStatus = async (orderId: string, newStatus: OrderStatus) => {
+        // Optimistic update
+        setOrders(prev => prev.map(o => o.id === orderId ? { ...o, status: newStatus } : o));
+
+        if (supabase) {
+            await supabase
+                .from('orders')
+                .update({ status: newStatus })
+                .eq('id', orderId);
+        }
+    };
 
     const statusConfig: Record<OrderStatus, { color: string; icon: any }> = {
         'Recibido': { color: 'text-blue-400 bg-blue-900/20 border-blue-500/30', icon: Package },
@@ -27,6 +70,14 @@ export default function OrdersPage() {
         if (status === 'Todos') return orders.length;
         return orders.filter(order => order.status === status).length;
     };
+
+    if (loading) {
+        return (
+            <div className="flex h-[50vh] items-center justify-center">
+                <Loader2 className="w-8 h-8 text-gold-500 animate-spin" />
+            </div>
+        );
+    }
 
     return (
         <div className="container mx-auto px-6">
@@ -135,7 +186,7 @@ export default function OrdersPage() {
                                                 {statusOrder.map((status) => (
                                                     <button
                                                         key={status}
-                                                        onClick={() => updateOrderStatus(order.id, status)}
+                                                        onClick={() => handleUpdateStatus(order.id, status)}
                                                         className={`text-[9px] font-bold uppercase tracking-widest py-3 border transition-all ${order.status === status
                                                             ? 'bg-gold-500 border-gold-500 text-black'
                                                             : 'bg-white/5 border-white/10 text-white/40 hover:border-white/20 hover:text-white'

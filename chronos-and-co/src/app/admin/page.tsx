@@ -1,20 +1,39 @@
 'use client';
 
-import { useStore } from '@/lib/store';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 import { motion } from 'framer-motion';
-import { DollarSign, ShoppingBag, Users, TrendingUp, Clock, Package } from 'lucide-react';
+import { DollarSign, ShoppingBag, Users, TrendingUp, Clock, Package, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AdminDashboardPage() {
-    const { orders } = useStore();
+    const [orders, setOrders] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    // Calculate basic stats from dummy/store data
-    const totalRevenue = orders.reduce((acc, order) => acc + order.total, 0);
+    useEffect(() => {
+        const fetchOrders = async () => {
+            if (!supabase) return;
+            const { data, error } = await supabase
+                .from('orders')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (data) setOrders(data);
+            setLoading(false);
+        };
+
+        fetchOrders();
+    }, []);
+
+    // Calculate basic stats from Supabase data
+    // Note: Supabase 'total_amount' vs local 'total'
+    const totalRevenue = orders.reduce((acc, order) => acc + (order.total_amount || 0), 0);
+    // Note: Supabase 'status' match
     const activeOrders = orders.filter(o => o.status !== 'Entregado' && o.status !== 'Cancelado').length;
     const completedOrders = orders.filter(o => o.status === 'Entregado').length;
 
-    // Dummy "Recent Activity" or similar could be derived from orders too
-    const recentOrders = [...orders].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 5);
+    // Recent Activity
+    const recentOrders = orders.slice(0, 5);
 
     const stats = [
         {
@@ -30,7 +49,7 @@ export default function AdminDashboardPage() {
             label: 'Pedidos Activos',
             value: activeOrders,
             change: '-2',
-            positive: true, // fewer active orders might be good if we are processing fast, but usually "more business" is good. Context dependent.
+            positive: true,
             icon: ShoppingBag,
             color: 'text-blue-400',
             bg: 'bg-blue-500/10'
@@ -44,7 +63,7 @@ export default function AdminDashboardPage() {
             color: 'text-gold-500',
             bg: 'bg-gold-500/10'
         },
-        // Placeholder for Customers count since we don't have a real customer store yet
+        // Placeholder for Customers count
         {
             label: 'Clientes Totales',
             value: '142',
@@ -55,6 +74,14 @@ export default function AdminDashboardPage() {
             bg: 'bg-purple-500/10'
         }
     ];
+
+    if (loading) {
+        return (
+            <div className="flex h-[50vh] items-center justify-center">
+                <Loader2 className="w-8 h-8 text-gold-500 animate-spin" />
+            </div>
+        );
+    }
 
     return (
         <div className="container mx-auto max-w-7xl">

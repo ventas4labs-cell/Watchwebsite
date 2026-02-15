@@ -2,10 +2,12 @@
 import { createClient } from '@supabase/supabase-js';
 import { Order } from './store';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = (supabaseUrl && supabaseAnonKey)
+    ? createClient(supabaseUrl, supabaseAnonKey)
+    : null;
 
 export interface SupabaseOrder {
     customer_name: string;
@@ -16,6 +18,11 @@ export interface SupabaseOrder {
 }
 
 export const submitOrderToSupabase = async (order: SupabaseOrder) => {
+    if (!supabase) {
+        console.warn('Supabase client not initialized. Skipping order submission.');
+        return { success: false, error: 'Supabase not configured' };
+    }
+
     try {
         const { data, error } = await supabase
             .from('orders')
