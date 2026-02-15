@@ -6,8 +6,20 @@ import { supabase } from '@/lib/supabase';
 import { Package, Truck, CheckCircle2, Clock, Mail, Phone, MessageSquare, ChevronRight, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 
+interface AdminOrder {
+    id: string;
+    customerName: string;
+    email: string;
+    phone: string;
+    items: any[]; // proper type would be better but this is enough to fix the immediate error
+    total: number;
+    status: OrderStatus;
+    date: string;
+    note?: string;
+}
+
 export default function OrdersPage() {
-    const [orders, setOrders] = useState<any[]>([]);
+    const [orders, setOrders] = useState<AdminOrder[]>([]);
     const [loading, setLoading] = useState(true);
     const [selectedStatus, setSelectedStatus] = useState<OrderStatus | 'Todos'>('Todos');
 
@@ -20,17 +32,16 @@ export default function OrdersPage() {
                 .order('created_at', { ascending: false });
 
             if (data) {
-                const mappedOrders = data.map(order => ({
-                    ...order,
-                    id: order.id, // Assuming ID is preserved or generated
+                const mappedOrders: AdminOrder[] = data.map(order => ({
+                    id: order.id,
                     customerName: order.customer_name,
                     email: order.customer_email,
-                    phone: order.customer_phone || '', // Handle potential missing field
+                    phone: order.customer_phone || '',
                     items: order.order_items || [],
                     total: order.total_amount,
-                    status: order.status as OrderStatus,
+                    status: (isValidStatus(order.status) ? order.status : 'Recibido') as OrderStatus,
                     date: order.created_at,
-                    note: order.note // Assuming note helps
+                    note: order.note
                 }));
                 setOrders(mappedOrders);
             }
@@ -61,6 +72,10 @@ export default function OrdersPage() {
     };
 
     const statusOrder: OrderStatus[] = ['Recibido', 'Preparación', 'Enviado', 'Entregado', 'Cancelado'];
+
+    const isValidStatus = (status: any): status is OrderStatus => {
+        return statusOrder.includes(status);
+    };
 
     const filteredOrders = selectedStatus === 'Todos'
         ? orders
@@ -159,7 +174,7 @@ export default function OrdersPage() {
                                             <span className="text-gold-500 font-display text-lg">${order.total.toLocaleString()}</span>
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            {order.items.map((item) => (
+                                            {order.items.map((item: any) => (
                                                 <div key={item.id} className="flex items-center gap-4 bg-white/[0.02] p-3 border border-white/5 rounded-sm">
                                                     <div className="text-gold-500 font-bold text-xs">{item.quantity}x</div>
                                                     <div>

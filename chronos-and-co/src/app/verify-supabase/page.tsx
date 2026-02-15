@@ -9,6 +9,11 @@ export default function VerifyPage() {
 
     useEffect(() => {
         async function check() {
+            if (!supabase) {
+                setStatus('error');
+                setStatus('Supabase client not initialized (missing env vars)');
+                return;
+            }
             try {
                 const { count, error } = await supabase
                     .from('orders')
