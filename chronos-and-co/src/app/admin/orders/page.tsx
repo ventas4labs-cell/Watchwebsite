@@ -38,7 +38,7 @@ export default function OrdersPage() {
                     email: order.customer_email,
                     phone: order.customer_phone || '',
                     items: order.order_items || [],
-                    total: order.total_amount,
+                    total: order.total_amount || 0,
                     status: (isValidStatus(order.status) ? order.status : 'Recibido') as OrderStatus,
                     date: order.created_at,
                     note: order.note

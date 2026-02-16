@@ -1,19 +1,36 @@
-import { WATCHES } from '@/lib/seed-data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { AddToCartButton } from '@/components/AddToCartButton';
+import { Watch } from '@/lib/seed-data';
 import { Navbar } from '@/components/Navbar';
 import { CartDrawer } from '@/components/CartDrawer';
+import { createClient } from '@supabase/supabase-js';
 
-export function generateStaticParams() {
-    return WATCHES.map((watch) => ({
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+export async function generateStaticParams() {
+    if (!supabaseUrl || !supabaseKey) return [];
+
+    const { data: watches } = await supabase.from('watches').select('id');
+    return (watches || []).map((watch) => ({
         id: watch.id,
     }));
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
-    const watch = WATCHES.find((w) => w.id === id);
+
+    let watch;
+    if (supabaseUrl && supabaseKey) {
+        const { data } = await supabase
+            .from('watches')
+            .select('*')
+            .eq('id', id)
+            .single();
+        watch = data as Watch | null;
+    }
 
     if (!watch) {
         notFound();
@@ -40,7 +57,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                         </div>
                         {watch.gallery && (
                             <div className="grid grid-cols-2 gap-4">
-                                {watch.gallery.map((img, i) => (
+                                {watch.gallery.map((img: string, i: number) => (
                                     <div key={i} className="relative aspect-square bg-white/5 rounded-sm overflow-hidden">
                                         <Image
                                             src={img}

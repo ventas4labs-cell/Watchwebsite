@@ -138,14 +138,14 @@ export default function AdminDashboardPage() {
                             {recentOrders.map((order) => (
                                 <tr key={order.id} className="group hover:bg-white/5 transition-colors">
                                     <td className="py-4 pl-4 font-mono text-xs text-white/60">#{order.id}</td>
-                                    <td className="py-4 text-sm text-white">{order.customerName}</td>
-                                    <td className="py-4 text-sm text-gold-500">${order.total.toLocaleString()}</td>
+                                    <td className="py-4 text-sm text-white">{order.customer_name}</td>
+                                    <td className="py-4 text-sm text-gold-500">${(order.total_amount || 0).toLocaleString()}</td>
                                     <td className="py-4">
                                         <span className="text-[10px] font-bold uppercase px-2 py-1 bg-white/5 rounded-full text-white/60 border border-white/10">
                                             {order.status}
                                         </span>
                                     </td>
-                                    <td className="py-4 text-xs text-white/40">{new Date(order.date).toLocaleDateString()}</td>
+                                    <td className="py-4 text-xs text-white/40">{new Date(order.created_at).toLocaleDateString()}</td>
                                 </tr>
                             ))}
                         </tbody>

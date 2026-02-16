@@ -1,16 +1,72 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Watch } from '@/lib/seed-data';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Save, DollarSign, Tag, Loader2 } from 'lucide-react';
+import { X, Save, DollarSign, Loader2, UploadCloud } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import Image from 'next/image';
+import { useDropzone } from 'react-dropzone';
+import { uploadWatchImage } from '@/lib/supabase';
+import { toast } from 'sonner';
 
 interface EditWatchModalProps {
     watch: Watch | null;
     isOpen: boolean;
     onClose: () => void;
+}
+
+function ImageUploadDropbox({ onUpload, label, compact }: { onUpload: (url: string) => void, label: string, compact?: boolean }) {
+    const [isUploading, setIsUploading] = useState(false);
+
+    const onDrop = useCallback(async (acceptedFiles: File[]) => {
+        const file = acceptedFiles[0];
+        if (!file) return;
+
+        setIsUploading(true);
+        try {
+            const url = await uploadWatchImage(file);
+            if (url) {
+                onUpload(url);
+                toast.success('Imagen subida correctamente');
+            } else {
+                toast.error('Error al subir la imagen');
+            }
+        } catch (error) {
+            console.error(error);
+            toast.error('Error al subir imagen');
+        } finally {
+            setIsUploading(false);
+        }
+    }, [onUpload]);
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: { 'image/*': [] }, maxFiles: 1 });
+
+    return (
+        <div
+            {...getRootProps()}
+            className={`
+                border border-dashed border-white/20 bg-white/5 rounded-sm cursor-pointer hover:bg-white/10 transition-colors flex flex-col items-center justify-center text-white/40 hover:text-white/80
+                ${compact ? 'aspect-square' : 'p-4 min-h-[80px] w-full'}
+            `}
+        >
+            <input {...getInputProps()} />
+            {isUploading ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+            ) : (
+                <>
+                    {compact ? (
+                        <span className="text-2xl font-light">+</span>
+                    ) : (
+                        <div className="flex flex-col items-center gap-2">
+                            <UploadCloud className="w-5 h-5" />
+                            <span className="text-[10px] uppercase tracking-wider">{isDragActive ? 'Suelta aquí' : label}</span>
+                        </div>
+                    )}
+                </>
+            )}
+        </div>
+    );
 }
 
 export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) {
@@ -25,6 +81,8 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                 model: watch.model,
                 price: watch.price,
                 availability: watch.availability,
+                description: watch.description,
+                details: watch.details,
             });
         }
     }, [watch]);
@@ -57,7 +115,7 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-rich-black border border-white/10 rounded-sm shadow-2xl z-51 overflow-hidden"
+                        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-rich-black border border-white/10 rounded-sm shadow-2xl z-51 overflow-hidden max-h-[90vh] overflow-y-auto"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between p-6 border-b border-white/5 bg-white/[0.02]">
@@ -130,6 +188,118 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                                     <option value="pre-order">Reserved</option>
                                     <option value="sold">Sold</option>
                                 </select>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Descripción</label>
+                                <textarea
+                                    value={formData.description || ''}
+                                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                                    className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors h-24"
+                                />
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Movimiento</label>
+                                    <input
+                                        type="text"
+                                        value={formData.details?.movement || ''}
+                                        onChange={(e) => setFormData({
+                                            ...formData,
+                                            details: { ...formData.details!, movement: e.target.value }
+                                        })}
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Resistencia Agua</label>
+                                    <input
+                                        type="text"
+                                        value={formData.details?.waterResistance || ''}
+                                        onChange={(e) => setFormData({
+                                            ...formData,
+                                            details: { ...formData.details!, waterResistance: e.target.value }
+                                        })}
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                                    />
+                                    1</div>
+                                <div className="space-y-2 col-span-2">
+                                    <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Cristal</label>
+                                    <input
+                                        type="text"
+                                        value={formData.details?.crystal || ''}
+                                        onChange={(e) => setFormData({
+                                            ...formData,
+                                            details: { ...formData.details!, crystal: e.target.value }
+                                        })}
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="space-y-4 pt-4 border-t border-white/10">
+                                <h4 className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Imágenes</h4>
+
+                                {/* Main Image Upload */}
+                                <div className="space-y-2">
+                                    <label className="text-[10px] text-white/40 uppercase tracking-widest ml-1">Imagen Principal</label>
+                                    <div className="grid grid-cols-1 gap-4">
+                                        <div className="flex gap-4 items-start">
+                                            {formData.image && (
+                                                <div className="relative w-24 h-24 bg-white/5 rounded-sm overflow-hidden border border-white/10 shrink-0">
+                                                    <Image src={formData.image} alt="Preview" fill className="object-cover" />
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setFormData({ ...formData, image: '' })}
+                                                        className="absolute top-0 right-0 bg-black/60 p-1 text-white hover:text-red-500 transition-colors"
+                                                    >
+                                                        <X className="w-3 h-3" />
+                                                    </button>
+                                                </div>
+                                            )}
+                                            <ImageUploadDropbox
+                                                onUpload={(url) => setFormData({ ...formData, image: url })}
+                                                label={formData.image ? "Cambiar Imagen" : "Subir Imagen Principal"}
+                                            />
+                                        </div>
+                                        <input
+                                            type="text"
+                                            placeholder="O pegar URL directa..."
+                                            value={formData.image || ''}
+                                            onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                                            className="w-full bg-white/5 border border-white/10 rounded-sm p-2 text-xs text-white/60 focus:outline-none focus:border-gold-500/50 transition-colors font-mono"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Gallery Upload */}
+                                <div className="space-y-2">
+                                    <label className="text-[10px] text-white/40 uppercase tracking-widest ml-1">Galería</label>
+                                    <div className="grid grid-cols-4 gap-2">
+                                        {formData.gallery?.map((img, index) => (
+                                            <div key={index} className="relative aspect-square bg-white/5 rounded-sm overflow-hidden group border border-white/10">
+                                                <Image src={img} alt={`Gallery ${index}`} fill className="object-cover" />
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        const newGallery = [...(formData.gallery || [])];
+                                                        newGallery.splice(index, 1);
+                                                        setFormData({ ...formData, gallery: newGallery });
+                                                    }}
+                                                    className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-red-500"
+                                                >
+                                                    <X className="w-5 h-5" />
+                                                </button>
+                                            </div>
+                                        ))}
+                                        <ImageUploadDropbox
+                                            onUpload={(url) => setFormData({ ...formData, gallery: [...(formData.gallery || []), url] })}
+                                            label="+"
+                                            compact
+                                        />
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="pt-4 flex justify-end gap-3">

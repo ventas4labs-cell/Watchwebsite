@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useStore } from '@/lib/store';
 import { MoreHorizontal, Trash2, Edit, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
 import Image from 'next/image';
@@ -10,9 +10,14 @@ import { EditWatchModal } from './EditWatchModal';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function InventoryVault() {
-    const { inventory, deleteItem, updateItemStatus } = useStore();
+    const { inventory, deleteItem, updateItemStatus, fetchInventory } = useStore();
     const [selectedBrand, setSelectedBrand] = useState('All');
     const [editingWatch, setEditingWatch] = useState<Watch | null>(null);
+
+    // Fetch inventory on mount
+    useEffect(() => {
+        fetchInventory();
+    }, [fetchInventory]);
 
     // Extract unique brands
     const brands = ['All', ...Array.from(new Set(inventory.map(item => item.brand)))];

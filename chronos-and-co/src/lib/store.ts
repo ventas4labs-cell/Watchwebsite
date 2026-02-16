@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Watch, WATCHES } from './seed-data';
+import { Watch } from './seed-data';
+import { supabase } from './supabase';
 
 export interface CartItem extends Watch {
     quantity: number;
@@ -40,9 +41,11 @@ interface StoreState {
 
     // Inventory Actions
     inventory: Watch[];
-    deleteItem: (id: string) => void;
-    updateItemStatus: (id: string, status: 'in-stock' | 'pre-order' | 'sold') => void;
-    updateWatchDetails: (id: string, updates: Partial<Watch>) => void;
+    isLoading: boolean;
+    fetchInventory: () => Promise<void>;
+    deleteItem: (id: string) => Promise<void>;
+    updateItemStatus: (id: string, status: 'in-stock' | 'pre-order' | 'sold') => Promise<void>;
+    updateWatchDetails: (id: string, updates: Partial<Watch>) => Promise<void>;
 }
 
 export const useStore = create<StoreState>()(
@@ -51,7 +54,28 @@ export const useStore = create<StoreState>()(
             cart: [],
             isCartOpen: false,
             orders: [],
-            inventory: WATCHES, // Initialize with seed data
+            inventory: [], // Initialize empty
+            isLoading: false,
+
+            fetchInventory: async () => {
+                const client = supabase;
+                if (!client) return;
+                set({ isLoading: true });
+                const { data, error } = await client
+                    .from('watches')
+                    .select('*');
+
+                if (error) {
+                    console.error('Error fetching inventory:', error);
+                    set({ isLoading: false });
+                    return;
+                }
+
+                if (data) {
+                    // Normalize data if necessary or just cast
+                    set({ inventory: data as Watch[], isLoading: false });
+                }
+            },
 
             addToCart: (watch) =>
                 set((state) => {
@@ -138,24 +162,48 @@ export const useStore = create<StoreState>()(
                     ),
                 })),
 
-            deleteItem: (id: string) =>
+            deleteItem: async (id: string) => {
+                const client = supabase;
+                if (!client) return;
+                const { error } = await client.from('watches').delete().eq('id', id);
+                if (error) {
+                    console.error('Error deleting item:', error);
+                    return;
+                }
                 set((state) => ({
                     inventory: state.inventory.filter((item) => item.id !== id),
-                })),
+                }));
+            },
 
-            updateItemStatus: (id: string, status) =>
+            updateItemStatus: async (id: string, status) => {
+                const client = supabase;
+                if (!client) return;
+                const { error } = await client.from('watches').update({ availability: status }).eq('id', id);
+                if (error) {
+                    console.error('Error updating status:', error);
+                    return;
+                }
                 set((state) => ({
                     inventory: state.inventory.map((item) =>
                         item.id === id ? { ...item, availability: status as any } : item
                     ),
-                })),
+                }));
+            },
 
-            updateWatchDetails: (id, updates) =>
+            updateWatchDetails: async (id, updates) => {
+                const client = supabase;
+                if (!client) return;
+                const { error } = await client.from('watches').update(updates).eq('id', id);
+                if (error) {
+                    console.error('Error updating details:', error);
+                    return;
+                }
                 set((state) => ({
                     inventory: state.inventory.map((item) =>
                         item.id === id ? { ...item, ...updates } : item
                     ),
-                })),
+                }));
+            },
         }),
         {
             name: 'chronos-store',
