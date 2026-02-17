@@ -204,10 +204,22 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                                     <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Movimiento</label>
                                     <input
                                         type="text"
-                                        value={formData.details?.movement || ''}
+                                        value={formData.details?.["Movimiento"] || ''}
                                         onChange={(e) => setFormData({
                                             ...formData,
-                                            details: { ...formData.details!, movement: e.target.value }
+                                            details: { ...formData.details!, "Movimiento": e.target.value }
+                                        })}
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Tamaño de Caja</label>
+                                    <input
+                                        type="text"
+                                        value={formData.details?.["Tamaño de Caja"] || ''}
+                                        onChange={(e) => setFormData({
+                                            ...formData,
+                                            details: { ...formData.details!, "Tamaño de Caja": e.target.value }
                                         })}
                                         className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
                                     />
@@ -216,22 +228,34 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                                     <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Resistencia Agua</label>
                                     <input
                                         type="text"
-                                        value={formData.details?.waterResistance || ''}
+                                        value={formData.details?.["Resistencia al Agua"] || ''}
                                         onChange={(e) => setFormData({
                                             ...formData,
-                                            details: { ...formData.details!, waterResistance: e.target.value }
+                                            details: { ...formData.details!, "Resistencia al Agua": e.target.value }
                                         })}
                                         className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
                                     />
-                                    1</div>
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Material Caja</label>
+                                    <input
+                                        type="text"
+                                        value={formData.details?.["Material de la Caja"] || ''}
+                                        onChange={(e) => setFormData({
+                                            ...formData,
+                                            details: { ...formData.details!, "Material de la Caja": e.target.value }
+                                        })}
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                                    />
+                                </div>
                                 <div className="space-y-2 col-span-2">
                                     <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Cristal</label>
                                     <input
                                         type="text"
-                                        value={formData.details?.crystal || ''}
+                                        value={formData.details?.["Cristal"] || ''}
                                         onChange={(e) => setFormData({
                                             ...formData,
-                                            details: { ...formData.details!, crystal: e.target.value }
+                                            details: { ...formData.details!, "Cristal": e.target.value }
                                         })}
                                         className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
                                     />

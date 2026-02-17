@@ -7,12 +7,7 @@ export interface Watch {
     image: string;
     gallery?: string[];
     availability?: 'in-stock' | 'pre-order';
-    details: {
-        movement: string;
-        caseSize: string;
-        waterResistance: string;
-        crystal: string;
-    };
+    details: Record<string, string>;
 }
 
 export const WATCHES: Watch[] = [
@@ -25,7 +20,13 @@ export const WATCHES: Watch[] = [
         price: 1161,
         description: "Una mezcla magistral de 1970s retro-chic y moderna excelencia mecánica. Si buscas un reloj delgado y suave con un auténtico toque de los años 70, no busques más.",
         image: "/watches/tissot-prx/main.jpg",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prx-gold-pvd",
@@ -34,7 +35,13 @@ export const WATCHES: Watch[] = [
         price: 921,
         description: "El Tissot PRX, el reloj para aquellos con pasión por el diseño y ojo para el ingenio. Su diseño evocador y delgado lo hace un esencial intransigente. Acabado PVD oro amarillo.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwf3224e66/product-pictures/3ff417c6-3ab6-42d9-b01f-f359aa5c926e_T137_410_33_021_00.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Cuarzo Suizo", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable" }
+        details: {
+            "Movimiento": "Cuarzo Suizo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prx-quartz-blue",
@@ -43,7 +50,13 @@ export const WATCHES: Watch[] = [
         price: 720,
         description: "Descubre el nuevo Tissot PRX, su diseño evocador y delgado lo hace un esencial intransigente para todos los entusiastas del diseño.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw4398c36a/product-pictures/739cc440-025b-42e8-a5f9-ae33b31479b2_T137-410-11-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Cuarzo Suizo", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable" }
+        details: {
+            "Movimiento": "Cuarzo Suizo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prx-quartz-green",
@@ -52,7 +65,13 @@ export const WATCHES: Watch[] = [
         price: 720,
         description: "En 1978 nació el Tissot PRX, ahora celebramos su regreso. El reloj para aquellos con pasión por el diseño.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw51c36e24/product-pictures/2ea14f38-887a-4f88-b35f-ef97276e79c2_T137-410-11-091-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Cuarzo Suizo", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable" }
+        details: {
+            "Movimiento": "Cuarzo Suizo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prx-quartz-black",
@@ -61,7 +80,13 @@ export const WATCHES: Watch[] = [
         price: 720,
         description: "Un diseño delgado y evocador que lo convierte en un esencial intransigente para todos los entusiastas del diseño.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwdce8b0a5/product-pictures/56554287-24c7-4edf-b4aa-04bf6845fe24_T137-410-11-051-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Cuarzo Suizo", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable" }
+        details: {
+            "Movimiento": "Cuarzo Suizo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prx-quartz-silver",
@@ -70,7 +95,13 @@ export const WATCHES: Watch[] = [
         price: 720,
         description: "El nuevo Tissot PRX, el reloj para aquellos con pasión por el diseño y ojo para el ingenio.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw5af4bd57/product-pictures/eab45cfc-8389-4430-9cf7-1ee3d13f428c_T137-410-11-031-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Cuarzo Suizo", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable" }
+        details: {
+            "Movimiento": "Cuarzo Suizo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prx-quartz-mint",
@@ -79,7 +110,13 @@ export const WATCHES: Watch[] = [
         price: 720,
         description: "Descubre el nuevo Tissot PRX ahora, su diseño evocador y delgado lo hace un esencial intransigente.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw7e0f6b6f/product-pictures/ed11fd53-ddd9-4272-a771-5d180a551211_T137-410-11-091-01_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Cuarzo Suizo", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable" }
+        details: {
+            "Movimiento": "Cuarzo Suizo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prx-quartz-rubber-black",
@@ -88,7 +125,13 @@ export const WATCHES: Watch[] = [
         price: 681,
         description: "Estilo moderno con comodidad deportiva. La versión con correa de caucho del icónico PRX.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwb77b24b2/product-pictures/05dc0b87-3f53-4697-99f9-e464b0e589d3_T137-410-17-051-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Cuarzo Suizo", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable" }
+        details: {
+            "Movimiento": "Cuarzo Suizo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prx-quartz-leather-blue",
@@ -97,7 +140,13 @@ export const WATCHES: Watch[] = [
         price: 640,
         description: "Elegancia clásica con un toque moderno. La versión con correa de piel azul para un look sofisticado.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw66579bc1/product-pictures/1035559f-8895-4f8b-a45c-fd0489773882_T137-410-16-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Cuarzo Suizo", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable" }
+        details: {
+            "Movimiento": "Cuarzo Suizo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
 
     {
@@ -107,7 +156,13 @@ export const WATCHES: Watch[] = [
         price: 1040,
         description: "Revisando la tradición con una firma clásica de Le Locle. Elegancia personificada.",
         image: "/watches/tissot-le-locle/main.jpg",
-        details: { movement: "Automático Suizo", caseSize: "39.3mm", waterResistance: "30m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Suizo",
+            "Tamaño de Caja": "39.3mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-gentleman",
@@ -116,7 +171,13 @@ export const WATCHES: Watch[] = [
         price: 1433,
         description: "El reloj perfecto para el día a día para el caballero moderno. Versátil y robusto.",
         image: "/watches/tissot-gentleman/main.jpg",
-        details: { movement: "Powermatic 80 con Silicio", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Powermatic 80 con Silicio",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-seastar-1000",
@@ -125,7 +186,13 @@ export const WATCHES: Watch[] = [
         price: 1200,
         description: "Un Reloj de buceo de alto rendimiento con una reserva de marcha de 80 horas.",
         image: "/watches/tissot-seastar-1000/main.jpg",
-        details: { movement: "Powermatic 80", caseSize: "43mm", waterResistance: "300m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Powermatic 80",
+            "Tamaño de Caja": "43mm",
+            "Resistencia al Agua": "300m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-supersport-chrono",
@@ -134,7 +201,13 @@ export const WATCHES: Watch[] = [
         price: 921,
         description: "Un masculino, dinámico y futurista cronógrafo deportivo.",
         image: "/watches/tissot-supersport-chrono/main.jpg",
-        details: { movement: "Cronógrafo de Cuarzo", caseSize: "45.5mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cronógrafo de Cuarzo",
+            "Tamaño de Caja": "45.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-heritage-1938",
@@ -143,7 +216,13 @@ export const WATCHES: Watch[] = [
         price: 1321,
         description: "Un reloj de inspiración vintage celebrando la rica historia.",
         image: "/watches/tissot-heritage-1938/main.jpg",
-        details: { movement: "Automático", caseSize: "39mm", waterResistance: "50m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático",
+            "Tamaño de Caja": "39mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-telemeter-1938",
@@ -152,7 +231,13 @@ export const WATCHES: Watch[] = [
         price: 3401,
         description: "Un cronógrafo elegante presentando una escala telemétrica en la esfera.",
         image: "/watches/tissot-telemeter-1938/main.jpg",
-        details: { movement: "Cronógrafo Automático", caseSize: "42mm", waterResistance: "30m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cronógrafo Automático",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-chrono-xl",
@@ -161,7 +246,13 @@ export const WATCHES: Watch[] = [
         price: 633,
         description: "Un reloj de caja grande con una estética retro vintage.",
         image: "/watches/tissot-chrono-xl/main.jpg",
-        details: { movement: "Cronógrafo de Cuarzo", caseSize: "45mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cronógrafo de Cuarzo",
+            "Tamaño de Caja": "45mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-chemin-des-tourelles",
@@ -170,7 +261,13 @@ export const WATCHES: Watch[] = [
         price: 1321,
         description: "Nombrado en honor a la calle donde se estableció el taller de Tissot.",
         image: "/watches/tissot-chemin-des-tourelles/main.jpg",
-        details: { movement: "Powermatic 80", caseSize: "42mm", waterResistance: "50m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Powermatic 80",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-pr-100",
@@ -179,7 +276,13 @@ export const WATCHES: Watch[] = [
         price: 521,
         description: "Un preciso y robusto everyday watch for any occasion.",
         image: "/watches/tissot-pr-100/main.jpg",
-        details: { movement: "Cuarzo", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cuarzo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-classic-dream",
@@ -188,7 +291,13 @@ export const WATCHES: Watch[] = [
         price: 560,
         description: "Un diseño minimalista y atemporal for uso formal.",
         image: "/watches/tissot-classic-dream/main.jpg",
-        details: { movement: "Cuarzo", caseSize: "42mm", waterResistance: "50m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cuarzo",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-ballade",
@@ -197,7 +306,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "Precisión certificada por cronómetro con una espiral de silicio.",
         image: "/watches/tissot-ballade/main.jpg",
-        details: { movement: "Automático COSC", caseSize: "41mm", waterResistance: "50m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático COSC",
+            "Tamaño de Caja": "41mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-pr516-chrono",
@@ -206,7 +321,13 @@ export const WATCHES: Watch[] = [
         price: 841,
         description: "Reinterpretación moderna of a 1970s clásico de carreras.",
         image: "/watches/tissot-pr516-chrono/main.jpg",
-        details: { movement: "Cronógrafo de Cuarzo", caseSize: "41mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cronógrafo de Cuarzo",
+            "Tamaño de Caja": "41mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-carson-premium",
@@ -215,7 +336,13 @@ export const WATCHES: Watch[] = [
         price: 1161,
         description: "Un reloj de vestir elegante con una sofisticada esfera con números romanos.",
         image: "/watches/tissot-carson-premium/main.jpg",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "50m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-tradition",
@@ -224,7 +351,13 @@ export const WATCHES: Watch[] = [
         price: 560,
         description: "Relojería ultramoderna con una toque de nostalgia.",
         image: "/watches/tissot-tradition/main.jpg",
-        details: { movement: "Cuarzo", caseSize: "42mm", waterResistance: "30m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cuarzo",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-everytime",
@@ -233,7 +366,13 @@ export const WATCHES: Watch[] = [
         price: 473,
         description: "Un diseño de esfera simple y limpio for the minimalista moderno.",
         image: "/watches/tissot-everytime/main.jpg",
-        details: { movement: "Cuarzo", caseSize: "40mm", waterResistance: "50m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cuarzo",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-t-touch-solar",
@@ -242,7 +381,13 @@ export const WATCHES: Watch[] = [
         price: 1840,
         description: "El primer reloj conectado táctil alimentado por energía solar sostenible.",
         image: "/watches/tissot-t-touch-solar/main.jpg",
-        details: { movement: "Solar Táctil", caseSize: "47mm", waterResistance: "100m", crystal: "Zafiro Táctil" }
+        details: {
+            "Movimiento": "Solar Táctil",
+            "Tamaño de Caja": "47mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro Táctil",
+            "Material de la Caja": "Titanio"
+        }
     },
     {
         id: "tissot-visodate",
@@ -251,7 +396,13 @@ export const WATCHES: Watch[] = [
         price: 1081,
         description: "Un actualización contemporánea to the original de los años 50 Visodate.",
         image: "/watches/tissot-visodate/main.jpg",
-        details: { movement: "Powermatic 80", caseSize: "42mm", waterResistance: "30m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Powermatic 80",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prc-200",
@@ -260,7 +411,13 @@ export const WATCHES: Watch[] = [
         price: 841,
         description: "Un cronógrafo deportivo with alta resistencia al agua and a taquímetro.",
         image: "/watches/tissot-prc-200/main.jpg",
-        details: { movement: "Cronógrafo de Cuarzo", caseSize: "43mm", waterResistance: "200m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cronógrafo de Cuarzo",
+            "Tamaño de Caja": "43mm",
+            "Resistencia al Agua": "200m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-couturier",
@@ -269,7 +426,13 @@ export const WATCHES: Watch[] = [
         price: 1040,
         description: "Un watch influenciado por los diseños meticulosos of diseñadores de moda de clase mundial.",
         image: "/watches/tissot-couturier/main.jpg",
-        details: { movement: "Cronógrafo de Cuarzo", caseSize: "41mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Cronógrafo de Cuarzo",
+            "Tamaño de Caja": "41mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
 
     // Seiko (Japanese Precision / Nature Inspired)
@@ -289,10 +452,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0007s/gallery_3.jpg"
         ],
         details: {
-            movement: "Automático F6B24",
-            caseSize: "42.5mm",
-            waterResistance: "50m",
-            crystal: "Zafiro"
+            "Movimiento": "Automático F6B24",
+            "Tamaño de Caja": "42.5mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -308,10 +472,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0008s/gallery_3.jpg"
         ],
         details: {
-            movement: "Automático F6B24",
-            caseSize: "42.5mm",
-            waterResistance: "50m",
-            crystal: "Zafiro"
+            "Movimiento": "Automático F6B24",
+            "Tamaño de Caja": "42.5mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -326,7 +491,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0009t/gallery_2.webp",
             "/watches/orient-ra-ak0009t/gallery_3.jpg"
         ],
-        details: { movement: "Automático F6B24", caseSize: "42.5mm", waterResistance: "50m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático F6B24",
+            "Tamaño de Caja": "42.5mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ak0010b",
@@ -339,7 +510,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0010b/gallery_1.jpg",
             "/watches/orient-ra-ak0010b/gallery_2.webp"
         ],
-        details: { movement: "Automático F6B24", caseSize: "42.5mm", waterResistance: "50m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático F6B24",
+            "Tamaño de Caja": "42.5mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ak0011d",
@@ -352,7 +529,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0011d/gallery_1.jpg",
             "/watches/orient-ra-ak0011d/gallery_2.webp"
         ],
-        details: { movement: "Mecánico F6B24", caseSize: "42.5mm", waterResistance: "50m", crystal: "Zafiro Curvo" }
+        details: {
+            "Movimiento": "Mecánico F6B24",
+            "Tamaño de Caja": "42.5mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Zafiro Curvo",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-as0101s",
@@ -364,7 +547,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-as0101s/gallery_1.webp"
         ],
-        details: { movement: "Automático F6L24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Cristal Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6L24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Cristal Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-as0102s",
@@ -376,7 +565,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-as0102s/gallery_1.webp"
         ],
-        details: { movement: "Mecánico F6L24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Cristal de Caja" }
+        details: {
+            "Movimiento": "Mecánico F6L24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Cristal de Caja",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-as0103a",
@@ -388,7 +583,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-as0103a/gallery_1.webp"
         ],
-        details: { movement: "Automático F6L24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Cristal Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6L24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Cristal Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     // Classic Semi-Skeleton (Batch 2)
     {
@@ -402,7 +603,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0805e/gallery_1.webp",
             "/watches/orient-ra-ak0805e/gallery_2.webp"
         ],
-        details: { movement: "Automático F6B24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6B24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ak0806l",
@@ -415,7 +622,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0806l/gallery_1.webp",
             "/watches/orient-ra-ak0806l/gallery_2.webp"
         ],
-        details: { movement: "Automático F6B24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6B24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ak0807r",
@@ -427,7 +640,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-ak0807r/gallery_1.webp"
         ],
-        details: { movement: "Automático F6B24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6B24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ak0808s",
@@ -439,7 +658,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-ak0808s/gallery_1.webp"
         ],
-        details: { movement: "Mecánico F6B24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Cristal Mineral" }
+        details: {
+            "Movimiento": "Mecánico F6B24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Cristal Mineral",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ak0801s",
@@ -451,7 +676,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-ak0801s/gallery_1.webp"
         ],
-        details: { movement: "Automático F6B24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6B24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ak0802s",
@@ -463,7 +694,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-ak0802s/gallery_1.webp"
         ],
-        details: { movement: "Automático F6B24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6B24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ak0803y",
@@ -473,7 +710,13 @@ export const WATCHES: Watch[] = [
         description: "Gold plated mechanical watch with esfera color marfil. Estética vintage clásica.",
         image: "/watches/orient-ra-ak0803y/main.webp",
         gallery: [],
-        details: { movement: "Mecánico F6B24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Cristal Mineral" }
+        details: {
+            "Movimiento": "Mecánico F6B24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Cristal Mineral",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ak0804y",
@@ -485,7 +728,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-ak0804y/gallery_1.webp"
         ],
-        details: { movement: "Mecánico F6B24", caseSize: "41.5mm", waterResistance: "30m", crystal: "Cristal Mineral" }
+        details: {
+            "Movimiento": "Mecánico F6B24",
+            "Tamaño de Caja": "41.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Cristal Mineral",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     // Classic & Simple Style (Bambino Gen 2 V4 / V8)
     {
@@ -498,7 +747,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-ac0029e/gallery_1.webp"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0030l",
@@ -510,7 +765,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-ac0030l/gallery_1.webp"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0031s",
@@ -522,7 +783,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-ac0031s/gallery_1.webp"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0032v",
@@ -532,7 +799,13 @@ export const WATCHES: Watch[] = [
         description: "Unique purple gradation dial Bambino mechanical watch. Stand out with this rare color.",
         image: "/watches/orient-ra-ac0032v/main.webp",
         gallery: [],
-        details: { movement: "Mecánico F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Domed Mineral" }
+        details: {
+            "Movimiento": "Mecánico F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Domed Mineral",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0033y",
@@ -542,7 +815,13 @@ export const WATCHES: Watch[] = [
         description: "Bambino de inspiración vintage con esfera color marfil y cristal abovedado. Un atractivo atemporal que celebra la herencia clásica de la relojería.",
         image: "/watches/orient-ra-ac0033y/main.webp",
         gallery: [],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0035e",
@@ -554,7 +833,13 @@ export const WATCHES: Watch[] = [
         gallery: [
             "/watches/orient-ra-ac0035e/gallery_1.webp"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0037r",
@@ -564,7 +849,13 @@ export const WATCHES: Watch[] = [
         description: "Mechanical watch with deep esfera burdeos and Unrabic numerals. Rich and elegant.",
         image: "/watches/orient-ra-ac0037r/main.webp",
         gallery: [],
-        details: { movement: "Mecánico F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Domed Mineral" }
+        details: {
+            "Movimiento": "Mecánico F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Domed Mineral",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0038s",
@@ -574,7 +865,13 @@ export const WATCHES: Watch[] = [
         description: "Clean white dial Bambino with Unrabic numerals and black strap. High legibility and classic style.",
         image: "/watches/orient-ra-ac0038s/main.webp",
         gallery: [],
-        details: { movement: "Mecánico F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Domed Mineral" }
+        details: {
+            "Movimiento": "Mecánico F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Domed Mineral",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0039y",
@@ -587,7 +884,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0039y/gallery_1.webp",
             "/watches/orient-ra-ac0039y/gallery_2.webp"
         ],
-        details: { movement: "Mecánico F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "See-through Caseback" }
+        details: {
+            "Movimiento": "Mecánico F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "See-through Caseback",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     // Classic & Simple Style (Batch 4)
     {
@@ -601,7 +904,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0023e/gallery_1.webp",
             "/watches/orient-ra-ac0023e/gallery_2.webp"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0024l",
@@ -615,7 +924,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0024l/gallery_2.webp",
             "/watches/orient-ra-ac0024l/gallery_3.webp"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0025n",
@@ -629,7 +944,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0025n/gallery_2.webp",
             "/watches/orient-ra-ac0025n/gallery_3.webp"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0026r",
@@ -643,7 +964,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0026r/gallery_2.webp",
             "/watches/orient-ra-ac0026r/gallery_3.webp"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0027s",
@@ -657,7 +984,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0027s/gallery_2.webp",
             "/watches/orient-ra-ac0027s/gallery_3.jpg"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-wk0001s",
@@ -671,7 +1004,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0001s/gallery_2.webp",
             "/watches/orient-ra-wk0001s/gallery_3.webp"
         ],
-        details: { movement: "Cuarzo VL321", caseSize: "38.4mm", waterResistance: "50m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Cuarzo VL321",
+            "Tamaño de Caja": "38.4mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-wk0003g",
@@ -685,7 +1024,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0003g/gallery_2.webp",
             "/watches/orient-ra-wk0003g/gallery_3.webp"
         ],
-        details: { movement: "Solar VS213", caseSize: "38.4mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Solar VS213",
+            "Tamaño de Caja": "38.4mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-wk0004l",
@@ -699,7 +1044,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0004l/gallery_2.webp",
             "/watches/orient-ra-wk0004l/gallery_3.webp"
         ],
-        details: { movement: "Solar VS213", caseSize: "38.4 mm", waterResistance: "30 m", crystal: "Box crystal" }
+        details: {
+            "Movimiento": "Solar VS213",
+            "Tamaño de Caja": "38.4 mm",
+            "Resistencia al Agua": "30 m",
+            "Cristal": "Box crystal",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-wk0005p",
@@ -713,7 +1064,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0005p/gallery_2.webp",
             "/watches/orient-ra-wk0005p/gallery_3.webp"
         ],
-        details: { movement: "Solar VS213", caseSize: "38.4mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Solar VS213",
+            "Tamaño de Caja": "38.4mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-wk0006s",
@@ -727,7 +1084,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0006s/gallery_2.webp",
             "/watches/orient-ra-wk0006s/gallery_3.webp"
         ],
-        details: { movement: "Solar VS213", caseSize: "38.4 mm", waterResistance: "30 m", crystal: "Box crystal" }
+        details: {
+            "Movimiento": "Solar VS213",
+            "Tamaño de Caja": "38.4 mm",
+            "Resistencia al Agua": "30 m",
+            "Cristal": "Box crystal",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ap0101b",
@@ -741,7 +1104,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ap0101b/gallery_2.webp",
             "/watches/orient-ra-ap0101b/gallery_3.webp"
         ],
-        details: { movement: "Automático F6222", caseSize: "38.4mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6222",
+            "Tamaño de Caja": "38.4mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ap0104s",
@@ -755,7 +1124,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ap0104s/gallery_2.webp",
             "/watches/orient-ra-ap0104s/gallery_3.webp"
         ],
-        details: { movement: "Automático F6222", caseSize: "38.4mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6222",
+            "Tamaño de Caja": "38.4mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "orient-ra-ac0028s",
@@ -768,7 +1143,13 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0028s/gallery_1.webp",
             "/watches/orient-ra-ac0028s/gallery_2.webp"
         ],
-        details: { movement: "Automático F6724", caseSize: "40.5mm", waterResistance: "30m", crystal: "Mineral Abovedado" }
+        details: {
+            "Movimiento": "Automático F6724",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral Abovedado",
+            "Material de la Caja": "Acero Inoxidable"
+        }
     },
     {
         id: "tissot-prx-titanium-38mm",
@@ -778,10 +1159,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX Titanium 38mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-titanium-38mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "38mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -792,10 +1174,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Le Locle 39.3mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-le-locle-39-3mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "3mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "3mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -806,10 +1189,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Classic Dream 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-classic-dream-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -820,10 +1204,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Ballade 39mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-ballade-39mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "39mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "39mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -834,10 +1219,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX Damascus Steel 38mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-damascus-steel-38mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "38mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -848,10 +1234,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PR 100 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pr-100-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -862,10 +1249,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -876,10 +1264,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PR516 41mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pr516-41mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "41mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "41mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -890,10 +1279,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Classic Dream 42mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-classic-dream-42mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "42mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -904,10 +1294,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Ballade 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-ballade-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -918,10 +1309,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Chrono XL Vintage 45mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-chrono-xl-vintage-45mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "45mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "45mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -932,10 +1324,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Chemin Des Tourelles Skeleton 39mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-chemin-des-tourelles-skeleton-39mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "39mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "39mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -946,10 +1339,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 1000 45.5mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-1000-45-5mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "5mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "45.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -960,10 +1354,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar Wilson WNBUn 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-wilson-wnba-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -974,10 +1369,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX 35mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-35mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "35mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -988,10 +1384,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 1000 GMT 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-1000-gmt-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1002,10 +1399,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot T-Race 45mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-t-race-45mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "45mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "45mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1016,10 +1414,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRC 200 43mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prc-200-43mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "43mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "43mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1030,10 +1429,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 1000 43mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-1000-43mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "43mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "43mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1044,10 +1444,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot T-Touch Connect Sport 43.75mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-t-touch-connect-sport-43-75mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "75mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "43.75mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1058,10 +1459,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot T-Touch Connect Sport Jungfraubahn 43.75mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-t-touch-connect-sport-jungfraubahn-43-75mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "75mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "43.75mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1072,10 +1474,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Savonnette 49.4mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-savonnette-49-4mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "4mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "49.4mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Latón"
         }
     },
     {
@@ -1086,10 +1489,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRC 100 Solar 39mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prc-100-solar-39mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "39mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "39mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1100,10 +1504,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Gentleman Open Heart 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-gentleman-open-heart-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1114,10 +1519,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PR516 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pr516-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1128,10 +1534,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Supersport Chrono 45.5mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-supersport-chrono-45-5mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "5mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "45.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1142,10 +1549,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Chrono XL Classic 45mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-chrono-xl-classic-45mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "45mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "45mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1156,10 +1564,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot T-Touch Connect Solar 47.5mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-t-touch-connect-solar-47-5mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "5mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "47.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1170,10 +1579,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Tradition 42mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-tradition-42mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "42mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1184,10 +1594,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 1000 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-1000-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1198,10 +1609,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Savonnette 48.5mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-savonnette-48-5mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "5mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "48.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Latón"
         }
     },
     {
@@ -1212,10 +1624,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PR 100 34mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pr-100-34mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "34mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "34mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1226,10 +1639,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Gentleman 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-gentleman-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1240,10 +1654,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 1000 38mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-1000-38mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "38mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1254,10 +1669,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Carson Premium 41mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-carson-premium-41mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "41mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "41mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1268,10 +1684,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PR516 38mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pr516-38mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "38mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1282,10 +1699,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Gentleman Gold bezel 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-gentleman-gold-bezel-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1296,10 +1714,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot T-Race 38mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-t-race-38mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "38mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1310,10 +1729,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PR 100 Jungfraubahn 34mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pr-100-jungfraubahn-34mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "34mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "34mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1324,10 +1744,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 1000 Quartz Chronograph 38mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-1000-quartz-chronograph-38mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "38mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1338,10 +1759,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PR 100 Vuelta 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pr-100-vuelta-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1352,10 +1774,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El TISSOT HERITUnGE 1938 39mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-heritage-1938-39mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "39mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "39mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1366,10 +1789,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX UFO Robot Grendizer 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-ufo-robot-grendizer-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1380,10 +1804,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Le Locle Gold 39.3mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-le-locle-gold-39-3mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "3mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "3mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -1394,10 +1819,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 1000 36mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-1000-36mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "36mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "36mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1408,10 +1834,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 2000 46mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-2000-46mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "46mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "46mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1422,10 +1849,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Le Locle Open Heart 39.3mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-le-locle-open-heart-39-3mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "3mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "3mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -1436,10 +1864,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Telemeter 1938 42mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-telemeter-1938-42mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "42mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1450,10 +1879,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot T-Race 41mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-t-race-41mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "41mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "41mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1464,10 +1894,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Lepine 49mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-lepine-49mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "49mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "49mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Latón"
         }
     },
     {
@@ -1478,10 +1909,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Chrono XL Classic represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-chrono-xl-classic/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1492,10 +1924,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX 42mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-42mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "42mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1506,10 +1939,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX Gold 35mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-gold-35mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "35mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1520,10 +1954,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot T-Complication Squelette 43mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-t-complication-squelette-43mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "43mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "43mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1534,10 +1969,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRC 100 Solar 34mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prc-100-solar-34mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "34mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "34mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1548,10 +1984,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX Gold 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-gold-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1562,10 +1999,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Chemin des Tourelles 42mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-chemin-des-tourelles-42mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "42mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1576,10 +2014,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Goldrun Gold 38mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-goldrun-gold-38mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "38mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1590,10 +2029,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Pendants 30.1mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pendants-30-1mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "1mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "30.1mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Latón"
         }
     },
     {
@@ -1604,10 +2044,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Goldrun Hesalite Gold 33.7mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-goldrun-hesalite-gold-33-7mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "7mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "33.7mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1618,10 +2059,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Le Locle Gold 39mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-le-locle-gold-39mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "39mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "39mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1632,10 +2074,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Infirmi&egrave;res represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-infirmi-egrave-res/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1646,10 +2089,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Classic Dream Swissmatic represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-classic-dream-swissmatic/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1660,10 +2104,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 1000 Powermatic 80 GMT represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-1000-powermatic-80-gmt/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1674,10 +2119,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX UFO Robot Grendizer 50th Anniversary 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-ufo-robot-grendizer-50th-anniversary-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1688,10 +2134,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Heritage 1973 represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-heritage-1973/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1702,10 +2149,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot T-Touch Connect Solar Jungfraubahn 47.5mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-t-touch-connect-solar-jungfraubahn-47-5mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "5mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "47.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1716,10 +2164,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Rockwatch 38mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-rockwatch-38mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "38mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -1730,10 +2179,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Le Locle 20th Anniversary 39.3mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-le-locle-20th-anniversary-39-3mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "3mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "3mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -1744,10 +2194,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PR 100 41mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pr-100-41mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "41mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "41mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1758,10 +2209,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Savonnette 49.5mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-savonnette-49-5mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "5mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "49.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Latón"
         }
     },
     {
@@ -1772,10 +2224,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX Carbon 40.5mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-carbon-40-5mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "5mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1786,10 +2239,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PR 100 Jungfraubahn 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-pr-100-jungfraubahn-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1800,10 +2254,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Everytime 34mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-everytime-34mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "34mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "34mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1814,10 +2269,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot PRX Damian Lillard Edición Especial 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-prx-damian-lillard-special-edition-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1828,10 +2284,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Supersport NBUn Edición Especial 45.5mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-supersport-nba-special-edition-45-5mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "5mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "45.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1842,10 +2299,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Savonnette 49.55mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-savonnette-49-55mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "55mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "49.55mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Latón"
         }
     },
     {
@@ -1856,10 +2314,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Carson Premium 40mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-carson-premium-40mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1870,10 +2329,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Supersport Chrono Basketball Edition 45.5mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-supersport-chrono-basketball-edition-45-5mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "5mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "45.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1884,10 +2344,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Le Locle 39mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-le-locle-39mm/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "39mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "39mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1898,10 +2359,11 @@ export const WATCHES: Watch[] = [
         description: "Swiss made excellence. El Tissot Seastar 1000 Chronograph represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-seastar-1000-chronograph/main.jpg",
         details: {
-            movement: "Swiss Quartz / Automatic",
-            caseSize: "40mm",
-            waterResistance: "100m",
-            crystal: "Zafiro"
+            "Movimiento": "Swiss Quartz / Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
         }
     },
     {
@@ -1912,10 +2374,11 @@ export const WATCHES: Watch[] = [
         description: "Una pieza que captura la sofisticación de la coctelería clásica. Con un dial texturizado 'Frozen Skydiving' que evoca el brillo del hielo, este modelo hereda la maestría artesanal de Seiko.",
         image: "/watches/seiko-srpl61/default.png",
         details: {
-            caseSize: "34.0mm",
-            waterResistance: "50m",
-            movement: "Automático 4R35",
-            crystal: "Hardlex en forma de caja"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "34.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1926,10 +2389,11 @@ export const WATCHES: Watch[] = [
         description: "El modelo 'Frozen Mojito' destaca por su dial verde texturizado y elegancia refinada. Ofrece una precisión automática impecable en un diseño atemporal inspirado en la alta coctelería.",
         image: "/watches/seiko-srpl63/default.png",
         details: {
-            caseSize: "34.0mm",
-            waterResistance: "50m",
-            movement: "Automático 4R35",
-            crystal: "Hardlex en forma de caja"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "34.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1940,10 +2404,11 @@ export const WATCHES: Watch[] = [
         description: "Inspirado en el cóctel 'Frozen Daiquiri', este reloj combina tonos cálidos con la sofisticación de la línea Presage. Un ejemplo perfecto de la unión entre arte y relojería mecánica.",
         image: "/watches/seiko-srpl64/default.png",
         details: {
-            caseSize: "34.0mm",
-            waterResistance: "50m",
-            movement: "Automático 4R35",
-            crystal: "Hardlex en forma de caja"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "34.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1954,10 +2419,11 @@ export const WATCHES: Watch[] = [
         description: "La colección Coutura representa la unión entre el diseño moderno y el lujo. Adornado con diamantes genuinos y protegido por cristal de zafiro, es una pieza de elegancia contemporánea.",
         image: "/watches/seiko-sur589/default.png",
         details: {
-            caseSize: "30.0mm",
-            waterResistance: "100m",
-            movement: "Cuarzo",
-            crystal: "Zafiro"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "30.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1968,10 +2434,11 @@ export const WATCHES: Watch[] = [
         description: "Elegancia y rendimiento en cada detalle. Este modelo Coutura presenta una esfera refinada con acentos de diamantes, ideal para quienes buscan un reloj joya con la fiabilidad de Seiko.",
         image: "/watches/seiko-sur591/default.png",
         details: {
-            caseSize: "30.0mm",
-            waterResistance: "100m",
-            movement: "Cuarzo",
-            crystal: "Zafiro"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "30.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1982,10 +2449,11 @@ export const WATCHES: Watch[] = [
         description: "Un modelo bitono excepcional de la serie Coutura. Su diseño integrado, esmerada selección de diamantes y cristal de zafiro lo sitúan a la vanguardia del lujo funcional.",
         image: "/watches/seiko-sur592/default.png",
         details: {
-            caseSize: "30.0mm",
-            waterResistance: "100m",
-            movement: "Cuarzo",
-            crystal: "Zafiro"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "30.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1996,10 +2464,11 @@ export const WATCHES: Watch[] = [
         description: "Este modelo de la serie Seiko Coutura destaca por su sofisticado diseño bitono y su esfera de madreperla blanca. Una joya de precisión protegida por cristal de zafiro.",
         image: "/watches/seiko-sur586/default.png",
         details: {
-            caseSize: "34.0mm",
-            waterResistance: "100m",
-            movement: "Cuarzo 6N42",
-            crystal: "Zafiro"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "34.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2010,10 +2479,11 @@ export const WATCHES: Watch[] = [
         description: "Un reloj de lujo moderno con acabado dorado integral y esfera de madreperla. Su cristal de zafiro y resistencia de 100m lo hacen tan robusto como elegante.",
         image: "/watches/seiko-sur588/default.png",
         details: {
-            caseSize: "34.0mm",
-            waterResistance: "100m",
-            movement: "Cuarzo 6N42",
-            crystal: "Zafiro"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "34.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2024,10 +2494,11 @@ export const WATCHES: Watch[] = [
         description: "Reloj estilo 'Tank' con 34 cristales que adornan el bisel. Un diseño clásico rectangular que combina la elegancia de la joyería con la fiabilidad de Seiko.",
         image: "/watches/seiko-swr093/default.png",
         details: {
-            caseSize: "22.7mm x 33.1mm",
-            waterResistance: "30m",
-            movement: "Cuarzo 4N30",
-            crystal: "Hardlex Curvo"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "22.7mm x 33.1mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2038,10 +2509,11 @@ export const WATCHES: Watch[] = [
         description: "Cronógrafo solar inspirado en la herencia de cronometraje deportivo de Seiko. Su cristal de zafiro curvado y tecnología solar V192 lo sitúan en la cima del rendimiento.",
         image: "/watches/seiko-ssc939/default.png",
         details: {
-            caseSize: "41.4mm",
-            waterResistance: "100m",
-            movement: "Solar V192",
-            crystal: "Zafiro Curvado"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "41.4mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2052,10 +2524,11 @@ export const WATCHES: Watch[] = [
         description: "Un cronógrafo de alta precisión que rinde homenaje a los hitos históricos de Seiko en el deporte profesional. Equipado con carga solar y zafiro con revestimiento antirreflectante.",
         image: "/watches/seiko-ssc929/default.png",
         details: {
-            caseSize: "41.4mm",
-            waterResistance: "100m",
-            movement: "Solar V192",
-            crystal: "Zafiro Curvado"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "41.4mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2066,10 +2539,11 @@ export const WATCHES: Watch[] = [
         description: "Diseño robusto y tecnología avanzada se unen en este Speedtimer. Su movimiento solar elimina la necesidad de cambio de batería, ofreciendo una fiabilidad excepcional.",
         image: "/watches/seiko-ssc931/default.png",
         details: {
-            caseSize: "41.4mm",
-            waterResistance: "100m",
-            movement: "Solar V192",
-            crystal: "Zafiro Curvado"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "41.4mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2080,10 +2554,11 @@ export const WATCHES: Watch[] = [
         description: "Versión compacta de 39mm con dial azul 'Pepsi'. Un cronógrafo solar versátil que captura la esencia de los clásicos de los años 60 con especificaciones modernas.",
         image: "/watches/seiko-ssc913/default.png",
         details: {
-            caseSize: "39.0mm",
-            waterResistance: "100m",
-            movement: "Solar V192",
-            crystal: "Zafiro Curvado"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "39.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2094,10 +2569,11 @@ export const WATCHES: Watch[] = [
         description: "Este modelo Prospex combina elegancia y rendimiento deportivo en un diseño compacto. Con esfera de madreperla blanca y cristal de zafiro, ofrece una impresionante resistencia al agua de 200 metros.",
         image: "/watches/seiko-sur605/default.png",
         details: {
-            caseSize: "34.0mm",
-            waterResistance: "200m",
-            movement: "Cuarzo 6N22",
-            crystal: "Zafiro Curvado"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "34.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2108,10 +2584,11 @@ export const WATCHES: Watch[] = [
         description: "Un reloj sumergible de alta gama con esfera de madreperla azul. Su construcción robusta y cristal de zafiro lo hacen ideal tanto para el uso diario sofisticado como para actividades acuáticas.",
         image: "/watches/seiko-sur607/default.png",
         details: {
-            caseSize: "34.0mm",
-            waterResistance: "200m",
-            movement: "Cuarzo 6N22",
-            crystal: "Zafiro Curvado"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "34.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2122,10 +2599,11 @@ export const WATCHES: Watch[] = [
         description: "La variante bitono de la serie Prospex Sea Compact. Combina lujo y funcionalidad con una esfera de madreperla, 200m de resistencia al agua y la dureza del cristal de zafiro.",
         image: "/watches/seiko-sur608/default.png",
         details: {
-            caseSize: "34.0mm",
-            waterResistance: "200m",
-            movement: "Cuarzo 6N22",
-            crystal: "Zafiro Curvado"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "34.0mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2136,10 +2614,11 @@ export const WATCHES: Watch[] = [
         description: "Elevando la elegancia mecánica, este modelo integra la complicación GMT en la icónica estética Cocktail Time. Con dial 'Skydiving' y la precisión del calibre automático 4R34.",
         image: "/watches/seiko-ssk039/default.png",
         details: {
-            caseSize: "40.5mm",
-            waterResistance: "50m",
-            movement: "Automático GMT 4R34",
-            crystal: "Hardlex en forma de caja"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2150,10 +2629,11 @@ export const WATCHES: Watch[] = [
         description: "Inspirado en los colores del cóctel 'Acacia', este GMT combina funcionalidad para el viajero con un diseño refinado. Presenta un cristal Hardlex abovedado y fondo de caja transparente.",
         image: "/watches/seiko-ssk041/default.png",
         details: {
-            caseSize: "40.5mm",
-            waterResistance: "50m",
-            movement: "Automático GMT 4R34",
-            crystal: "Hardlex en forma de caja"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2164,10 +2644,11 @@ export const WATCHES: Watch[] = [
         description: "Captura la luz de los bares de Tokio con este modelo en tonos dorados y esfera azul profunda. Una celebración de la precisión japonesa y la elegancia clásica de la línea Presage.",
         image: "/watches/seiko-srpk48/default.png",
         details: {
-            caseSize: "40.5mm",
-            waterResistance: "50m",
-            movement: "Automático 4R35",
-            crystal: "Hardlex en forma de caja"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2178,10 +2659,11 @@ export const WATCHES: Watch[] = [
         description: "Edición especial con acabado dorado y esfera blanca radiante. Su movimiento automático es visible a través del fondo de caja, rindiendo tributo a la tradición relojera de Seiko.",
         image: "/watches/seiko-srpk46/default.png",
         details: {
-            caseSize: "40.5mm",
-            waterResistance: "50m",
-            movement: "Automático 4R35",
-            crystal: "Hardlex en forma de caja"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2192,10 +2674,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Curv Chronograph Dark Gray Esfera Men's Watch 98Un162 (BUL98Un162). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98a162/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2206,10 +2689,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Lunar Pilot Unrchive Chronograph Quartz Black Esfera Men's Watch 96K111 (BUL96K111). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96k111/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2220,10 +2704,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Surveyor Unutomatic Red Esfera Men's Watch 98B422 (BUL98B422). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98b422/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2234,10 +2719,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Lunar Pilot Chronograph Quartz Red Esfera Men's Watch 96K115 (BUL96K115). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96k115/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2248,10 +2734,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Sutton Unutomatic Silver White Esfera Men's Watch 96Un268 (BUL96Un268). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96a268/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2262,10 +2749,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Marine Star Unutomatic Black Esfera Men's Watch 98Un272 (BUL98Un272). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98a272/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2276,10 +2764,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Hack Unutomatic Black Esfera Men's Watch 98Un255 (BUL98Un255). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98a255/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2290,10 +2779,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Surveyor Unutomatic Men's Watch 96Un310 (BUL96Un310). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96a310/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2304,10 +2794,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Marine Star HPQ Precisionist Quartz White Esfera Men's Watch 96B426 (BUL96B426). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96b426/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2318,10 +2809,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Jet Star Quartz Gold Esfera Men's Watch 97B214 (BUL97B214). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul97b214/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2332,10 +2824,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Snorkel Quartz White Esfera Men's Watch 98B449 (BUL98B449). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98b449/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2346,10 +2839,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova VWI Edición Especial HUnCK Unutomatic Black Esfera Men's Watch 96Un259 (BUL96Un259). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96a259/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2360,10 +2854,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Unerojet Chronograph Unutomatic Blue Sunray Esfera  Men's Watch 96B374 (BUL96B374). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96b374/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2374,10 +2869,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Racer Chronograph Quartz Black Esfera Men's Watch 98B427 (BUL98B427). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98b427/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2388,10 +2884,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Sutton Unutomatic Silver Skeleton Esfera Men's Watch 97Un161 (BUL97Un161). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul97a161/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2402,10 +2899,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Maquina Unutomatic Blue Esfera Men's Watch 98Un319 (BUL98Un319). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98a319/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2416,10 +2914,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Sutton Quartz Grey Esfera Watch 96B443 (BUL96B443). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96b443/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2430,10 +2929,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Racer Chronograph Quartz Blue Esfera Men's Watch 98B432 (BUL98B432). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98b432/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2444,10 +2944,11 @@ export const WATCHES: Watch[] = [
         description: "Official Bulova Hack Unutomatic Ivory Esfera Men's Watch 96Un246 (BUL96Un246). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96a246/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "100m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2458,10 +2959,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer DuMonde Watch (59370). Vintage-inspired timepiece.",
         image: "/watches/stauer-59370/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2472,10 +2974,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Stauer Swiss Tactical Watch (46931). Vintage-inspired timepiece.",
         image: "/watches/stauer-46931/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2486,10 +2989,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer 1920s Retrograde Watch (55092). Vintage-inspired timepiece.",
         image: "/watches/stauer-55092/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2500,10 +3004,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Stauer Titanium Untomic Men's Watch (17468). Vintage-inspired timepiece.",
         image: "/watches/stauer-17468/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Titanio"
         }
     },
     {
@@ -2514,10 +3019,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Stauer 1930 Dashtronic Watch (17469). Vintage-inspired timepiece.",
         image: "/watches/stauer-17469/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2528,10 +3034,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer RossoBlu Classic Sport Watch (62698). Vintage-inspired timepiece.",
         image: "/watches/stauer-62698/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2542,10 +3049,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer El Only Chronograph Watch (60100). Vintage-inspired timepiece.",
         image: "/watches/stauer-60100/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2556,10 +3064,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Italian-made Volterra Chronograph (62789). Vintage-inspired timepiece.",
         image: "/watches/stauer-62789/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2570,10 +3079,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Morgan Silver Dollar Men's Watch (18295). Vintage-inspired timepiece.",
         image: "/watches/stauer-18295/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2584,10 +3094,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer El Sage Men's Hybrid Watch (61955). Vintage-inspired timepiece.",
         image: "/watches/stauer-61955/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2598,10 +3109,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Swiss Tactical Undventurer Watch (61104). Vintage-inspired timepiece.",
         image: "/watches/stauer-61104/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2612,10 +3124,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Unlpine Precision Italian-made Chronograph (62787). Vintage-inspired timepiece.",
         image: "/watches/stauer-62787/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2626,10 +3139,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Stauer Meisterzeit Timepiece (20319). Vintage-inspired timepiece.",
         image: "/watches/stauer-20319/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2640,10 +3154,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Stauer 1930 Gold-Finished Dashtronic Watch (17475). Vintage-inspired timepiece.",
         image: "/watches/stauer-17475/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2654,10 +3169,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Classique Retrograde Watch (61631). Vintage-inspired timepiece.",
         image: "/watches/stauer-61631/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2668,10 +3184,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Ladies Rouge Watch (51465). Vintage-inspired timepiece.",
         image: "/watches/stauer-51465/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2682,10 +3199,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Senso Sport Hybrid Smart Watch (Slate Grey) (59495). Vintage-inspired timepiece.",
         image: "/watches/stauer-59495/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2696,10 +3214,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Co-Pilot Men's Watch (35771). Vintage-inspired timepiece.",
         image: "/watches/stauer-35771/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2710,10 +3229,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Men's Rhone Glacier Swiss Watch (61396). Vintage-inspired timepiece.",
         image: "/watches/stauer-61396/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2724,10 +3244,11 @@ export const WATCHES: Watch[] = [
         description: "Official Stauer Stauer Blue Stone Chronograph (33208). Vintage-inspired timepiece.",
         image: "/watches/stauer-33208/default.jpg",
         details: {
-            caseSize: "42mm",
-            waterResistance: "30m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2738,10 +3259,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Harborside Coast Unutomatic Blue Esfera Men's Watch TWH6Z4310 (TXTWH6Z4310). Reliable, durable, and iconic.",
         image: "/watches/timex-txtwh6z4310/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2752,10 +3274,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Marlin Unutomatic Black Esfera Men's Watch TW2V62100 (TXTW2V62100). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v62100/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2766,10 +3289,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Expedition Quartz Beige Esfera Watch TW4B06800 (TXTW4B06800). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw4b06800/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2780,10 +3304,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Waterbury Chronograph Quartz Men's Watch TW2W47300 (TXTW2W47300). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w47300/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2794,10 +3319,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Marlin Quartz Moon Phase Blue Esfera Watch TW2W51300JR (TXTW2W51300JR). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w51300jr/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2808,10 +3334,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex M79 Unutomatic Black Esfera Watch TW2U78300V3 (TXTW2U78300). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2u78300/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2822,10 +3349,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Q Timex 1978 Quartz Green Esfera Men's Watch TW2W44700 (TXTW2W44700). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w44700/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2836,10 +3364,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Waterbury Classic Chronograph Quartz White Esfera Men's Watch TW2U88100 (TXTW2U88100). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2u88100/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2850,10 +3379,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Q Timex Chronograph Quartz Black Esfera Men's Watch TW2W64200 (TXTW2W64200). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w64200/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2864,10 +3394,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Q Timex Chronograph Quartz Blue Esfera Men's Watch TW2W51600 (TXTW2W51600). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w51600/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2878,10 +3409,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Expedition North Anchorage Quartz Black Esfera Men's Watch TW2W41900 (TXTW2W41900). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w41900/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2892,10 +3424,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Legacy Quartz Gray Esfera Men's Watch TW2V67900 (TXTW2V67900). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v67900/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2906,10 +3439,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex MK1 Chronograph Quartz Blue Esfera Men's Watch TW2R67600 (TXTW2R67600). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2r67600/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2920,10 +3454,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Q Timex Reissue Quartz Blue Esfera Pepsi Bezel Watch TW2T80700ZV (TXTW2T80700). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2t80700/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2934,10 +3469,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Waterbury Legacy Quartz Navy Esfera Men's Watch TW2V17500 (TXTW2V17500). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v17500/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2948,10 +3484,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Marlin Unutomatic Black Esfera Men's Watch TW2W58800 (TXTW2W58800). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w58800/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2962,10 +3499,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Expedition Traprock Blue Esfera Men's Watch TW2W71200 (TXTW2W71200). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w71200/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2976,10 +3514,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Q Chronograph Quartz Black Esfera Men's Watch TW2V42700 (TXTW2V42700). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v42700/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -2990,10 +3529,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Waterbury Traditional GMT Quartz Coke Bezel Men's Watch TW2V74000VQ (TXTW2V74000). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v74000/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -3004,10 +3544,11 @@ export const WATCHES: Watch[] = [
         description: "Official Timex Q Falcon Eye Chronograph Quartz Blue Esfera Men's Watch TW2W33700 (TXTW2W33700). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w33700/default.jpg",
         details: {
-            caseSize: "40mm",
-            waterResistance: "50m",
-            movement: "Quartz/Automatic",
-            crystal: "Mineral"
+            "Movimiento": "Quartz/Automatic",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Mineral",
+            "Material de la Caja": "Acero Inoxidable"
         }
     },
     {
@@ -3023,10 +3564,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk049/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3042,10 +3584,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssj026/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3061,10 +3604,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssj021/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3080,10 +3624,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssj013/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3099,10 +3644,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssh153/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3118,10 +3664,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssh137/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3137,10 +3684,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssh139/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3156,10 +3704,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb446/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3175,10 +3724,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sseh024/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "3bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3192,10 +3742,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sseh023/gallery_1.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "3bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3211,10 +3762,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sseh021/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "3bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3229,10 +3781,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur392/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "3bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3247,10 +3800,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur394/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "3bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3265,10 +3819,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur618/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "20bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3283,10 +3838,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur620/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "20bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3301,10 +3857,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur622/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "20bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3319,10 +3876,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur595/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "20bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3337,10 +3895,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur597/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "20bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3356,10 +3915,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl81/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "200m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3374,10 +3934,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur402/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3392,10 +3953,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur444/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3410,10 +3972,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur442/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3428,10 +3991,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur410/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3446,10 +4010,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl57/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3464,10 +4029,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl59/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3482,10 +4048,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl55/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3500,10 +4067,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sre017/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3518,10 +4086,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sre018/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3536,10 +4105,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sre020/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3555,10 +4125,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl99/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "38m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3573,10 +4144,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk047/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3592,10 +4164,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssc947/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3611,10 +4184,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl79/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "38m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3630,10 +4204,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl77/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "38m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3649,10 +4224,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssc945/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3668,10 +4244,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur585/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3687,10 +4264,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur583/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3706,10 +4284,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur560/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3725,10 +4304,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur557/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3743,10 +4323,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur438/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3761,10 +4342,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur377/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3779,10 +4361,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur421/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3797,10 +4380,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur632/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3815,10 +4399,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur309/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3833,10 +4418,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur307/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3852,10 +4438,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe03/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3870,10 +4457,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb325/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "9m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3888,10 +4476,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb321/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "9m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3906,10 +4495,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd95/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3924,10 +4514,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd91/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3943,10 +4534,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd63/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3962,10 +4554,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd55/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -3981,10 +4574,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl53/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "200m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4000,10 +4594,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl51/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "200m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4019,10 +4614,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl83/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "100m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4038,10 +4634,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl87/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "100m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4057,10 +4654,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl89/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "100m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4076,10 +4674,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl85/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "100m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
 
@@ -4096,10 +4695,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl75/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4115,10 +4715,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl73/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4134,10 +4735,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl71/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
 
@@ -4154,10 +4756,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk91/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4173,10 +4776,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl15/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "200m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4192,10 +4796,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl13/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "200m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4211,10 +4816,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl11/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "200m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4230,10 +4836,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk036/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4249,10 +4856,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk035/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4268,10 +4876,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk033/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4283,10 +4892,11 @@ export const WATCHES: Watch[] = [
         "image": "/watches/seiko-sut068/main.webp",
         "gallery": [],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4302,10 +4912,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srz535/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4320,10 +4931,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sne565/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4338,10 +4950,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sne506/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "100M",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4357,10 +4970,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssc927/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4376,10 +4990,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssc941/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4395,10 +5010,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssc933/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4414,10 +5030,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssc911/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4433,10 +5050,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssc813/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4452,10 +5070,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr091/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "3bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4471,10 +5090,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur582/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4490,10 +5110,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur581/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4509,10 +5130,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur579/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4528,10 +5150,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur578/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4547,10 +5170,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur575/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4566,10 +5190,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur573/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4585,10 +5210,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb455/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4604,10 +5230,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb453/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4623,10 +5250,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb451/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4641,10 +5269,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur567/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4659,10 +5288,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur566/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4677,10 +5307,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur565/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4696,10 +5327,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk037/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4715,10 +5347,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk99/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4734,10 +5367,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk97/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4753,10 +5387,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl09/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4772,10 +5407,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpl07/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4791,10 +5427,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur562/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4810,10 +5447,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur561/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4829,10 +5467,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr087/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4847,10 +5486,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr085/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4866,10 +5506,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr083/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4885,10 +5526,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur558/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4904,10 +5546,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur555/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4923,10 +5566,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr078/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4941,10 +5585,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr070/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4959,10 +5604,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr052/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4977,10 +5623,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr049/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -4995,10 +5642,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr048/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5013,10 +5661,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr046/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5031,10 +5680,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-swr044/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5049,10 +5699,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur636/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5067,10 +5718,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur633/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5085,10 +5737,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur540/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5104,10 +5757,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur531/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5123,10 +5777,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur527/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5141,10 +5796,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur503/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5160,10 +5816,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur487/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "6m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5178,10 +5835,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur460/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5197,10 +5855,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur450/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5215,10 +5874,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur449/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5233,10 +5893,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur440/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5251,10 +5912,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur436/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5269,10 +5931,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur434/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "9m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5287,10 +5950,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur430/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "9m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5305,10 +5969,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur419/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5323,10 +5988,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur375/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5341,10 +6007,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur361/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5359,10 +6026,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur360/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "6m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5378,10 +6046,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssg022/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5396,10 +6065,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssg010/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5414,10 +6084,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssc700/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5429,10 +6100,11 @@ export const WATCHES: Watch[] = [
         "image": "/watches/seiko-ssc376/main.webp",
         "gallery": [],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5448,10 +6120,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb435/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5467,10 +6140,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb397/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5485,10 +6159,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb345/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5504,10 +6179,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-snj025/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5522,10 +6198,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur363/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5540,10 +6217,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur373/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5558,10 +6236,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur358/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "6m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5576,10 +6255,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur356/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "6m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5594,10 +6274,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur355/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "6m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5612,10 +6293,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur343/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5630,10 +6312,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur322/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5648,10 +6331,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur314/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5667,10 +6351,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk025/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5686,10 +6371,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk023/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5705,10 +6391,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sup467/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5723,10 +6410,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur312/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5741,10 +6429,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur311/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5760,10 +6449,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk019/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5779,10 +6469,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk017/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5798,10 +6489,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk013/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5817,10 +6509,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk009/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5836,10 +6529,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk005/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5855,10 +6549,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk003/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5874,10 +6569,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk001/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5892,10 +6588,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssg021/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5910,10 +6607,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssg009/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5929,10 +6627,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb445/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5947,10 +6646,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb430/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5965,10 +6665,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb438/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -5984,10 +6685,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb434/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6002,10 +6704,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssc787/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6021,10 +6724,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk89/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6040,10 +6744,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk87/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6059,10 +6764,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk73/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6077,10 +6783,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb429/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6096,10 +6803,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb427/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6115,10 +6823,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb425/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6134,10 +6843,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssa459/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6152,10 +6862,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srwz24/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6171,10 +6882,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk65/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6190,10 +6902,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk67/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6209,10 +6922,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk43/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "200m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6228,10 +6942,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk71/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6247,10 +6962,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk15/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6266,10 +6982,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk01/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6285,10 +7002,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpj93/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6304,10 +7022,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk22/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6323,10 +7042,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk20/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6342,10 +7062,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk18/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6360,10 +7081,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpj85/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6378,10 +7100,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpj81/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6397,10 +7120,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk33/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6415,10 +7139,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk31/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6433,10 +7158,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk29/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6450,10 +7176,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srph89/gallery_1.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6469,10 +7196,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpj17/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6488,10 +7216,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpj13/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6507,10 +7236,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srph33/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6526,10 +7256,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srph29/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6545,10 +7276,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srph59/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6564,10 +7296,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg57/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6582,10 +7315,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg05/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6601,10 +7335,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg03/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6619,10 +7354,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg31/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6638,10 +7374,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg29/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6657,10 +7394,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg41/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6676,10 +7414,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg39/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6695,10 +7434,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg37/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6714,10 +7454,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg35/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6733,10 +7474,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg33/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6752,10 +7494,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpg27/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6771,10 +7514,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpf03/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6790,10 +7534,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpf54/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6808,10 +7553,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpf53/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "7m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6826,10 +7572,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe93/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6844,10 +7591,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe99/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6863,10 +7611,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe45/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6882,10 +7631,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe43/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6901,10 +7651,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe41/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6920,10 +7671,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe37/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6938,10 +7690,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe57/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6956,10 +7709,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe55/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6975,10 +7729,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe53/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -6993,10 +7748,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe51/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7012,10 +7768,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe33/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7031,10 +7788,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe74/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7049,10 +7807,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe27/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7068,10 +7827,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd59/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7087,10 +7847,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd71/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7106,10 +7867,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd79/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7124,10 +7886,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd93/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7142,10 +7905,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd65/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7161,10 +7925,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd51/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7179,10 +7944,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srp841/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7197,10 +7963,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srp839/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7215,10 +7982,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe15/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7234,10 +8002,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpd37/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7252,10 +8021,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpb46/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7270,10 +8040,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpb43/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7289,10 +8060,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpb41/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7307,10 +8079,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpb77/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7326,10 +8099,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sfj009/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "50m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7345,10 +8119,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sfj007/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "50m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7364,10 +8139,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sre009/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "3m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7383,10 +8159,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sre007/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "3m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7402,10 +8179,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-spb249/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7420,10 +8198,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sre004/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7438,10 +8217,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sre003/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7457,10 +8237,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-spb117/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "1959M",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7476,10 +8257,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-spb210/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7495,10 +8277,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-spb155/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7514,10 +8297,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-spb121/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "1959M",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7532,10 +8316,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sne529/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7550,10 +8335,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-snkp27/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7568,10 +8354,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-snkp23/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7583,10 +8370,11 @@ export const WATCHES: Watch[] = [
         "image": "/watches/seiko-snkn37/main.webp",
         "gallery": [],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7598,10 +8386,11 @@ export const WATCHES: Watch[] = [
         "image": "/watches/seiko-snkm97/main.webp",
         "gallery": [],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7617,10 +8406,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sfj005/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "50m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7632,10 +8422,11 @@ export const WATCHES: Watch[] = [
         "image": "/watches/seiko-s23159/main.webp",
         "gallery": [],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7651,10 +8442,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur559/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7670,10 +8462,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sfj003/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "50m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7689,10 +8482,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur549/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7708,10 +8502,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sre010/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "3m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7726,10 +8521,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpj83/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7745,10 +8541,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur525/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7762,10 +8559,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpj45/gallery_1.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7779,10 +8577,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srph87/gallery_1.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "2m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7798,10 +8597,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb405/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7816,10 +8616,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srph31/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7834,10 +8635,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur432/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "9m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7852,10 +8654,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur488/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "6m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7871,10 +8674,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssa425/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "8m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7890,10 +8694,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpf77/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7909,10 +8714,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpe05/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7928,10 +8734,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur550/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7947,10 +8754,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb437/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7965,10 +8773,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srk050/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -7983,10 +8792,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srk047/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "0m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -8001,10 +8811,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-sur414/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "4m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -8019,10 +8830,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssb347/gallery_2.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "60m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -8038,10 +8850,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-ssk021/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "10bar",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -8057,10 +8870,11 @@ export const WATCHES: Watch[] = [
             "/watches/seiko-srpk37/gallery_3.webp"
         ],
         "details": {
-            "movement": "Automatic",
-            "caseSize": "40mm",
-            "waterResistance": "5m",
-            "crystal": "Sapphire"
+            "Movimiento": "Automático Japonés",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "50m",
+            "Cristal": "Hardlex",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -8070,7 +8884,13 @@ export const WATCHES: Watch[] = [
         price: 1881,
         description: "Un icono renacido con material de vanguardia: Acero de Damasco jaspeado. Si buscas un reloj delgado y suave con un auténtico toque de los años 70, no busques más.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw6af42289/product-pictures/2595b61a-d8db-414a-9356-51c9350e537b_T137-807-96-081-00_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "38mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Titanio"
+        }
     },
     {
         id: "tissot-T1378074406100",
@@ -8079,7 +8899,13 @@ export const WATCHES: Watch[] = [
         price: 1561,
         description: "Un icono renacido con material de vanguardia: Titanio. Ultraligero y resistente, manteniendo el auténtico diseño de los 70.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw699e42ba/product-pictures/bb1339fa-d3fd-4572-a568-9ab0c2cbf248_T137-807-44-061-00_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "38mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Titanio"
+        }
     },
     {
         id: "tissot-T1378074404100",
@@ -8088,7 +8914,13 @@ export const WATCHES: Watch[] = [
         price: 1561,
         description: "Esfera azul profundo en una caja de Titanio de alta tecnología. Estilo y sustancia con un peso pluma.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw544290e7/product-pictures/bfc139c5-3da5-4a57-849b-4711ef6b0f41_T137-807-44-041-00_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "38mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Titanio"
+        }
     },
     {
         id: "tissot-T1374071104102",
@@ -8097,7 +8929,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "Edición especial colaborativa. Un homenaje a la cultura pop y la relojería suiza.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw2e27ccbc/product-pictures/1640b44b-7c54-4c7a-878d-747000e92c3f_T137-407-11-041-02_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071135100",
@@ -8106,7 +8944,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "El codiciado dial azul hielo. Fresco, moderno y distintivo, con la fiabilidad del Powermatic 80.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw195fabc9/product-pictures/5f0c9cb0-604a-476e-8ba7-563133b91d5c_T137-407-11-351-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374073305101",
@@ -8115,7 +8959,13 @@ export const WATCHES: Watch[] = [
         price: 1760,
         description: "Celebrando 50 años de un icono. Acabado PVD negro y detalles exclusivos de Grendizer.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwe931905e/product-pictures/2672bb1a-58ec-4ca0-aa4f-1b299fc802b2_T137-407-33-051-01_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374073304100",
@@ -8124,7 +8974,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "Todo en azul. Caja de acero y brazalete con revestimiento PVD azul para un look impactante.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw8ddb8341/product-pictures/daab9283-862f-4732-abd0-fa955e11d7bd_T137-407-33-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374073302100",
@@ -8133,7 +8989,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "El clásico dorado. Caja de acero inoxidable 316L con revestimiento PVD oro amarillo.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwee0090e5/product-pictures/5729d09d-baed-40b3-8e7f-4643b9cd1a43_T137-407-33-021-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071104100",
@@ -8142,7 +9004,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "El superventas. Dial azul texturizado y brazalete integrado en acero 316L.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw27713dcb/product-pictures/63f42767-a9f5-4cdd-b952-8ea7b82b7e0c_T137-407-11-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071105100",
@@ -8151,7 +9019,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Elegancia discreta. Dial negro profundo con textura en relieve.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwb4fc1f36/product-pictures/7cb35e0f-1746-4892-a054-b32700bdbe10_T137-407-11-051-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1379079720100",
@@ -8160,7 +9034,13 @@ export const WATCHES: Watch[] = [
         price: 1840,
         description: "Vanguardia tecnológica. Caja y dial de carbono forjado jaspeado, ligero y duradero.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw627b1daa/product-pictures/ee3811c6-6d9e-44e1-889f-b0e6182bbc36_T137-907-97-201-00_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80 (Silicio)", caseSize: "40.5mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80 (Silicio)",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Carbono Forjado"
+        }
     },
     {
         id: "tissot-T1372071135100",
@@ -8169,7 +9049,13 @@ export const WATCHES: Watch[] = [
         price: 1273,
         description: "El color del momento, ahora en 35mm. Perfecto para muñecas más delgadas.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwdaec7f3c/product-pictures/842ff1da-5eac-4e1d-9222-1f828ab4835b_T137-207-11-351-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1372073302100",
@@ -8178,7 +9064,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "Todo el estilo del PRX Gold, en un tamaño clásico de 35mm. PVD oro amarillo.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwa499c9bb/product-pictures/c016ca2d-0369-4a45-969d-24c114b8d03d_T137-207-33-021-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374073305100",
@@ -8187,7 +9079,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "Diseñado con la estrella de la NBA. Estilo audaz en PVD oro con detalles únicos.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwf4dd9736/product-pictures/a56e8842-e93e-482a-b6bb-fb5dc223c496_T137-407-33-051-00_Shadow-png.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071109100",
@@ -8196,7 +9094,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Dial verde profundo. Una elección elegante y contemporánea.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw38ffa161/product-pictures/6c313b76-3e79-466d-83a5-042e47b276d5_T137-407-11-091-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1372071105100",
@@ -8205,7 +9109,13 @@ export const WATCHES: Watch[] = [
         price: 1273,
         description: "El clásico negro en 35mm. Atemporal y versátil.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw54e98d10/product-pictures/c84a100e-6e30-4244-aec6-44a8a1d1d333_T137-207-11-051-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071109101",
@@ -8214,7 +9124,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Un toque de frescura con el dial verde menta.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwa2ce0f04/product-pictures/d102160b-bf40-4582-a545-910f29536ad9_T137-407-11-091-01_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1372071109100",
@@ -8223,7 +9139,13 @@ export const WATCHES: Watch[] = [
         price: 1273,
         description: "Verde vibrante en formato compacto.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw5ab05c59/product-pictures/a2c83d75-5920-46ae-9357-748382f43010_T137-207-11-091-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071105101",
@@ -8232,7 +9154,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Variación con detalles sutiles en el dial negro.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwa50b0112/product-pictures/dfde7d22-afc8-42e1-b263-6087f1cd022d_T137-407-11-051-01_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374072103100",
@@ -8241,7 +9169,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Acero y detalles en PVD oro rosa. Una combinación sofisticada.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw993ed041/product-pictures/4d67a811-f821-4e4f-9413-0c141790493f_T137-407-21-031-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374271101100",
@@ -8250,7 +9184,13 @@ export const WATCHES: Watch[] = [
         price: 3440,
         description: "Cronógrafo automático con dial tipo panda. Estilo deportivo retro con el prestigio del Valjoux.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw6e9f0330/product-pictures/ee366fd4-7d3b-4cc8-8d59-07b9892ab1a5_T137-427-11-011-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Valjoux A05.H31", caseSize: "42mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Valjoux A05.H31",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374271109100",
@@ -8259,7 +9199,13 @@ export const WATCHES: Watch[] = [
         price: 3440,
         description: "Cronógrafo automático con dial verde profundo. Potencia y precisión Valjoux.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw04fe3403/product-pictures/1ef9b8d4-d9af-4a09-9b89-c1a4a62da84e_T137-427-11-091-00_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Valjoux A05.H31", caseSize: "42mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Valjoux A05.H31",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374271104100",
@@ -8268,7 +9214,13 @@ export const WATCHES: Watch[] = [
         price: 3440,
         description: "El cronógrafo PRX en su versión azul clásica. Movimiento Valjoux de alto rendimiento.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwb94346ee/product-pictures/d7a9cc11-d2f8-49e6-b9f0-a4918e18082e_T137-427-11-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Valjoux A05.H31", caseSize: "42mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Valjoux A05.H31",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1372071104100",
@@ -8277,7 +9229,13 @@ export const WATCHES: Watch[] = [
         price: 1273,
         description: "El favorito de todos en 35mm. Perfecto acabado y movimiento Powermatic 80.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw288f0509/product-pictures/c40959ea-db66-4297-b91b-63cb686c1cf5_T137-207-11-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Automático Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro irrayable con antírreflejos" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro irrayable con antírreflejos",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
 
     {
@@ -8287,7 +9245,13 @@ export const WATCHES: Watch[] = [
         price: 1561,
         description: "Ultraligero y resistente. La versión de titanio del icónico PRX para un confort absoluto.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw699e42ba/product-pictures/bb1339fa-d3fd-4572-a568-9ab0c2cbf248_T137-807-44-061-00_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "38mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
+        }
     },
     {
         id: "tissot-T1378074404100",
@@ -8296,7 +9260,13 @@ export const WATCHES: Watch[] = [
         price: 1561,
         description: "Esfera azul profundo en una caja de titanio de alta tecnología. Estilo y sustancia.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw544290e7/product-pictures/bfc139c5-3da5-4a57-849b-4711ef6b0f41_T137-807-44-041-00_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "38mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "38mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Titanio"
+        }
     },
     {
         id: "tissot-T1374071104102",
@@ -8305,7 +9275,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "Edición especial colaborativa. Un homenaje a la cultura pop y la relojería suiza.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw2e27ccbc/product-pictures/1640b44b-7c54-4c7a-878d-747000e92c3f_T137-407-11-041-02_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071135100",
@@ -8314,7 +9290,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "El codiciado dial azul hielo. Fresco, moderno y distintivo.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw195fabc9/product-pictures/5f0c9cb0-604a-476e-8ba7-563133b91d5c_T137-407-11-351-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374073305101",
@@ -8323,7 +9305,13 @@ export const WATCHES: Watch[] = [
         price: 1760,
         description: "Celebrando 50 años de un icono. Acabado PVD negro y detalles exclusivos.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwe931905e/product-pictures/2672bb1a-58ec-4ca0-aa4f-1b299fc802b2_T137-407-33-051-01_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374073304100",
@@ -8332,7 +9320,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "Todo en azul. Caja y brazalete con revestimiento PVD para un look impactante.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw8ddb8341/product-pictures/daab9283-862f-4732-abd0-fa955e11d7bd_T137-407-33-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374073302100",
@@ -8341,7 +9335,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "El clásico dorado, ahora con movimiento automático. Lujo y precisión.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwee0090e5/product-pictures/5729d09d-baed-40b3-8e7f-4643b9cd1a43_T137-407-33-021-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071104100",
@@ -8350,7 +9350,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "El superventas. Dial azul texturizado y brazalete integrado.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw27713dcb/product-pictures/63f42767-a9f5-4cdd-b952-8ea7b82b7e0c_T137-407-11-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071105100",
@@ -8359,7 +9365,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Elegancia discreta. Dial negro profundo para cualquier ocasión.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwb4fc1f36/product-pictures/7cb35e0f-1746-4892-a054-b32700bdbe10_T137-407-11-051-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1379079720100",
@@ -8368,7 +9380,13 @@ export const WATCHES: Watch[] = [
         price: 1840,
         description: "Vanguardia tecnológica. Caja y dial de carbono forjado.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw627b1daa/product-pictures/ee3811c6-6d9e-44e1-889f-b0e6182bbc36_T137-907-97-201-00_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40.5mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80 (Silicio)",
+            "Tamaño de Caja": "40.5mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Carbono Forjado"
+        }
     },
     {
         id: "tissot-T1372071135100",
@@ -8377,7 +9395,13 @@ export const WATCHES: Watch[] = [
         price: 1273,
         description: "El color del momento, ahora en 35mm. Perfecto para muñecas más delgadas.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwdaec7f3c/product-pictures/842ff1da-5eac-4e1d-9222-1f828ab4835b_T137-207-11-351-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1372073302100",
@@ -8386,7 +9410,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "Todo el estilo del PRX Gold, en un tamaño clásico de 35mm.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwa499c9bb/product-pictures/c016ca2d-0369-4a45-969d-24c114b8d03d_T137-207-33-021-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374073305100",
@@ -8395,7 +9425,13 @@ export const WATCHES: Watch[] = [
         price: 1520,
         description: "Diseñado con la estrella de la NBA. Estilo audaz y detalles únicos.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwf4dd9736/product-pictures/a56e8842-e93e-482a-b6bb-fb5dc223c496_T137-407-33-051-00_Shadow-png.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071109100",
@@ -8404,7 +9440,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Dial verde profundo. Una elección elegante y contemporánea.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw38ffa161/product-pictures/6c313b76-3e79-466d-83a5-042e47b276d5_T137-407-11-091-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1372071105100",
@@ -8413,7 +9455,13 @@ export const WATCHES: Watch[] = [
         price: 1273,
         description: "El clásico negro en 35mm. Atemporal y versátil.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw54e98d10/product-pictures/c84a100e-6e30-4244-aec6-44a8a1d1d333_T137-207-11-051-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071109101",
@@ -8422,7 +9470,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Un toque de frescura con el dial verde menta.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwa2ce0f04/product-pictures/d102160b-bf40-4582-a545-910f29536ad9_T137-407-11-091-01_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1372071109100",
@@ -8431,7 +9485,13 @@ export const WATCHES: Watch[] = [
         price: 1273,
         description: "Verde vibrante en formato compacto.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw5ab05c59/product-pictures/a2c83d75-5920-46ae-9357-748382f43010_T137-207-11-091-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374071105101",
@@ -8440,7 +9500,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Variación con detalles sutiles en el dial negro.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwa50b0112/product-pictures/dfde7d22-afc8-42e1-b263-6087f1cd022d_T137-407-11-051-01_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374072103100",
@@ -8449,7 +9515,13 @@ export const WATCHES: Watch[] = [
         price: 1360,
         description: "Acero y detalles en oro rosa. Una combinación sofisticada.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw993ed041/product-pictures/4d67a811-f821-4e4f-9413-0c141790493f_T137-407-21-031-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "40mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "40mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374271101100",
@@ -8458,7 +9530,13 @@ export const WATCHES: Watch[] = [
         price: 3440,
         description: "Cronógrafo automático con dial tipo panda. Estilo deportivo retro.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw6e9f0330/product-pictures/ee366fd4-7d3b-4cc8-8d59-07b9892ab1a5_T137-427-11-011-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Valjoux A05.H31", caseSize: "42mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Valjoux A05.H31",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374271109100",
@@ -8467,7 +9545,13 @@ export const WATCHES: Watch[] = [
         price: 3440,
         description: "Cronógrafo automático con dial verde profundo. Potencia y precisión.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw04fe3403/product-pictures/1ef9b8d4-d9af-4a09-9b89-c1a4a62da84e_T137-427-11-091-00_Shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Valjoux A05.H31", caseSize: "42mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Valjoux A05.H31",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1374271104100",
@@ -8476,7 +9560,13 @@ export const WATCHES: Watch[] = [
         price: 3440,
         description: "El cronógrafo PRX en su versión azul clásica.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwb94346ee/product-pictures/d7a9cc11-d2f8-49e6-b9f0-a4918e18082e_T137-427-11-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Valjoux A05.H31", caseSize: "42mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Valjoux A05.H31",
+            "Tamaño de Caja": "42mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-T1372071104100",
@@ -8485,7 +9575,13 @@ export const WATCHES: Watch[] = [
         price: 1273,
         description: "El favorito de todos en 35mm.",
         image: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw288f0509/product-pictures/c40959ea-db66-4297-b91b-63cb686c1cf5_T137-207-11-041-00_shadow.png?sm=fit&sw=800&sh=800",
-        details: { movement: "Powermatic 80", caseSize: "35mm", waterResistance: "100m", crystal: "Zafiro" }
+        details: {
+            "Movimiento": "Automático Powermatic 80",
+            "Tamaño de Caja": "35mm",
+            "Resistencia al Agua": "100m",
+            "Cristal": "Zafiro",
+            "Material de la Caja": "Acero Inoxidable 316L"
+        }
     },
     {
         id: "tissot-prx-collection-end", // Marker to ensure proper comma handling
@@ -8494,6 +9590,6 @@ export const WATCHES: Watch[] = [
         price: 0,
         description: "Hidden marker",
         image: "",
-        details: { movement: "", caseSize: "", waterResistance: "", crystal: "" }
+        details: { "Movimiento": "", "Tamaño de Caja": "", "Resistencia al Agua": "", "Cristal": "" }
     },
 ];

@@ -21,8 +21,8 @@ const WATCHES_DATA = [
     },
     {
         id: 'seiko-srpk48',
-        brand: 'Seiko 5 Sports',
-        model: 'SRPK48',
+        brand: 'Seiko Presage',
+        model: 'Cocktail Time SRPK48',
         description: 'Encanto retro y fiabilidad moderna. Desde 1968, este clásico reinventado ofrece durabilidad y estilo en un impresionante acabado dorado.',
         link: '/collections/seiko',
         mainImage: "https://www.revwatches.com/wp-content/uploads/SRPK48-1.png",

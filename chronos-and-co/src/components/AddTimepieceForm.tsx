@@ -21,6 +21,14 @@ export function AddTimepieceForm() {
     const [model, setModel] = useState('');
     const [price, setPrice] = useState('');
     const [status, setStatus] = useState('Available');
+
+    const [details, setDetails] = useState({
+        "Movimiento": "",
+        "Tamaño de Caja": "",
+        "Resistencia al Agua": "",
+        "Cristal": "",
+        "Material de la Caja": ""
+    });
     const [selectedCollections, setSelectedCollections] = useState<string[]>([]);
 
     const onDrop = useCallback((acceptedFiles: File[]) => {
@@ -71,6 +79,14 @@ export function AddTimepieceForm() {
         setModel('');
         setPrice('');
         setStatus('Available');
+
+        setDetails({
+            "Movimiento": "",
+            "Tamaño de Caja": "",
+            "Resistencia al Agua": "",
+            "Cristal": "",
+            "Material de la Caja": ""
+        });
         setSelectedCollections([]);
         setImages([]);
         setPreviewUrls([]);
@@ -135,6 +151,58 @@ export function AddTimepieceForm() {
                                 <option key={s} value={s} className="bg-rich-black">{s}</option>
                             ))}
                         </select>
+                    </div>
+                </div>
+            </div>
+
+            {/* Technical Details */}
+            <div className="space-y-4">
+                <label className="block text-xs uppercase tracking-widest text-white/40 font-bold mb-3">Especificaciones Técnicas</label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white/5 p-6 rounded-sm border border-white/10">
+                    <div>
+                        <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Movimiento</label>
+                        <input
+                            type="text"
+                            value={details["Movimiento"]}
+                            onChange={(e) => setDetails({ ...details, "Movimiento": e.target.value })}
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Tamaño de Caja</label>
+                        <input
+                            type="text"
+                            value={details["Tamaño de Caja"]}
+                            onChange={(e) => setDetails({ ...details, "Tamaño de Caja": e.target.value })}
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Resistencia al Agua</label>
+                        <input
+                            type="text"
+                            value={details["Resistencia al Agua"]}
+                            onChange={(e) => setDetails({ ...details, "Resistencia al Agua": e.target.value })}
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Material de la Caja</label>
+                        <input
+                            type="text"
+                            value={details["Material de la Caja"]}
+                            onChange={(e) => setDetails({ ...details, "Material de la Caja": e.target.value })}
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                        />
+                    </div>
+                    <div className="md:col-span-2">
+                        <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Cristal</label>
+                        <input
+                            type="text"
+                            value={details["Cristal"]}
+                            onChange={(e) => setDetails({ ...details, "Cristal": e.target.value })}
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
+                        />
                     </div>
                 </div>
             </div>

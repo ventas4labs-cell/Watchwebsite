@@ -3,7 +3,6 @@ import { Navbar } from '@/components/Navbar';
 import { BrandSlider } from '@/components/BrandSlider';
 import { CartDrawer } from '@/components/CartDrawer';
 import { ConciergePhilosophy } from '@/components/ConciergePhilosophy';
-import { CommissionCTA } from '@/components/CommissionCTA';
 import { FeaturedWatches } from '@/components/FeaturedWatches';
 import { MobileStickyBar } from '@/components/MobileStickyBar';
 
@@ -18,7 +17,6 @@ export default function Home() {
       <BrandSlider />
 
       <ConciergePhilosophy />
-      <CommissionCTA />
 
       <FeaturedWatches />
 

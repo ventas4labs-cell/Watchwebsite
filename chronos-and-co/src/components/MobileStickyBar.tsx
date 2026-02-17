@@ -28,10 +28,10 @@ export function MobileStickyBar() {
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-md border-t border-white/10" />
                     <div className="relative z-10">
                         <Link
-                            href="/commission"
+                            href="/shop/pre-order"
                             className="flex items-center justify-center w-full bg-gold-500 text-black font-bold uppercase tracking-widest text-xs py-4 rounded-sm shadow-[0_0_15px_rgba(212,175,55,0.3)]"
                         >
-                            Solicitar Comisión
+                            Hacer Pre-orden
                         </Link>
                     </div>
                 </motion.div>

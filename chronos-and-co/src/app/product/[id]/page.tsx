@@ -80,33 +80,17 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                             <p className="text-3xl text-white/90 font-light">${watch.price.toLocaleString()}</p>
                         </div>
 
-                        <div className="prose prose-invert prose-lg text-white/60 font-light">
-                            <p className="text-xl leading-relaxed">{watch.description}</p>
-                            <p>
-                                Experimente la cúspide de la artesanía. Este reloj representa un legado de ingeniería de precisión
-                                y refinamiento estético. Diseñado para aquellos que aprecian el arte sutil de la relojería.
-                            </p>
-                        </div>
+
 
                         <div className="border-t border-white/10 pt-8 space-y-6">
                             <h3 className="font-display text-xl tracking-wide">Especificaciones Técnicas</h3>
                             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4 text-sm">
-                                <div className="flex flex-col">
-                                    <dt className="text-white/40 mb-1 uppercase tracking-wider text-xs">Movimiento</dt>
-                                    <dd className="font-medium text-white">{watch.details.movement}</dd>
-                                </div>
-                                <div className="flex flex-col">
-                                    <dt className="text-white/40 mb-1 uppercase tracking-wider text-xs">Material de la Caja</dt>
-                                    <dd className="font-medium text-white">Acero Inoxidable 316L</dd>
-                                </div>
-                                <div className="flex flex-col">
-                                    <dt className="text-white/40 mb-1 uppercase tracking-wider text-xs">Resistencia al Agua</dt>
-                                    <dd className="font-medium text-white">{watch.details.waterResistance}</dd>
-                                </div>
-                                <div className="flex flex-col">
-                                    <dt className="text-white/40 mb-1 uppercase tracking-wider text-xs">Cristal</dt>
-                                    <dd className="font-medium text-white">{watch.details.crystal}</dd>
-                                </div>
+                                {Object.entries(watch.details).map(([key, value]) => (
+                                    <div key={key} className="flex flex-col">
+                                        <dt className="text-white/40 mb-1 uppercase tracking-wider text-xs">{key}</dt>
+                                        <dd className="font-medium text-white">{value}</dd>
+                                    </div>
+                                ))}
                             </dl>
                         </div>
 
