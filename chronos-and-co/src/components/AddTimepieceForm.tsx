@@ -7,9 +7,16 @@ import { toast } from 'sonner';
 import clsx from 'clsx';
 import Image from 'next/image';
 
-const BRANDS = ['Rolex', 'Patek Philippe', 'Audemars Piguet', 'Omega', 'Cartier', 'Tissot', 'Seiko', 'Bulova'];
-const COLLECTIONS = ['Divers', 'Chronograph', 'Dress', 'Vintage', 'Gold', 'Limited Edition'];
-const STATUSES = ['Available', 'Reserved', 'Sold'];
+import {
+    WATCH_BRANDS as BRANDS,
+    WATCH_COLLECTIONS as COLLECTIONS,
+    WATCH_STATUSES as STATUSES,
+    WATCH_MOVEMENTS,
+    WATCH_CASE_SIZES,
+    WATCH_WATER_RESISTANCE,
+    WATCH_CASE_MATERIALS,
+    WATCH_CRYSTAL_TYPES
+} from '@/lib/constants';
 
 export function AddTimepieceForm() {
     const [isLoading, setIsLoading] = useState(false);
@@ -17,10 +24,11 @@ export function AddTimepieceForm() {
     const [previewUrls, setPreviewUrls] = useState<string[]>([]);
 
     // Form State
-    const [brand, setBrand] = useState(BRANDS[0]);
+    const [brand, setBrand] = useState<string>(BRANDS[0]);
     const [model, setModel] = useState('');
     const [price, setPrice] = useState('');
-    const [status, setStatus] = useState('Available');
+    const [status, setStatus] = useState<string>('Available');
+    const [isFeatured, setIsFeatured] = useState(false);
 
     const [details, setDetails] = useState({
         "Movimiento": "",
@@ -152,6 +160,19 @@ export function AddTimepieceForm() {
                             ))}
                         </select>
                     </div>
+
+                    <div className="flex items-center gap-3 bg-white/5 p-3 rounded-sm border border-white/10 h-[50px] mt-auto">
+                        <input
+                            type="checkbox"
+                            id="is_featured_new"
+                            checked={isFeatured}
+                            onChange={(e) => setIsFeatured(e.target.checked)}
+                            className="w-4 h-4 rounded-sm bg-black border border-white/20 checked:bg-gold-500 checked:border-gold-500 focus:ring-gold-500/50 transition-colors cursor-pointer appearance-none relative checked:after:content-['✓'] checked:after:absolute checked:after:text-black checked:after:text-[10px] checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 checked:after:font-bold"
+                        />
+                        <label htmlFor="is_featured_new" className="text-xs text-white cursor-pointer select-none">
+                            <span className="font-bold text-gold-500 uppercase tracking-wider">Destacado</span>
+                        </label>
+                    </div>
                 </div>
             </div>
 
@@ -161,48 +182,68 @@ export function AddTimepieceForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white/5 p-6 rounded-sm border border-white/10">
                     <div>
                         <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Movimiento</label>
-                        <input
-                            type="text"
+                        <select
                             value={details["Movimiento"]}
                             onChange={(e) => setDetails({ ...details, "Movimiento": e.target.value })}
-                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                        />
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                        >
+                            <option value="">Seleccionar...</option>
+                            {WATCH_MOVEMENTS.map(opt => (
+                                <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                            ))}
+                        </select>
                     </div>
                     <div>
                         <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Tamaño de Caja</label>
-                        <input
-                            type="text"
+                        <select
                             value={details["Tamaño de Caja"]}
                             onChange={(e) => setDetails({ ...details, "Tamaño de Caja": e.target.value })}
-                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                        />
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                        >
+                            <option value="">Seleccionar...</option>
+                            {WATCH_CASE_SIZES.map(opt => (
+                                <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                            ))}
+                        </select>
                     </div>
                     <div>
                         <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Resistencia al Agua</label>
-                        <input
-                            type="text"
+                        <select
                             value={details["Resistencia al Agua"]}
                             onChange={(e) => setDetails({ ...details, "Resistencia al Agua": e.target.value })}
-                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                        />
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                        >
+                            <option value="">Seleccionar...</option>
+                            {WATCH_WATER_RESISTANCE.map(opt => (
+                                <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                            ))}
+                        </select>
                     </div>
                     <div>
                         <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Material de la Caja</label>
-                        <input
-                            type="text"
+                        <select
                             value={details["Material de la Caja"]}
                             onChange={(e) => setDetails({ ...details, "Material de la Caja": e.target.value })}
-                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                        />
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                        >
+                            <option value="">Seleccionar...</option>
+                            {WATCH_CASE_MATERIALS.map(opt => (
+                                <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                            ))}
+                        </select>
                     </div>
                     <div className="md:col-span-2">
                         <label className="block text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-2">Cristal</label>
-                        <input
-                            type="text"
+                        <select
                             value={details["Cristal"]}
                             onChange={(e) => setDetails({ ...details, "Cristal": e.target.value })}
-                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                        />
+                            className="w-full bg-black/20 border border-white/10 rounded-sm py-2 px-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                        >
+                            <option value="">Seleccionar...</option>
+                            {WATCH_CRYSTAL_TYPES.map(opt => (
+                                <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                            ))}
+                        </select>
                     </div>
                 </div>
             </div>
@@ -249,6 +290,38 @@ export function AddTimepieceForm() {
                     <Upload className={clsx("w-12 h-12 mx-auto mb-4", isDragActive ? "text-gold-500" : "text-white/20")} />
                     <p className="text-white/60 font-medium">Arrastra y suelta imágenes de alta resolución aquí</p>
                     <p className="text-white/20 text-xs mt-2">o haz clic para seleccionar archivos</p>
+                </div>
+
+                {/* URL Input */}
+                <div className="flex gap-2 mb-6">
+                    <input
+                        type="text"
+                        placeholder="O añadir URL de imagen..."
+                        className="flex-1 bg-white/5 border border-white/10 rounded-sm p-3 text-sm text-white focus:outline-none focus:border-gold-500/50 transition-colors font-mono"
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                e.preventDefault();
+                                const input = e.currentTarget;
+                                if (input.value) {
+                                    setPreviewUrls(prev => [...prev, input.value]);
+                                    input.value = '';
+                                }
+                            }
+                        }}
+                    />
+                    <button
+                        type="button"
+                        onClick={(e) => {
+                            const input = e.currentTarget.previousElementSibling as HTMLInputElement;
+                            if (input.value) {
+                                setPreviewUrls(prev => [...prev, input.value]);
+                                input.value = '';
+                            }
+                        }}
+                        className="px-6 bg-white/10 hover:bg-gold-500 hover:text-black text-white rounded-sm transition-colors font-bold text-lg"
+                    >
+                        +
+                    </button>
                 </div>
 
                 {/* Thumbnails */}

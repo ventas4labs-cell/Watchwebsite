@@ -9,6 +9,13 @@ import Image from 'next/image';
 import { useDropzone } from 'react-dropzone';
 import { uploadWatchImage } from '@/lib/supabase';
 import { toast } from 'sonner';
+import {
+    WATCH_MOVEMENTS,
+    WATCH_CASE_SIZES,
+    WATCH_WATER_RESISTANCE,
+    WATCH_CASE_MATERIALS,
+    WATCH_CRYSTAL_TYPES
+} from '@/lib/constants';
 
 interface EditWatchModalProps {
     watch: Watch | null;
@@ -190,6 +197,20 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                                 </select>
                             </div>
 
+                            <div className="flex items-center gap-3 bg-white/5 p-3 rounded-sm border border-white/10">
+                                <input
+                                    type="checkbox"
+                                    id="is_featured"
+                                    checked={formData.is_featured || false}
+                                    onChange={(e) => setFormData({ ...formData, is_featured: e.target.checked })}
+                                    className="w-4 h-4 rounded-sm bg-black border border-white/20 checked:bg-gold-500 checked:border-gold-500 focus:ring-gold-500/50 transition-colors cursor-pointer appearance-none relative checked:after:content-['✓'] checked:after:absolute checked:after:text-black checked:after:text-[10px] checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 checked:after:font-bold"
+                                />
+                                <label htmlFor="is_featured" className="text-xs text-white cursor-pointer select-none">
+                                    <span className="font-bold text-gold-500 uppercase tracking-wider">Destacado</span>
+                                    <span className="block text-[10px] text-white/40">Mostrar en la página principal</span>
+                                </label>
+                            </div>
+
                             <div className="space-y-2">
                                 <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Descripción</label>
                                 <textarea
@@ -202,63 +223,83 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Movimiento</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         value={formData.details?.["Movimiento"] || ''}
                                         onChange={(e) => setFormData({
                                             ...formData,
                                             details: { ...formData.details!, "Movimiento": e.target.value }
                                         })}
-                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                                    />
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                                    >
+                                        <option value="">Seleccionar...</option>
+                                        {WATCH_MOVEMENTS.map(opt => (
+                                            <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                                        ))}
+                                    </select>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Tamaño de Caja</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         value={formData.details?.["Tamaño de Caja"] || ''}
                                         onChange={(e) => setFormData({
                                             ...formData,
                                             details: { ...formData.details!, "Tamaño de Caja": e.target.value }
                                         })}
-                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                                    />
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                                    >
+                                        <option value="">Seleccionar...</option>
+                                        {WATCH_CASE_SIZES.map(opt => (
+                                            <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                                        ))}
+                                    </select>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Resistencia Agua</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         value={formData.details?.["Resistencia al Agua"] || ''}
                                         onChange={(e) => setFormData({
                                             ...formData,
                                             details: { ...formData.details!, "Resistencia al Agua": e.target.value }
                                         })}
-                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                                    />
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                                    >
+                                        <option value="">Seleccionar...</option>
+                                        {WATCH_WATER_RESISTANCE.map(opt => (
+                                            <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                                        ))}
+                                    </select>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Material Caja</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         value={formData.details?.["Material de la Caja"] || ''}
                                         onChange={(e) => setFormData({
                                             ...formData,
                                             details: { ...formData.details!, "Material de la Caja": e.target.value }
                                         })}
-                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                                    />
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                                    >
+                                        <option value="">Seleccionar...</option>
+                                        {WATCH_CASE_MATERIALS.map(opt => (
+                                            <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                                        ))}
+                                    </select>
                                 </div>
                                 <div className="space-y-2 col-span-2">
                                     <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Cristal</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         value={formData.details?.["Cristal"] || ''}
                                         onChange={(e) => setFormData({
                                             ...formData,
                                             details: { ...formData.details!, "Cristal": e.target.value }
                                         })}
-                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
-                                    />
+                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                                    >
+                                        <option value="">Seleccionar...</option>
+                                        {WATCH_CRYSTAL_TYPES.map(opt => (
+                                            <option key={opt} value={opt} className="bg-rich-black">{opt}</option>
+                                        ))}
+                                    </select>
                                 </div>
                             </div>
 
@@ -298,23 +339,64 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                                 </div>
 
                                 {/* Gallery Upload */}
-                                <div className="space-y-2">
+                                <div className="space-y-4">
                                     <label className="text-[10px] text-white/40 uppercase tracking-widest ml-1">Galería</label>
+
+                                    {/* URL Input for Gallery */}
+                                    <div className="flex gap-2">
+                                        <input
+                                            type="text"
+                                            placeholder="Añadir URL de imagen..."
+                                            className="flex-1 bg-white/5 border border-white/10 rounded-sm p-2 text-xs text-white focus:outline-none focus:border-gold-500/50 transition-colors font-mono"
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Enter') {
+                                                    e.preventDefault();
+                                                    const input = e.currentTarget;
+                                                    if (input.value) {
+                                                        setFormData({
+                                                            ...formData,
+                                                            gallery: [...(formData.gallery || []), input.value]
+                                                        });
+                                                        input.value = '';
+                                                    }
+                                                }
+                                            }}
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={(e) => {
+                                                const input = e.currentTarget.previousElementSibling as HTMLInputElement;
+                                                if (input.value) {
+                                                    setFormData({
+                                                        ...formData,
+                                                        gallery: [...(formData.gallery || []), input.value]
+                                                    });
+                                                    input.value = '';
+                                                }
+                                            }}
+                                            className="px-4 bg-white/10 hover:bg-gold-500 hover:text-black text-white rounded-sm transition-colors font-bold"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+
                                     <div className="grid grid-cols-4 gap-2">
                                         {formData.gallery?.map((img, index) => (
                                             <div key={index} className="relative aspect-square bg-white/5 rounded-sm overflow-hidden group border border-white/10">
                                                 <Image src={img} alt={`Gallery ${index}`} fill className="object-cover" />
-                                                <button
-                                                    type="button"
-                                                    onClick={() => {
-                                                        const newGallery = [...(formData.gallery || [])];
-                                                        newGallery.splice(index, 1);
-                                                        setFormData({ ...formData, gallery: newGallery });
-                                                    }}
-                                                    className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-red-500"
-                                                >
-                                                    <X className="w-5 h-5" />
-                                                </button>
+                                                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => {
+                                                            const newGallery = [...(formData.gallery || [])];
+                                                            newGallery.splice(index, 1);
+                                                            setFormData({ ...formData, gallery: newGallery });
+                                                        }}
+                                                        className="text-white hover:text-red-500 transition-colors"
+                                                    >
+                                                        <X className="w-5 h-5" />
+                                                    </button>
+                                                </div>
                                             </div>
                                         ))}
                                         <ImageUploadDropbox

@@ -1,82 +1,105 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { createClient } from '@supabase/supabase-js';
+import { Watch } from '@/lib/seed-data';
 
-const WATCHES_DATA = [
-    {
-        id: 'tissot-chemin',
-        brand: 'Tissot',
-        model: 'Chemin des Tourelles',
-        description: 'Un homenaje a la herencia y la precisión suiza. Este modelo encarna la elegancia atemporal con un diseño contemporáneo, perfecto para quien aprecia la sofisticación en cada detalle.',
-        link: '/collections/tissot',
-        mainImage: "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwbc1c222d/product-pictures/c9b3eacb-ef18-4c0b-827b-19b4589d4df7_T139-836-36-441-00_Shadow.png?sm=fit&sw=1680&sh=1680,gravity=center",
-        gallery: [
-            "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwdc28064b/product-pictures/7e47176c-e68f-4d5a-b077-c036a36db218_T139-836-36-441-00_DETAIL-1.png?sm=fit&sw=1680&sh=1680,gravity=center",
-            "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw2643126b/product-pictures/1165c6fc-ad23-4312-a161-89348038c5e8_T600-049-593_ZOOM.png?sm=fit&sw=1680&sh=1680,gravity=center",
-            "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw3812833c/product-pictures/4d233bff-118d-4e28-9b4f-1bdfbfd98361_T139_836_36_441_00_DETAIL-2.png?sm=fit&sw=1680&sh=1680,gravity=center",
-        ]
-    },
-    {
-        id: 'seiko-srpk48',
-        brand: 'Seiko Presage',
-        model: 'Cocktail Time SRPK48',
-        description: 'Encanto retro y fiabilidad moderna. Desde 1968, este clásico reinventado ofrece durabilidad y estilo en un impresionante acabado dorado.',
-        link: '/collections/seiko',
-        mainImage: "https://www.revwatches.com/wp-content/uploads/SRPK48-1.png",
-        gallery: [
-            "https://timeaccess-store.com/cdn/shop/files/SRPK48m.jpg?v=1734688172&width=1080",
-            "https://watchzonebd.com/uploads/multiimage/SRPK48_5_332.webp",
-            "https://www.revwatches.com/wp-content/uploads/SRPK48-1.png" // Reusing main as 3rd gallery image to maintain grid
-        ]
-    }
-];
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export function FeaturedWatches() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [watches, setWatches] = useState<Watch[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchFeaturedWatches() {
+            if (!supabaseUrl || !supabaseKey) {
+                setIsLoading(false);
+                return;
+            }
+
+            const { data, error } = await supabase
+                .from('watches')
+                .select('*')
+                .eq('is_featured', true);
+
+            if (data && data.length > 0) {
+                setWatches(data as Watch[]);
+            } else {
+                // Fallback or empty state? For now, let's just leave it empty if nothing is featured.
+                // Or we could fetch some default ones? 
+                // Let's fetch the first 3 watches as fallback if none are featured explicitly.
+                const { data: fallbackData } = await supabase
+                    .from('watches')
+                    .select('*')
+                    .limit(3);
+
+                if (fallbackData) {
+                    setWatches(fallbackData as Watch[]);
+                }
+            }
+            setIsLoading(false);
+        }
+
+        fetchFeaturedWatches();
+    }, []);
 
     const nextWatch = () => {
-        setCurrentIndex((prev) => (prev + 1) % WATCHES_DATA.length);
+        setCurrentIndex((prev) => (prev + 1) % watches.length);
     };
 
     const prevWatch = () => {
-        setCurrentIndex((prev) => (prev - 1 + WATCHES_DATA.length) % WATCHES_DATA.length);
+        setCurrentIndex((prev) => (prev - 1 + watches.length) % watches.length);
     };
 
-    const currentWatch = WATCHES_DATA[currentIndex];
+    if (isLoading) {
+        return <div className="h-[600px] flex items-center justify-center"><div className="w-8 h-8 border-2 border-gold-500 border-t-transparent rounded-full animate-spin" /></div>;
+    }
+
+    if (watches.length === 0) return null;
+
+    const currentWatch = watches[currentIndex];
+
+    // Ensure we have a valid image for gallery mapping, use main image if gallery is missing/empty
+    const displayGallery = currentWatch.gallery && currentWatch.gallery.length > 0
+        ? currentWatch.gallery.slice(0, 3)
+        : [currentWatch.image, currentWatch.image, currentWatch.image]; // Fallback grid
 
     return (
         <section id="catalog" className="py-20 md:py-32 container mx-auto px-6 relative group">
-
-            {/* Navigation Buttons */}
-            {/* Navigation Buttons */}
-            <button
-                onClick={prevWatch}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-gold-500 text-white p-3 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110"
-            >
-                <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-                onClick={nextWatch}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-gold-500 text-white p-3 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110"
-            >
-                <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Pagination Dots */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-                {WATCHES_DATA.map((_, index) => (
+            {watches.length > 1 && (
+                <>
                     <button
-                        key={index}
-                        onClick={() => setCurrentIndex(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-gold-500 scale-125' : 'bg-white/20 hover:bg-white/40'
-                            }`}
-                        aria-label={`Go to slide ${index + 1}`}
-                    />
-                ))}
-            </div>
+                        onClick={prevWatch}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-gold-500 text-white p-3 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110"
+                    >
+                        <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                        onClick={nextWatch}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-gold-500 text-white p-3 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110"
+                    >
+                        <ChevronRight className="w-6 h-6" />
+                    </button>
+
+                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+                        {watches.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentIndex(index)}
+                                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-gold-500 scale-125' : 'bg-white/20 hover:bg-white/40'
+                                    }`}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
 
             <AnimatePresence mode="wait">
                 <motion.div
@@ -118,7 +141,7 @@ export function FeaturedWatches() {
                                 transition={{ delay: 0.5 }}
                             >
                                 <Link
-                                    href={currentWatch.link}
+                                    href={`/product/${currentWatch.id}`}
                                     className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold-500 transition-colors duration-300"
                                 >
                                     Ver Colección <ArrowRight className="w-4 h-4" />
@@ -133,7 +156,7 @@ export function FeaturedWatches() {
                                 initial={{ scale: 0.9, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
-                                src={currentWatch.mainImage}
+                                src={currentWatch.image}
                                 alt={currentWatch.model}
                                 className="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl object-contain h-[500px]"
                             />
@@ -142,7 +165,7 @@ export function FeaturedWatches() {
 
                     {/* Gallery Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {currentWatch.gallery.map((src, index) => (
+                        {displayGallery.map((src, index) => (
                             <motion.div
                                 key={`${currentWatch.id}-gallery-${index}`}
                                 initial={{ opacity: 0, y: 40 }}

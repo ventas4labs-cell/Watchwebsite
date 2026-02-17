@@ -6,6 +6,7 @@ export interface Watch {
     description: string;
     image: string;
     gallery?: string[];
+    is_featured?: boolean;
     availability?: 'in-stock' | 'pre-order';
     details: Record<string, string>;
 }

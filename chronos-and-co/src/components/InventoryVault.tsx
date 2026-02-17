@@ -44,10 +44,19 @@ export function InventoryVault() {
         }
     };
 
+    // Group inventory by Brand
+    const groupedInventory = filteredInventory.reduce((acc, item) => {
+        if (!acc[item.brand]) {
+            acc[item.brand] = [];
+        }
+        acc[item.brand].push(item);
+        return acc;
+    }, {} as Record<string, Watch[]>);
+
     return (
-        <div className="space-y-8">
+        <div className="space-y-12">
             {/* Brand Filter - Scrollable Pill Bar */}
-            <div className="overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide">
+            <div className="overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide sticky top-0 z-40 bg-rich-black/95 backdrop-blur-sm py-4 border-b border-white/5">
                 <div className="flex gap-3 w-max">
                     {brands.map((brand) => (
                         <button
@@ -66,142 +75,136 @@ export function InventoryVault() {
                 </div>
             </div>
 
-            {/* Desktop Table View */}
-            <div className="hidden md:block bg-white/[0.02] border border-white/5 rounded-sm overflow-hidden">
-                <table className="w-full">
-                    <thead>
-                        <tr className="border-b border-white/5 text-left">
-                            <th className="py-4 px-6 text-[10px] uppercase tracking-widest text-white/40 font-bold">Asset</th>
-                            <th className="py-4 px-6 text-[10px] uppercase tracking-widest text-white/40 font-bold">Reference</th>
-                            <th className="py-4 px-6 text-[10px] uppercase tracking-widest text-white/40 font-bold">Price</th>
-                            <th className="py-4 px-6 text-[10px] uppercase tracking-widest text-white/40 font-bold">Status</th>
-                            <th className="py-4 px-6 text-[10px] uppercase tracking-widest text-white/40 font-bold text-right">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-white/5">
-                        <AnimatePresence>
-                            {filteredInventory.map((item) => (
-                                <motion.tr
-                                    key={item.id}
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="group hover:bg-white/5 transition-colors"
-                                >
-                                    <td className="py-4 px-6">
-                                        <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10 group-hover:border-gold-500/50 transition-colors">
+            {/* Content Area */}
+            <div className="space-y-16">
+                <AnimatePresence>
+                    {Object.entries(groupedInventory).map(([brand, items]) => (
+                        <motion.div
+                            key={brand}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0 }}
+                            className="space-y-6"
+                        >
+                            {/* Brand Header */}
+                            <div className="flex items-center gap-4">
+                                <h2 className="text-2xl font-bold text-white uppercase tracking-wider">{brand}</h2>
+                                <div className="h-px flex-1 bg-white/10"></div>
+                                <span className="text-xs text-white/40 font-mono">
+                                    {items.length} {items.length === 1 ? 'PIECE' : 'PIECES'}
+                                </span>
+                            </div>
+
+                            {/* Cards Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                {items.map((item) => (
+                                    <div
+                                        key={item.id}
+                                        className="bg-white/[0.02] border border-white/5 rounded-sm overflow-hidden group hover:border-white/20 transition-all duration-300 hover:bg-white/[0.04]"
+                                    >
+                                        {/* Main Image Area */}
+                                        <div className="relative aspect-[4/3] w-full border-b border-white/5 bg-black/20">
                                             <Image
                                                 src={item.image}
                                                 alt={item.model}
                                                 fill
-                                                className="object-cover"
+                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
                                             />
-                                        </div>
-                                    </td>
-                                    <td className="py-4 px-6">
-                                        <div className="flex flex-col">
-                                            <span className="text-white font-bold text-sm tracking-wide">{item.model}</span>
-                                            <span className="text-white/40 text-[10px] uppercase tracking-wider">{item.brand}</span>
-                                        </div>
-                                    </td>
-                                    <td className="py-4 px-6">
-                                        <span className="font-mono text-gold-500 text-sm tracking-wider">
-                                            ${item.price.toLocaleString()}
-                                        </span>
-                                    </td>
-                                    <td className="py-4 px-6">
-                                        <span className={clsx(
-                                            "inline-flex items-center px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider border",
-                                            getStatusColor(item.availability)
-                                        )}>
-                                            {getStatusLabel(item.availability)}
-                                        </span>
-                                    </td>
-                                    <td className="py-4 px-6 text-right relative">
-                                        <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <button
-                                                onClick={() => setEditingWatch(item)}
-                                                className="p-2 text-white/40 hover:text-white hover:bg-white/10 rounded-full transition-colors"
-                                            >
-                                                <Edit className="w-4 h-4" />
-                                            </button>
-                                            <button
-                                                onClick={() => deleteItem(item.id)}
-                                                className="p-2 text-white/40 hover:text-red-500 hover:bg-red-500/10 rounded-full transition-colors"
-                                            >
-                                                <Trash2 className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    </td>
-                                </motion.tr>
-                            ))}
-                        </AnimatePresence>
-                    </tbody>
-                </table>
-            </div>
 
-            {/* Mobile Card View */}
-            <div className="md:hidden space-y-4">
-                <AnimatePresence>
-                    {filteredInventory.map((item) => (
-                        <motion.div
-                            key={item.id}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0 }}
-                            className="bg-white/5 border border-white/10 rounded-sm overflow-hidden"
-                        >
-                            <div className="relative aspect-video w-full border-b border-white/5">
-                                <Image
-                                    src={item.image}
-                                    alt={item.model}
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute top-3 right-3">
-                                    <span className={clsx(
-                                        "inline-flex items-center px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider border backdrop-blur-md shadow-lg",
-                                        getStatusColor(item.availability)
-                                    )}>
-                                        {getStatusLabel(item.availability)}
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="p-4">
-                                <div className="flex justify-between items-start mb-2">
-                                    <div>
-                                        <h3 className="text-white font-bold text-sm leading-tight mb-1">{item.model}</h3>
-                                        <p className="text-white/40 text-[10px] uppercase tracking-widest">{item.brand}</p>
+                                            {/* Status Badge */}
+                                            <div className="absolute top-4 right-4 z-10">
+                                                <span className={clsx(
+                                                    "inline-flex items-center px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest border backdrop-blur-md shadow-lg",
+                                                    getStatusColor(item.availability)
+                                                )}>
+                                                    {getStatusLabel(item.availability)}
+                                                </span>
+                                            </div>
+
+                                            {/* Action Buttons Overlay */}
+                                            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-[2px]">
+                                                <button
+                                                    onClick={() => setEditingWatch(item)}
+                                                    className="p-3 bg-white text-black rounded-full hover:bg-gold-500 transition-colors transform hover:scale-110"
+                                                    title="Edit"
+                                                >
+                                                    <Edit className="w-5 h-5" />
+                                                </button>
+                                                <button
+                                                    onClick={() => deleteItem(item.id)}
+                                                    className="p-3 bg-red-500/20 text-red-500 border border-red-500/50 rounded-full hover:bg-red-500 hover:text-white transition-colors transform hover:scale-110"
+                                                    title="Delete"
+                                                >
+                                                    <Trash2 className="w-5 h-5" />
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        {/* Card Content */}
+                                        <div className="p-6 space-y-4">
+                                            <div className="space-y-1">
+                                                <h3 className="text-white font-bold text-lg leading-tight">{item.model}</h3>
+                                                <p className="font-mono text-gold-500 text-sm tracking-wider">
+                                                    ${item.price.toLocaleString()}
+                                                </p>
+                                            </div>
+
+                                            {/* Gallery Preview */}
+                                            {(item.gallery && item.gallery.length > 0) ? (
+                                                <div className="space-y-2">
+                                                    <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Gallery ({item.gallery.length})</p>
+                                                    <div className="grid grid-cols-5 gap-2">
+                                                        {item.gallery.slice(0, 5).map((img, idx) => (
+                                                            <div key={idx} className="relative aspect-square rounded-sm overflow-hidden border border-white/10 bg-white/5">
+                                                                <Image src={img} alt="" fill className="object-cover" />
+                                                            </div>
+                                                        ))}
+                                                        {item.gallery.length > 5 && (
+                                                            <div className="aspect-square rounded-sm bg-white/5 border border-white/10 flex items-center justify-center">
+                                                                <span className="text-[9px] text-white/40 font-bold">+{item.gallery.length - 5}</span>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <div className="py-2">
+                                                    <p className="text-[10px] uppercase tracking-widest text-white/20 italic">No gallery images</p>
+                                                </div>
+                                            )}
+
+                                            {/* Footer Info */}
+                                            <div className="pt-4 border-t border-white/5">
+                                                <div className="grid grid-cols-2 gap-4">
+                                                    <div>
+                                                        <p className="text-[10px] text-white/40 uppercase tracking-wider">Reference</p>
+                                                        <p className="text-xs text-white/80 line-clamp-1">{item.id}</p>
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-[10px] text-white/40 uppercase tracking-wider">Movement</p>
+                                                        <p className="text-xs text-white/80 line-clamp-1">{item.details?.['Movimiento'] || '-'}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p className="font-mono text-gold-500 text-lg tracking-tight">
-                                        ${item.price.toLocaleString()}
-                                    </p>
-                                </div>
-                                <div className="flex items-center justify-end gap-4 mt-4 pt-4 border-t border-white/5">
-                                    <button
-                                        onClick={() => setEditingWatch(item)}
-                                        className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-white/40 hover:text-white transition-colors"
-                                    >
-                                        <Edit className="w-3 h-3" /> Edit
-                                    </button>
-                                    <button
-                                        onClick={() => deleteItem(item.id)}
-                                        className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-white/40 hover:text-red-500 transition-colors"
-                                    >
-                                        <Trash2 className="w-3 h-3" /> Remove
-                                    </button>
-                                </div>
+                                ))}
                             </div>
                         </motion.div>
                     ))}
                 </AnimatePresence>
-            </div>
 
-            {filteredInventory.length === 0 && (
-                <div className="text-center py-20 border border-dashed border-white/10 rounded-sm">
-                    <p className="text-white/40 text-sm">No items found.</p>
-                </div>
-            )}
+                {filteredInventory.length === 0 && (
+                    <div className="text-center py-32 border border-dashed border-white/10 rounded-sm">
+                        <p className="text-white/40 text-lg">No items found.</p>
+                        <button
+                            onClick={() => setSelectedBrand('All')}
+                            className="mt-4 text-gold-500 hover:underline text-sm uppercase tracking-widest font-bold"
+                        >
+                            Clear Filters
+                        </button>
+                    </div>
+                )}
+            </div>
 
             <EditWatchModal
                 watch={editingWatch}
