@@ -33,7 +33,15 @@ export function ProductCard({ watch }: { watch: Watch }) {
                 <div className="text-center space-y-2">
                     <h3 className="text-gold-500 text-xs font-bold tracking-[0.25em] uppercase">{watch.brand}</h3>
                     <h2 className="text-lg font-display text-white group-hover:text-gold-200 transition-colors leading-tight">{watch.model}</h2>
-                    <p className="text-white/50 font-light text-sm tracking-wide group-hover:text-white transition-colors">${watch.price.toLocaleString()}</p>
+                    {watch.brand.toLowerCase() === 'seiko' ? (
+                        <p className="text-white/50 font-light text-xs tracking-wide group-hover:text-gold-500 transition-colors uppercase">
+                            Precio pronto disponible, consulta con tu asesor
+                        </p>
+                    ) : (
+                        <p className="text-white/50 font-light text-sm tracking-wide group-hover:text-white transition-colors">
+                            ${watch.price.toLocaleString()}
+                        </p>
+                    )}
                 </div>
             </Link>
 

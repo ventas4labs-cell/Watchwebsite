@@ -1,5 +1,7 @@
 'use client';
+
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const BRANDS = ["Tissot", "Seiko", "Orient"];
 
@@ -9,16 +11,17 @@ export function BrandSlider() {
             <div className="container mx-auto px-6 overflow-hidden">
                 <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60">
                     {BRANDS.map((brand, i) => (
-                        <motion.span
-                            key={brand}
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1, duration: 0.5 }}
-                            className="text-2xl md:text-4xl font-display text-white/40 hover:text-gold-500 cursor-default transition-colors"
-                        >
-                            {brand}
-                        </motion.span>
+                        <Link key={brand} href={`/collections/${brand.toLowerCase()}`}>
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="text-2xl md:text-4xl font-display text-white/40 hover:text-gold-500 cursor-pointer transition-colors"
+                            >
+                                {brand}
+                            </motion.span>
+                        </Link>
                     ))}
                 </div>
             </div>

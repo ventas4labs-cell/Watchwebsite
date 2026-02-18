@@ -181,7 +181,9 @@ export function InventoryVault() {
                                                     </div>
                                                     <div>
                                                         <p className="text-[10px] text-white/40 uppercase tracking-wider">Movement</p>
-                                                        <p className="text-xs text-white/80 line-clamp-1">{item.details?.['Movimiento'] || '-'}</p>
+                                                        <p className="text-xs text-white/80 line-clamp-1">
+                                                            {item.details?.['Movimiento'] || item.details?.['movement'] || '-'}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>

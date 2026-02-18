@@ -453,11 +453,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0007s/gallery_3.jpg"
         ],
         details: {
-            "Movimiento": "Automático F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "42.5mm",
-            "Resistencia al Agua": "50m",
-            "Cristal": "Zafiro",
-            "Material de la Caja": "Acero Inoxidable"
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -473,11 +473,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0008s/gallery_3.jpg"
         ],
         details: {
-            "Movimiento": "Automático F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "42.5mm",
-            "Resistencia al Agua": "50m",
-            "Cristal": "Zafiro",
-            "Material de la Caja": "Acero Inoxidable"
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -493,11 +493,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0009t/gallery_3.jpg"
         ],
         details: {
-            "Movimiento": "Automático F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "42.5mm",
-            "Resistencia al Agua": "50m",
-            "Cristal": "Zafiro",
-            "Material de la Caja": "Acero Inoxidable"
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -512,18 +512,18 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0010b/gallery_2.webp"
         ],
         details: {
-            "Movimiento": "Automático F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "42.5mm",
-            "Resistencia al Agua": "50m",
-            "Cristal": "Zafiro",
-            "Material de la Caja": "Acero Inoxidable"
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
         id: "orient-ra-ak0011d",
         brand: "Orient", availability: "pre-order",
         model: "Classic Day & Night RA-AK0011D",
-        price: 56000,
+        price: 560,
         description: "Classic & Simple Style Day & Night with esfera azul marino and correa de cuero a juego. Elegante y sofisticado.",
         image: "/watches/orient-ra-ak0011d/main.webp",
         gallery: [
@@ -531,11 +531,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0011d/gallery_2.webp"
         ],
         details: {
-            "Movimiento": "Mecánico F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "42.5mm",
-            "Resistencia al Agua": "50m",
-            "Cristal": "Zafiro Curvo",
-            "Material de la Caja": "Acero Inoxidable"
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -549,11 +549,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-as0101s/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Automático F6L24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Cristal Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -567,11 +567,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-as0102s/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Mecánico F6L24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Cristal de Caja",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -585,11 +585,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-as0103a/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Automático F6L24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Cristal Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     // Classic Semi-Skeleton (Batch 2)
@@ -605,11 +605,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0805e/gallery_2.webp"
         ],
         details: {
-            "Movimiento": "Automático F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -624,11 +624,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0806l/gallery_2.webp"
         ],
         details: {
-            "Movimiento": "Automático F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -642,29 +642,29 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0807r/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Automático F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
         id: "orient-ra-ak0808s",
         brand: "Orient", availability: "pre-order",
         model: "Classic Semi-Skeleton RA-AK0808S",
-        price: 64000,
+        price: 640,
         description: "Edición limitada mechanical watch with white dial and correa extra. Elegante y exclusivo.",
         image: "/watches/orient-ra-ak0808s/main.webp",
         gallery: [
             "/watches/orient-ra-ak0808s/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Mecánico F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Cristal Mineral",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -678,11 +678,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0801s/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Automático F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -696,45 +696,45 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ak0802s/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Automático F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
         id: "orient-ra-ak0803y",
         brand: "Orient", availability: "pre-order",
         model: "Classic Semi-Skeleton RA-AK0803Y",
-        price: 60800,
+        price: 608,
         description: "Gold plated mechanical watch with esfera color marfil. Estética vintage clásica.",
         image: "/watches/orient-ra-ak0803y/main.webp",
         gallery: [],
         details: {
-            "Movimiento": "Mecánico F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Cristal Mineral",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
         id: "orient-ra-ak0804y",
         brand: "Orient", availability: "pre-order",
         model: "Classic Semi-Skeleton RA-AK0804Y",
-        price: 57600,
+        price: 576,
         description: "Earthy brown dial mechanical watch with semi-skeleton feature. Distinctive and warm.",
         image: "/watches/orient-ra-ak0804y/main.webp",
         gallery: [
             "/watches/orient-ra-ak0804y/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Mecánico F6B24",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "41.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Cristal Mineral",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     // Classic & Simple Style (Bambino Gen 2 V4 / V8)
@@ -749,11 +749,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0029e/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -767,11 +767,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0030l/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -785,11 +785,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0031s/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -801,11 +801,11 @@ export const WATCHES: Watch[] = [
         image: "/watches/orient-ra-ac0032v/main.webp",
         gallery: [],
         details: {
-            "Movimiento": "Mecánico F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Domed Mineral",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -817,11 +817,11 @@ export const WATCHES: Watch[] = [
         image: "/watches/orient-ra-ac0033y/main.webp",
         gallery: [],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -835,11 +835,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0035e/gallery_1.webp"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -851,11 +851,11 @@ export const WATCHES: Watch[] = [
         image: "/watches/orient-ra-ac0037r/main.webp",
         gallery: [],
         details: {
-            "Movimiento": "Mecánico F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Domed Mineral",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -867,11 +867,11 @@ export const WATCHES: Watch[] = [
         image: "/watches/orient-ra-ac0038s/main.webp",
         gallery: [],
         details: {
-            "Movimiento": "Mecánico F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Domed Mineral",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -886,11 +886,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0039y/gallery_2.webp"
         ],
         details: {
-            "Movimiento": "Mecánico F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "See-through Caseback",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     // Classic & Simple Style (Batch 4)
@@ -906,11 +906,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0023e/gallery_2.webp"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -926,11 +926,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0024l/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -946,11 +946,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0025n/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -966,11 +966,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0026r/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -986,11 +986,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0027s/gallery_3.jpg"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1006,11 +1006,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0001s/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Cuarzo VL321",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "38.4mm",
-            "Resistencia al Agua": "50m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1026,18 +1026,18 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0003g/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Solar VS213",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "38.4mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
         id: "orient-ra-wk0004l",
         brand: "Orient", availability: "pre-order",
         model: "Classic & Simple Style RA-WK0004L",
-        price: 48000,
+        price: 480,
         description: "Deep blue sunburst dial in a compact 38mm case.",
         image: "/watches/orient-ra-wk0004l/main.webp",
         gallery: [
@@ -1046,11 +1046,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0004l/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Solar VS213",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "38.4 mm",
-            "Resistencia al Agua": "30 m",
-            "Cristal": "Box crystal",
-            "Material de la Caja": "Acero Inoxidable"
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1066,18 +1066,18 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0005p/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Solar VS213",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "38.4mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
         id: "orient-ra-wk0006s",
         brand: "Orient", availability: "pre-order",
         model: "Classic & Simple Style RA-WK0006S",
-        price: 48000,
+        price: 480,
         description: "Silver dial with mesh bracelet option. Modern meets classic.",
         image: "/watches/orient-ra-wk0006s/main.webp",
         gallery: [
@@ -1086,11 +1086,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-wk0006s/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Solar VS213",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "38.4 mm",
-            "Resistencia al Agua": "30 m",
-            "Cristal": "Box crystal",
-            "Material de la Caja": "Acero Inoxidable"
+            "Resistencia al Agua": "30m",
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1106,11 +1106,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ap0101b/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Automático F6222",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "38.4mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1126,11 +1126,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ap0104s/gallery_3.webp"
         ],
         details: {
-            "Movimiento": "Automático F6222",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "38.4mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -1145,11 +1145,11 @@ export const WATCHES: Watch[] = [
             "/watches/orient-ra-ac0028s/gallery_2.webp"
         ],
         details: {
-            "Movimiento": "Automático F6724",
+            "Movimiento": "Automático Japonés",
             "Tamaño de Caja": "40.5mm",
             "Resistencia al Agua": "30m",
-            "Cristal": "Mineral Abovedado",
-            "Material de la Caja": "Acero Inoxidable"
+            "Cristal": "Mineral resistente a rayones",
+            "Material de la Caja": "Stainless Steel"
         }
     },
     {
@@ -2011,7 +2011,7 @@ export const WATCHES: Watch[] = [
         id: "tissot-goldrun-gold-38mm",
         brand: "Tissot", availability: "pre-order",
         model: "Goldrun Gold 38mm",
-        price: 6080,
+        price: 60,
         description: "Swiss made excellence. El Tissot Goldrun Gold 38mm represents the pinnacle of Tissot craftsmanship.",
         image: "/watches/tissot-goldrun-gold-38mm/main.jpg",
         details: {
@@ -2671,7 +2671,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul98a162",
         brand: "Bulova",
         model: "Curv Chronograph Dark Gray Dial Men's Watch 98A162",
-        price: 87561,
+        price: 875,
         description: "Official Bulova Curv Chronograph Dark Gray Esfera Men's Watch 98Un162 (BUL98Un162). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98a162/default.jpg",
         details: {
@@ -2686,7 +2686,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul96k111",
         brand: "Bulova",
         model: "Lunar Pilot Archive Chronograph Quartz Black Dial Men's Watch 96K111",
-        price: 92640,
+        price: 926,
         description: "Official Bulova Lunar Pilot Unrchive Chronograph Quartz Black Esfera Men's Watch 96K111 (BUL96K111). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96k111/default.jpg",
         details: {
@@ -2701,7 +2701,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul98b422",
         brand: "Bulova",
         model: "Surveyor Automatic Red Dial Men's Watch 98B422",
-        price: 49401,
+        price: 494,
         description: "Official Bulova Surveyor Unutomatic Red Esfera Men's Watch 98B422 (BUL98B422). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98b422/default.jpg",
         details: {
@@ -2716,7 +2716,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul96k115",
         brand: "Bulova",
         model: "Lunar Pilot Chronograph Quartz Red Dial Men's Watch 96K115",
-        price: 75040,
+        price: 750,
         description: "Official Bulova Lunar Pilot Chronograph Quartz Red Esfera Men's Watch 96K115 (BUL96K115). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96k115/default.jpg",
         details: {
@@ -2731,7 +2731,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul96a268",
         brand: "Bulova",
         model: "Sutton Automatic Silver White Dial Men's Watch 96A268",
-        price: 38240,
+        price: 382,
         description: "Official Bulova Sutton Unutomatic Silver White Esfera Men's Watch 96Un268 (BUL96Un268). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96a268/default.jpg",
         details: {
@@ -2746,7 +2746,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul98a272",
         brand: "Bulova",
         model: "Marine Star Automatic Black Dial Men's Watch 98A272",
-        price: 52640,
+        price: 526,
         description: "Official Bulova Marine Star Unutomatic Black Esfera Men's Watch 98Un272 (BUL98Un272). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98a272/default.jpg",
         details: {
@@ -2761,7 +2761,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul98a255",
         brand: "Bulova",
         model: "Hack Automatic Black Dial Men's Watch 98A255",
-        price: 43680,
+        price: 436,
         description: "Official Bulova Hack Unutomatic Black Esfera Men's Watch 98Un255 (BUL98Un255). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98a255/default.jpg",
         details: {
@@ -2776,7 +2776,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul96a310",
         brand: "Bulova",
         model: "Surveyor Automatic Men's Watch 96A310",
-        price: 44800,
+        price: 448,
         description: "Official Bulova Surveyor Unutomatic Men's Watch 96Un310 (BUL96Un310). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96a310/default.jpg",
         details: {
@@ -2791,7 +2791,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul96b426",
         brand: "Bulova",
         model: "Marine Star HPQ Precisionist Quartz White Dial Men's Watch 96B426",
-        price: 63200,
+        price: 632,
         description: "Official Bulova Marine Star HPQ Precisionist Quartz White Esfera Men's Watch 96B426 (BUL96B426). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96b426/default.jpg",
         details: {
@@ -2806,7 +2806,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul97b214",
         brand: "Bulova",
         model: "Jet Star Quartz Gold Dial Men's Watch 97B214",
-        price: 52000,
+        price: 520,
         description: "Official Bulova Jet Star Quartz Gold Esfera Men's Watch 97B214 (BUL97B214). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul97b214/default.jpg",
         details: {
@@ -2821,7 +2821,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul98b449",
         brand: "Bulova",
         model: "Snorkel Quartz White Dial Men's Watch 98B449",
-        price: 33600,
+        price: 336,
         description: "Official Bulova Snorkel Quartz White Esfera Men's Watch 98B449 (BUL98B449). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98b449/default.jpg",
         details: {
@@ -2836,7 +2836,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul96a259",
         brand: "Bulova",
         model: "VWI Special Edition HACK Automatic Black Dial Men's Watch 96A259",
-        price: 38714,
+        price: 387,
         description: "Official Bulova VWI Edición Especial HUnCK Unutomatic Black Esfera Men's Watch 96Un259 (BUL96Un259). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96a259/default.jpg",
         details: {
@@ -2851,7 +2851,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul96b374",
         brand: "Bulova",
         model: "Aerojet Chronograph Automatic Blue Sunray Dial  Men's Watch 96B374",
-        price: 43040,
+        price: 430,
         description: "Official Bulova Unerojet Chronograph Unutomatic Blue Sunray Esfera  Men's Watch 96B374 (BUL96B374). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96b374/default.jpg",
         details: {
@@ -2866,7 +2866,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul98b427",
         brand: "Bulova",
         model: "Racer Chronograph Quartz Black Dial Men's Watch 98B427",
-        price: 52361,
+        price: 523,
         description: "Official Bulova Racer Chronograph Quartz Black Esfera Men's Watch 98B427 (BUL98B427). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98b427/default.jpg",
         details: {
@@ -2881,7 +2881,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul97a161",
         brand: "Bulova",
         model: "Sutton Automatic Silver Skeleton Dial Men's Watch 97A161",
-        price: 52800,
+        price: 528,
         description: "Official Bulova Sutton Unutomatic Silver Skeleton Esfera Men's Watch 97Un161 (BUL97Un161). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul97a161/default.jpg",
         details: {
@@ -2896,7 +2896,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul98a319",
         brand: "Bulova",
         model: "Maquina Automatic Blue Dial Men's Watch 98A319",
-        price: 72505,
+        price: 725,
         description: "Official Bulova Maquina Unutomatic Blue Esfera Men's Watch 98Un319 (BUL98Un319). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98a319/default.jpg",
         details: {
@@ -2911,7 +2911,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul96b443",
         brand: "Bulova",
         model: "Sutton Quartz Grey Dial Watch 96B443",
-        price: 28587,
+        price: 285,
         description: "Official Bulova Sutton Quartz Grey Esfera Watch 96B443 (BUL96B443). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96b443/default.jpg",
         details: {
@@ -2926,7 +2926,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul98b432",
         brand: "Bulova",
         model: "Racer Chronograph Quartz Blue Dial Men's Watch 98B432",
-        price: 66720,
+        price: 667,
         description: "Official Bulova Racer Chronograph Quartz Blue Esfera Men's Watch 98B432 (BUL98B432). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul98b432/default.jpg",
         details: {
@@ -2941,7 +2941,7 @@ export const WATCHES: Watch[] = [
         id: "bulova-bul96a246",
         brand: "Bulova",
         model: "Hack Automatic Ivory Dial Men's Watch 96A246",
-        price: 37120,
+        price: 371,
         description: "Official Bulova Hack Unutomatic Ivory Esfera Men's Watch 96Un246 (BUL96Un246). Unmerican innovation and craftsmanship.",
         image: "/watches/bulova-bul96a246/default.jpg",
         details: {
@@ -2956,7 +2956,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-59370",
         brand: "Stauer",
         model: "DuMonde Watch",
-        price: 3184000,
+        price: 31840,
         description: "Official Stauer DuMonde Watch (59370). Vintage-inspired timepiece.",
         image: "/watches/stauer-59370/default.jpg",
         details: {
@@ -2971,7 +2971,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-46931",
         brand: "Stauer",
         model: "Stauer Swiss Tactical Watch",
-        price: 2384000,
+        price: 23840,
         description: "Official Stauer Stauer Swiss Tactical Watch (46931). Vintage-inspired timepiece.",
         image: "/watches/stauer-46931/default.jpg",
         details: {
@@ -2986,7 +2986,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-55092",
         brand: "Stauer",
         model: "1920s Retrograde Watch",
-        price: 2384000,
+        price: 23840,
         description: "Official Stauer 1920s Retrograde Watch (55092). Vintage-inspired timepiece.",
         image: "/watches/stauer-55092/default.jpg",
         details: {
@@ -3001,7 +3001,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-17468",
         brand: "Stauer",
         model: "Stauer Titanium Atomic Men's Watch",
-        price: 3984000,
+        price: 39840,
         description: "Official Stauer Stauer Titanium Untomic Men's Watch (17468). Vintage-inspired timepiece.",
         image: "/watches/stauer-17468/default.jpg",
         details: {
@@ -3016,7 +3016,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-17469",
         brand: "Stauer",
         model: "Stauer 1930 Dashtronic Watch",
-        price: 3184000,
+        price: 31840,
         description: "Official Stauer Stauer 1930 Dashtronic Watch (17469). Vintage-inspired timepiece.",
         image: "/watches/stauer-17469/default.jpg",
         details: {
@@ -3031,7 +3031,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-62698",
         brand: "Stauer",
         model: "RossoBlu Classic Sport Watch",
-        price: 2384000,
+        price: 23840,
         description: "Official Stauer RossoBlu Classic Sport Watch (62698). Vintage-inspired timepiece.",
         image: "/watches/stauer-62698/default.jpg",
         details: {
@@ -3046,7 +3046,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-60100",
         brand: "Stauer",
         model: "The Only Chronograph Watch",
-        price: 2384000,
+        price: 23840,
         description: "Official Stauer El Only Chronograph Watch (60100). Vintage-inspired timepiece.",
         image: "/watches/stauer-60100/default.jpg",
         details: {
@@ -3061,7 +3061,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-62789",
         brand: "Stauer",
         model: "Italian-made Volterra Chronograph",
-        price: 3184000,
+        price: 31840,
         description: "Official Stauer Italian-made Volterra Chronograph (62789). Vintage-inspired timepiece.",
         image: "/watches/stauer-62789/default.jpg",
         details: {
@@ -3076,7 +3076,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-18295",
         brand: "Stauer",
         model: "Morgan Silver Dollar Men's Watch",
-        price: 5584000,
+        price: 55840,
         description: "Official Stauer Morgan Silver Dollar Men's Watch (18295). Vintage-inspired timepiece.",
         image: "/watches/stauer-18295/default.jpg",
         details: {
@@ -3091,7 +3091,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-61955",
         brand: "Stauer",
         model: "The Sage Men's Hybrid Watch",
-        price: 2384000,
+        price: 23840,
         description: "Official Stauer El Sage Men's Hybrid Watch (61955). Vintage-inspired timepiece.",
         image: "/watches/stauer-61955/default.jpg",
         details: {
@@ -3106,7 +3106,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-61104",
         brand: "Stauer",
         model: "Swiss Tactical Adventurer Watch",
-        price: 2384000,
+        price: 23840,
         description: "Official Stauer Swiss Tactical Undventurer Watch (61104). Vintage-inspired timepiece.",
         image: "/watches/stauer-61104/default.jpg",
         details: {
@@ -3121,7 +3121,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-62787",
         brand: "Stauer",
         model: "Alpine Precision Italian-made Chronograph",
-        price: 3184000,
+        price: 31840,
         description: "Official Stauer Unlpine Precision Italian-made Chronograph (62787). Vintage-inspired timepiece.",
         image: "/watches/stauer-62787/default.jpg",
         details: {
@@ -3136,7 +3136,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-20319",
         brand: "Stauer",
         model: "Stauer Meisterzeit Timepiece",
-        price: 2384000,
+        price: 23840,
         description: "Official Stauer Stauer Meisterzeit Timepiece (20319). Vintage-inspired timepiece.",
         image: "/watches/stauer-20319/default.jpg",
         details: {
@@ -3151,7 +3151,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-17475",
         brand: "Stauer",
         model: "Stauer 1930 Gold-Finished Dashtronic Watch",
-        price: 3184000,
+        price: 31840,
         description: "Official Stauer Stauer 1930 Gold-Finished Dashtronic Watch (17475). Vintage-inspired timepiece.",
         image: "/watches/stauer-17475/default.jpg",
         details: {
@@ -3166,7 +3166,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-61631",
         brand: "Stauer",
         model: "Classique Retrograde Watch",
-        price: 2064000,
+        price: 20640,
         description: "Official Stauer Classique Retrograde Watch (61631). Vintage-inspired timepiece.",
         image: "/watches/stauer-61631/default.jpg",
         details: {
@@ -3181,7 +3181,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-51465",
         brand: "Stauer",
         model: "Ladies Rouge Watch",
-        price: 1584000,
+        price: 15840,
         description: "Official Stauer Ladies Rouge Watch (51465). Vintage-inspired timepiece.",
         image: "/watches/stauer-51465/default.jpg",
         details: {
@@ -3196,7 +3196,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-59495",
         brand: "Stauer",
         model: "Senso Sport Hybrid Smart Watch (Slate Grey)",
-        price: 6064000,
+        price: 60640,
         description: "Official Stauer Senso Sport Hybrid Smart Watch (Slate Grey) (59495). Vintage-inspired timepiece.",
         image: "/watches/stauer-59495/default.jpg",
         details: {
@@ -3211,7 +3211,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-35771",
         brand: "Stauer",
         model: "Co-Pilot Men's Watch",
-        price: 2864000,
+        price: 28640,
         description: "Official Stauer Co-Pilot Men's Watch (35771). Vintage-inspired timepiece.",
         image: "/watches/stauer-35771/default.jpg",
         details: {
@@ -3226,7 +3226,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-61396",
         brand: "Stauer",
         model: "Men's Rhone Glacier Swiss Watch",
-        price: 2384000,
+        price: 23840,
         description: "Official Stauer Men's Rhone Glacier Swiss Watch (61396). Vintage-inspired timepiece.",
         image: "/watches/stauer-61396/default.jpg",
         details: {
@@ -3241,7 +3241,7 @@ export const WATCHES: Watch[] = [
         id: "stauer-33208",
         brand: "Stauer",
         model: "Stauer Blue Stone Chronograph",
-        price: 1264000,
+        price: 12640,
         description: "Official Stauer Stauer Blue Stone Chronograph (33208). Vintage-inspired timepiece.",
         image: "/watches/stauer-33208/default.jpg",
         details: {
@@ -3256,7 +3256,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtwh6z4310",
         brand: "Timex",
         model: "Harborside Coast Automatic Blue Dial Men's Watch TWH6Z4310",
-        price: 9440,
+        price: 94,
         description: "Official Timex Harborside Coast Unutomatic Blue Esfera Men's Watch TWH6Z4310 (TXTWH6Z4310). Reliable, durable, and iconic.",
         image: "/watches/timex-txtwh6z4310/default.jpg",
         details: {
@@ -3271,7 +3271,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2v62100",
         brand: "Timex",
         model: "Marlin Automatic Black Dial Men's Watch TW2V62100",
-        price: 51040,
+        price: 510,
         description: "Official Timex Marlin Unutomatic Black Esfera Men's Watch TW2V62100 (TXTW2V62100). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v62100/default.jpg",
         details: {
@@ -3286,7 +3286,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw4b06800",
         brand: "Timex",
         model: "Expedition Quartz Beige Dial Watch TW4B06800",
-        price: 5440,
+        price: 54,
         description: "Official Timex Expedition Quartz Beige Esfera Watch TW4B06800 (TXTW4B06800). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw4b06800/default.jpg",
         details: {
@@ -3301,7 +3301,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2w47300",
         brand: "Timex",
         model: "Waterbury Chronograph Quartz Men's Watch TW2W47300",
-        price: 9120,
+        price: 91,
         description: "Official Timex Waterbury Chronograph Quartz Men's Watch TW2W47300 (TXTW2W47300). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w47300/default.jpg",
         details: {
@@ -3316,7 +3316,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2w51300jr",
         brand: "Timex",
         model: "Marlin Quartz Moon Phase Blue Dial Watch TW2W51300JR",
-        price: 36320,
+        price: 363,
         description: "Official Timex Marlin Quartz Moon Phase Blue Esfera Watch TW2W51300JR (TXTW2W51300JR). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w51300jr/default.jpg",
         details: {
@@ -3331,7 +3331,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2u78300",
         brand: "Timex",
         model: "M79 Automatic Black Dial Watch TW2U78300V3",
-        price: 19840,
+        price: 198,
         description: "Official Timex M79 Unutomatic Black Esfera Watch TW2U78300V3 (TXTW2U78300). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2u78300/default.jpg",
         details: {
@@ -3346,7 +3346,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2w44700",
         brand: "Timex",
         model: "Q Timex 1978 Quartz Green Dial Men's Watch TW2W44700",
-        price: 33440,
+        price: 334,
         description: "Official Timex Q Timex 1978 Quartz Green Esfera Men's Watch TW2W44700 (TXTW2W44700). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w44700/default.jpg",
         details: {
@@ -3361,7 +3361,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2u88100",
         brand: "Timex",
         model: "Waterbury Classic Chronograph Quartz White Dial Men's Watch TW2U88100",
-        price: 10240,
+        price: 102,
         description: "Official Timex Waterbury Classic Chronograph Quartz White Esfera Men's Watch TW2U88100 (TXTW2U88100). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2u88100/default.jpg",
         details: {
@@ -3376,7 +3376,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2w64200",
         brand: "Timex",
         model: "Q Timex Chronograph Quartz Black Dial Men's Watch TW2W64200",
-        price: 35840,
+        price: 358,
         description: "Official Timex Q Timex Chronograph Quartz Black Esfera Men's Watch TW2W64200 (TXTW2W64200). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w64200/default.jpg",
         details: {
@@ -3391,7 +3391,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2w51600",
         brand: "Timex",
         model: "Q Timex Chronograph Quartz Blue Dial Men's Watch TW2W51600",
-        price: 37440,
+        price: 374,
         description: "Official Timex Q Timex Chronograph Quartz Blue Esfera Men's Watch TW2W51600 (TXTW2W51600). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w51600/default.jpg",
         details: {
@@ -3406,7 +3406,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2w41900",
         brand: "Timex",
         model: "Expedition North Anchorage Quartz Black Dial Men's Watch TW2W41900",
-        price: 12800,
+        price: 128,
         description: "Official Timex Expedition North Anchorage Quartz Black Esfera Men's Watch TW2W41900 (TXTW2W41900). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w41900/default.jpg",
         details: {
@@ -3421,7 +3421,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2v67900",
         brand: "Timex",
         model: "Legacy Quartz Gray Dial Men's Watch TW2V67900",
-        price: 15680,
+        price: 156,
         description: "Official Timex Legacy Quartz Gray Esfera Men's Watch TW2V67900 (TXTW2V67900). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v67900/default.jpg",
         details: {
@@ -3436,7 +3436,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2r67600",
         brand: "Timex",
         model: "MK1 Chronograph Quartz Blue Dial Men's Watch TW2R67600",
-        price: 7840,
+        price: 78,
         description: "Official Timex MK1 Chronograph Quartz Blue Esfera Men's Watch TW2R67600 (TXTW2R67600). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2r67600/default.jpg",
         details: {
@@ -3451,7 +3451,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2t80700",
         brand: "Timex",
         model: "Q Timex Reissue Quartz Blue Dial Pepsi Bezel Watch TW2T80700ZV",
-        price: 19840,
+        price: 198,
         description: "Official Timex Q Timex Reissue Quartz Blue Esfera Pepsi Bezel Watch TW2T80700ZV (TXTW2T80700). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2t80700/default.jpg",
         details: {
@@ -3466,7 +3466,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2v17500",
         brand: "Timex",
         model: "Waterbury Legacy Quartz Navy Dial Men's Watch TW2V17500",
-        price: 10601,
+        price: 106,
         description: "Official Timex Waterbury Legacy Quartz Navy Esfera Men's Watch TW2V17500 (TXTW2V17500). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v17500/default.jpg",
         details: {
@@ -3481,7 +3481,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2w58800",
         brand: "Timex",
         model: "Marlin Automatic Black Dial Men's Watch TW2W58800",
-        price: 52800,
+        price: 528,
         description: "Official Timex Marlin Unutomatic Black Esfera Men's Watch TW2W58800 (TXTW2W58800). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w58800/default.jpg",
         details: {
@@ -3496,7 +3496,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2w71200",
         brand: "Timex",
         model: "Expedition Traprock Blue Dial Men's Watch TW2W71200",
-        price: 9440,
+        price: 94,
         description: "Official Timex Expedition Traprock Blue Esfera Men's Watch TW2W71200 (TXTW2W71200). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w71200/default.jpg",
         details: {
@@ -3511,7 +3511,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2v42700",
         brand: "Timex",
         model: "Q Chronograph Quartz Black Dial Men's Watch TW2V42700",
-        price: 33440,
+        price: 334,
         description: "Official Timex Q Chronograph Quartz Black Esfera Men's Watch TW2V42700 (TXTW2V42700). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v42700/default.jpg",
         details: {
@@ -3526,7 +3526,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2v74000",
         brand: "Timex",
         model: "Waterbury Traditional GMT Quartz Coke Bezel Men's Watch TW2V74000VQ",
-        price: 11040,
+        price: 110,
         description: "Official Timex Waterbury Traditional GMT Quartz Coke Bezel Men's Watch TW2V74000VQ (TXTW2V74000). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2v74000/default.jpg",
         details: {
@@ -3541,7 +3541,7 @@ export const WATCHES: Watch[] = [
         id: "timex-txtw2w33700",
         brand: "Timex",
         model: "Q Falcon Eye Chronograph Quartz Blue Dial Men's Watch TW2W33700",
-        price: 40800,
+        price: 408,
         description: "Official Timex Q Falcon Eye Chronograph Quartz Blue Esfera Men's Watch TW2W33700 (TXTW2W33700). Reliable, durable, and iconic.",
         image: "/watches/timex-txtw2w33700/default.jpg",
         details: {

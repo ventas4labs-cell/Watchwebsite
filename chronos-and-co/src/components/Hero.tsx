@@ -9,7 +9,7 @@ export function Hero() {
     const brands = ['Tissot', 'Seiko', 'Orient'];
 
     return (
-        <section className="relative h-[100dvh] md:h-screen min-h-[800px] flex flex-col items-center justify-center overflow-hidden">
+        <section className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden">
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 overflow-hidden z-0">
                 <motion.div
@@ -24,7 +24,7 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-10" />
             </div>
 
-            <div className="relative z-20 text-center space-y-6 md:space-y-10 px-6 max-w-5xl mx-auto flex flex-col justify-center h-full pt-32 pb-20 md:pb-0 md:pt-20">
+            <div className="relative z-20 text-center space-y-6 md:space-y-10 px-6 max-w-5xl mx-auto flex flex-col justify-center h-full pt-32 pb-20 md:pt-32 md:pb-20">
                 <motion.h1
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
