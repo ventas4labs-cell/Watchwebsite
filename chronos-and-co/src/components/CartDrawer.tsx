@@ -11,49 +11,52 @@ import Link from 'next/link';
 export function CartDrawer() {
     const { cart, isCartOpen, toggleCart, removeFromCart, updateQuantity, placeOrder, orders } = useStore();
     const [step, setStep] = useState<'cart' | 'form' | 'success'>('cart');
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '', note: '' });
-    const [lastOrderId, setLastOrderId] = useState('');
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', note: '', address: '' });
+    const [lastOrderTracking, setLastOrderTracking] = useState('');
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     const handleCheckout = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (formData.name && (formData.email || formData.phone)) {
+        if (formData.name && (formData.email || formData.phone) && formData.address) {
             const newOrder = placeOrder({
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone,
-                note: formData.note
+                note: formData.note,
+                address: formData.address
             });
 
             if (newOrder) {
-                // Submit to Supabase - Fire and forget or await? The user accepted "Inject... after validation... but before success message".
-                // We'll await it to ensure we catch errors if we wanted to (but the prompt said "before success message is shown").
+                // Submit to Supabase
                 await submitOrderToSupabase({
                     customer_name: newOrder.customerName,
                     customer_email: newOrder.email,
+                    customer_phone: newOrder.phone,
+                    customer_address: newOrder.address,
+                    tracking_number: newOrder.trackingNumber,
                     order_items: newOrder.items,
                     total_amount: newOrder.total,
-                    status: 'Recibido' // Default logic status matches 'Recibido'
+                    status: 'Recibido'
                 });
 
-                setLastOrderId(newOrder.id);
+                setLastOrderTracking(newOrder.trackingNumber);
                 setStep('success');
 
                 // Fire and forget email sending (Real Service)
                 if (formData.email) {
-                    sendOrderEmail(formData.email, formData.name, newOrder.id);
+                    sendOrderEmail(formData.email, formData.name, newOrder.trackingNumber);
                 }
             }
         }
     };
 
-    // Effect to reset drawer state if needed or other side effects
+    // Effect to reset drawer state if needed
     useEffect(() => {
-        if (step === 'success' && !lastOrderId && orders.length > 0) {
-            setLastOrderId(orders[0].id);
+        if (step === 'success' && !lastOrderTracking && orders.length > 0) {
+            setLastOrderTracking(orders[0].trackingNumber);
         }
-    }, [step, orders, lastOrderId]);
+    }, [step, orders, lastOrderTracking]);
 
     const resetDrawer = () => {
         toggleCart(false);
@@ -207,13 +210,24 @@ export function CartDrawer() {
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Teléfono</label>
+                                            <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Teléfono <span className="text-red-500">*</span></label>
                                             <input
+                                                required
                                                 type="tel"
                                                 placeholder="+506 8888 8888"
                                                 className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors placeholder:text-white/20"
                                                 value={formData.phone}
                                                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] text-gold-500 font-bold tracking-widest uppercase ml-1">Dirección de Entrega <span className="text-red-500">*</span></label>
+                                            <textarea
+                                                required
+                                                placeholder="Provincia, Cantón, Distrito y detalles exactos..."
+                                                className="w-full bg-white/5 border border-white/10 rounded-sm p-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors placeholder:text-white/20 h-24 resize-none"
+                                                value={formData.address}
+                                                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                                             />
                                         </div>
                                     </div>
@@ -252,13 +266,13 @@ export function CartDrawer() {
                                         <span className="text-[10px] font-bold tracking-widest uppercase">Número de seguimiento enviado a su email</span>
                                     </div>
 
-                                    {lastOrderId && (
+                                    {lastOrderTracking && (
                                         <div className="w-full bg-white/5 border border-white/10 rounded-sm p-6 mb-8 text-left">
                                             <span className="text-[10px] text-gold-500 font-bold tracking-widest uppercase mb-2 block">Número de Seguimiento</span>
                                             <div className="flex items-center justify-between">
-                                                <code className="text-xl font-mono text-white select-all">{lastOrderId}</code>
+                                                <code className="text-xl font-mono text-white select-all">{lastOrderTracking}</code>
                                                 <button
-                                                    onClick={() => navigator.clipboard.writeText(lastOrderId)}
+                                                    onClick={() => navigator.clipboard.writeText(lastOrderTracking)}
                                                     className="text-[10px] text-white/40 hover:text-white transition-colors uppercase font-bold tracking-tighter"
                                                 >
                                                     Copiar
@@ -269,7 +283,7 @@ export function CartDrawer() {
 
                                     <div className="flex flex-col w-full gap-4">
                                         <Link
-                                            href={`/track?id=${lastOrderId}`}
+                                            href={`/track?id=${lastOrderTracking}`}
                                             onClick={resetDrawer}
                                             className="w-full bg-gold-500 text-black font-bold py-4 hover:bg-gold-400 transition-all tracking-[0.2em] uppercase text-sm flex items-center justify-center gap-2"
                                         >

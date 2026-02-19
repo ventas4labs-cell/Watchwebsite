@@ -12,6 +12,9 @@ export const supabase = (supabaseUrl && supabaseAnonKey)
 export interface SupabaseOrder {
     customer_name: string;
     customer_email: string;
+    customer_phone: string;
+    customer_address?: string;
+    tracking_number: string;
     order_items: any[];
     total_amount: number;
     status: string;

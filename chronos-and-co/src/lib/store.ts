@@ -10,7 +10,8 @@ export interface CartItem extends Watch {
 export type OrderStatus = 'Recibido' | 'Preparación' | 'Enviado' | 'Entregado' | 'Cancelado';
 
 export interface Order {
-    id: string;
+    id: string; // Internal/Local ID
+    trackingNumber: string; // Public Tracking Number
     customerName: string;
     email: string;
     phone: string;
@@ -34,7 +35,7 @@ interface StoreState {
     toggleCart: (isOpen?: boolean) => void;
 
     // Order Actions
-    placeOrder: (details: { name: string; email: string; phone: string; note?: string; address?: string }) => Order | void;
+    placeOrder: (details: { name: string; email: string; phone: string; note?: string; address: string }) => Order | void;
     updateOrderStatus: (orderId: string, status: OrderStatus) => void;
     cancelOrder: (orderId: string) => void;
     updateQuantity: (id: string, delta: number) => void;
@@ -57,6 +58,7 @@ export const useStore = create<StoreState>()(
             inventory: [], // Initialize empty
             isLoading: false,
 
+            // ... (fetchInventory, addToCart, removeFromCart, clearCart, toggleCart implementations remain same) ...
             fetchInventory: async () => {
                 const client = supabase;
                 if (!client) return;
@@ -118,8 +120,14 @@ export const useStore = create<StoreState>()(
                         0
                     );
 
+                    // Generate a better tracking number: CHR-7823-X92
+                    const randomNum = Math.floor(1000 + Math.random() * 9000);
+                    const randomSuffix = Math.random().toString(36).substring(2, 5).toUpperCase();
+                    const trackingNumber = `CHR-${randomNum}-${randomSuffix}`;
+
                     newOrder = {
                         id: Math.random().toString(36).substr(2, 9).toUpperCase(),
+                        trackingNumber,
                         customerName: details.name,
                         email: details.email,
                         phone: details.phone,

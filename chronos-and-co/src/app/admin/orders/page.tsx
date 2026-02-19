@@ -8,9 +8,11 @@ import Link from 'next/link';
 
 interface AdminOrder {
     id: string;
+    trackingNumber?: string;
     customerName: string;
     email: string;
     phone: string;
+    address?: string;
     items: any[]; // proper type would be better but this is enough to fix the immediate error
     total: number;
     status: OrderStatus;
@@ -34,9 +36,11 @@ export default function OrdersPage() {
             if (data) {
                 const mappedOrders: AdminOrder[] = data.map(order => ({
                     id: order.id,
+                    trackingNumber: order.tracking_number,
                     customerName: order.customer_name,
                     email: order.customer_email,
                     phone: order.customer_phone || '',
+                    address: order.customer_address,
                     items: order.order_items || [],
                     total: order.total_amount || 0,
                     status: (isValidStatus(order.status) ? order.status : 'Recibido') as OrderStatus,
@@ -145,7 +149,7 @@ export default function OrdersPage() {
                                     {/* Left Side: Order Intro */}
                                     <div className="p-8 border-b lg:border-b-0 lg:border-r border-white/5 lg:w-80 bg-black/20">
                                         <div className="flex items-center justify-between mb-6">
-                                            <span className="font-mono text-xs text-white/40 uppercase tracking-tighter">#{order.id}</span>
+                                            <span className="font-mono text-xs text-gold-500 font-bold tracking-widest uppercase">{order.trackingNumber || order.id}</span>
                                             <span className="text-[10px] font-mono text-white/20">{new Date(order.date).toLocaleDateString()}</span>
                                         </div>
                                         <h3 className="text-xl font-display text-white mb-4">{order.customerName}</h3>
@@ -156,12 +160,19 @@ export default function OrdersPage() {
                                             </div>
                                             <div className="flex items-center gap-3 text-white/40 group-hover:text-white/60 transition-colors">
                                                 <Phone className="w-4 h-4 text-gold-500/50" />
-                                                <span className="text-xs">{order.phone}</span>
+                                                <span className="text-xs">{order.phone || 'No phone'}</span>
                                             </div>
-                                            {order.note && (
+                                            {(order.address || order.note) && (
                                                 <div className="flex gap-3 text-white/40 mt-6 pt-6 border-t border-white/5">
                                                     <MessageSquare className="w-4 h-4 text-gold-500/50 flex-shrink-0" />
-                                                    <p className="text-xs italic leading-relaxed">"{order.note}"</p>
+                                                    <div className="space-y-2">
+                                                        {order.address && (
+                                                            <p className="text-[10px] leading-relaxed"><span className="text-gold-500/70 font-bold uppercase tracking-widest text-[9px]">Dirección:</span><br />{order.address}</p>
+                                                        )}
+                                                        {order.note && (
+                                                            <p className="text-[10px] italic leading-relaxed"><span className="text-gold-500/70 font-bold uppercase tracking-widest text-[9px]">Nota:</span><br />"{order.note}"</p>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             )}
                                         </div>
@@ -215,7 +226,7 @@ export default function OrdersPage() {
 
                                         <div className="pt-6 border-t border-white/5">
                                             <Link
-                                                href={`/track?id=${order.id}`}
+                                                href={`/track?id=${order.trackingNumber || order.id}`}
                                                 target="_blank"
                                                 className="flex items-center justify-between text-[10px] text-white/20 hover:text-gold-500 transition-colors uppercase font-bold tracking-widest"
                                             >

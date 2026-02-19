@@ -12,6 +12,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export function InventoryVault() {
     const { inventory, deleteItem, updateItemStatus, fetchInventory } = useStore();
     const [selectedBrand, setSelectedBrand] = useState('All');
+    const [searchQuery, setSearchQuery] = useState('');
     const [editingWatch, setEditingWatch] = useState<Watch | null>(null);
 
     // Fetch inventory on mount
@@ -22,9 +23,13 @@ export function InventoryVault() {
     // Extract unique brands
     const brands = ['All', ...Array.from(new Set(inventory.map(item => item.brand)))];
 
-    const filteredInventory = selectedBrand === 'All'
-        ? inventory
-        : inventory.filter(item => item.brand === selectedBrand);
+    const filteredInventory = inventory.filter(item => {
+        const matchesBrand = selectedBrand === 'All' || item.brand === selectedBrand;
+        const matchesSearch = searchQuery === '' ||
+            item.model.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.brand.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesBrand && matchesSearch;
+    });
 
     const getStatusColor = (status: string = 'in-stock') => {
         switch (status) {
@@ -55,23 +60,41 @@ export function InventoryVault() {
 
     return (
         <div className="space-y-12">
-            {/* Brand Filter - Scrollable Pill Bar */}
-            <div className="overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide sticky top-0 z-40 bg-rich-black/95 backdrop-blur-sm py-4 border-b border-white/5">
-                <div className="flex gap-3 w-max">
-                    {brands.map((brand) => (
-                        <button
-                            key={brand}
-                            onClick={() => setSelectedBrand(brand)}
-                            className={clsx(
-                                "px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all border whitespace-nowrap",
-                                selectedBrand === brand
-                                    ? "bg-gold-500 text-black border-gold-500 shadow-[0_0_15px_rgba(212,175,55,0.4)]"
-                                    : "bg-transparent text-white/40 border-white/10 hover:border-white/40 hover:text-white"
-                            )}
-                        >
-                            {brand}
-                        </button>
-                    ))}
+            {/* Filters Bar */}
+            <div className="sticky top-0 z-40 bg-rich-black/95 backdrop-blur-sm py-4 border-b border-white/5 space-y-4 md:space-y-0 md:flex md:items-center md:justify-between gap-6">
+
+                {/* Brand Filter - Scrollable Pill Bar */}
+                <div className="overflow-x-auto pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide flex-1">
+                    <div className="flex gap-3 w-max">
+                        {brands.map((brand) => (
+                            <button
+                                key={brand}
+                                onClick={() => setSelectedBrand(brand)}
+                                className={clsx(
+                                    "px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all border whitespace-nowrap",
+                                    selectedBrand === brand
+                                        ? "bg-gold-500 text-black border-gold-500 shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+                                        : "bg-transparent text-white/40 border-white/10 hover:border-white/40 hover:text-white"
+                                )}
+                            >
+                                {brand}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Search Bar */}
+                <div className="relative w-full md:w-64 shrink-0">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-white/40">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="Buscar reloj..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-full bg-white/5 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-gold-500/50 focus:bg-white/10 transition-colors placeholder:text-white/20"
+                    />
                 </div>
             </div>
 

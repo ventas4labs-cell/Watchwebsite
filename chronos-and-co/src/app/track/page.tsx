@@ -26,7 +26,11 @@ function TrackingContent() {
 
     const handleSearch = (id: string = searchId) => {
         setHasSearched(true);
-        const order = orders.find(o => o.id.toLowerCase() === id.toLowerCase());
+        const term = id.toLowerCase().trim();
+        const order = orders.find(o =>
+            (o.trackingNumber && o.trackingNumber.toLowerCase() === term) ||
+            o.id.toLowerCase() === term
+        );
         setFoundOrder(order || null);
     };
 
@@ -43,7 +47,7 @@ function TrackingContent() {
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20" />
                         <input
                             type="text"
-                            placeholder="Ingrese su ID de pedido (ej: XJ9K2L)"
+                            placeholder="Ingrese su Número de Rastreo (ej: CHR-1234-XYZ)"
                             className="w-full bg-black/40 border border-white/10 rounded-sm py-4 pl-12 pr-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors uppercase font-mono"
                             value={searchId}
                             onChange={(e) => setSearchId(e.target.value)}
@@ -115,7 +119,7 @@ function TrackingContent() {
                                     <div className="flex justify-between items-start border-b border-white/5 pb-6">
                                         <div>
                                             <h3 className="text-white text-xl font-display">Resumen del Pedido</h3>
-                                            <p className="text-white/40 text-sm font-mono mt-1">#{foundOrder.id}</p>
+                                            <p className="text-white/40 text-sm font-mono mt-1 text-gold-500">{foundOrder.trackingNumber || '#' + foundOrder.id}</p>
                                         </div>
                                         <div className="text-right">
                                             <p className="text-white/40 text-xs uppercase tracking-widest">Fecha</p>
@@ -185,6 +189,12 @@ function TrackingContent() {
                                             <p className="text-white/80 text-sm">{foundOrder.email}</p>
                                             <p className="text-white/80 text-sm">{foundOrder.phone}</p>
                                         </div>
+                                        {foundOrder.address && (
+                                            <div>
+                                                <p className="text-white/40 text-[10px] uppercase tracking-widest mb-1">Dirección</p>
+                                                <p className="text-white/60 text-sm leading-relaxed">{foundOrder.address}</p>
+                                            </div>
+                                        )}
                                         {foundOrder.note && (
                                             <div>
                                                 <p className="text-white/40 text-[10px] uppercase tracking-widest mb-1">Nota</p>
