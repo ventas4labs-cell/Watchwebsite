@@ -43,7 +43,7 @@ export default function OrdersPage() {
                     address: order.customer_address,
                     items: order.order_items || [],
                     total: order.total_amount || 0,
-                    status: (isValidStatus(order.status) ? order.status : 'Recibido') as OrderStatus,
+                    status: (isValidStatus(order.status) ? order.status : 'Orden Recibida') as OrderStatus,
                     date: order.created_at,
                     note: order.note
                 }));
@@ -68,14 +68,16 @@ export default function OrdersPage() {
     };
 
     const statusConfig: Record<OrderStatus, { color: string; icon: any }> = {
-        'Recibido': { color: 'text-blue-400 bg-blue-900/20 border-blue-500/30', icon: Package },
-        'Preparación': { color: 'text-yellow-400 bg-yellow-900/20 border-yellow-500/30', icon: Clock },
-        'Enviado': { color: 'text-purple-400 bg-purple-900/20 border-purple-500/30', icon: Truck },
-        'Entregado': { color: 'bg-green-500/10 text-green-500', icon: CheckCircle2 },
-        'Cancelado': { color: 'bg-red-500/10 text-red-500', icon: Clock },
+        'Orden Recibida': { color: 'text-blue-400 bg-blue-900/20 border-blue-500/30', icon: Package },
+        'Asegurando su Pieza': { color: 'text-yellow-400 bg-yellow-900/20 border-yellow-500/30', icon: Clock },
+        'Pieza en Camino': { color: 'text-purple-400 bg-purple-900/20 border-purple-500/30', icon: Truck },
+        'Pieza Llegó': { color: 'text-orange-400 bg-orange-900/20 border-orange-500/30', icon: CheckCircle2 },
+        'Entregando': { color: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30', icon: Truck },
+        'Entregada': { color: 'bg-green-500/10 text-green-500 border-green-500/30', icon: CheckCircle2 },
+        'Cancelado': { color: 'bg-red-500/10 text-red-500 border-red-500/30', icon: Clock },
     };
 
-    const statusOrder: OrderStatus[] = ['Recibido', 'Preparación', 'Enviado', 'Entregado', 'Cancelado'];
+    const statusOrder: OrderStatus[] = ['Orden Recibida', 'Asegurando su Pieza', 'Pieza en Camino', 'Pieza Llegó', 'Entregando', 'Entregada', 'Cancelado'];
 
     const isValidStatus = (status: any): status is OrderStatus => {
         return statusOrder.includes(status);
@@ -142,7 +144,8 @@ export default function OrdersPage() {
                     </div>
                 ) : (
                     filteredOrders.map((order) => {
-                        const StatusIcon = statusConfig[order.status].icon;
+                        const statusData = statusConfig[order.status] || statusConfig['Orden Recibida'];
+                        const StatusIcon = statusData.icon;
                         return (
                             <div key={order.id} className="bg-white/5 border border-white/10 rounded-sm overflow-hidden backdrop-blur-sm hover:border-white/20 transition-all group">
                                 <div className="flex flex-col lg:flex-row">
@@ -202,23 +205,23 @@ export default function OrdersPage() {
                                         <div>
                                             <div className="flex items-center justify-between mb-6">
                                                 <span className="text-[10px] text-white/40 font-bold tracking-widest uppercase">Estado Actual</span>
-                                                <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider border ${statusConfig[order.status].color}`}>
+                                                <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider border ${statusData.color}`}>
                                                     <StatusIcon className="w-3 h-3" />
-                                                    {order.status}
+                                                    {order.status || 'Orden Recibida'}
                                                 </span>
                                             </div>
 
-                                            <div className="grid grid-cols-2 gap-2">
+                                            <div className="grid grid-cols-2 xl:grid-cols-3 gap-2">
                                                 {statusOrder.map((status) => (
                                                     <button
                                                         key={status}
                                                         onClick={() => handleUpdateStatus(order.id, status)}
-                                                        className={`text-[9px] font-bold uppercase tracking-widest py-3 border transition-all ${order.status === status
+                                                        className={`text-[8px] sm:text-[9px] font-bold uppercase tracking-widest py-3 px-2 border transition-all text-center flex flex-col items-center justify-center gap-2 rounded-sm ${order.status === status
                                                             ? 'bg-gold-500 border-gold-500 text-black'
                                                             : 'bg-white/5 border-white/10 text-white/40 hover:border-white/20 hover:text-white'
                                                             }`}
                                                     >
-                                                        {status}
+                                                        <span>{status}</span>
                                                     </button>
                                                 ))}
                                             </div>

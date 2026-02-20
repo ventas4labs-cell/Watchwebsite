@@ -8,6 +8,7 @@ import { Search, Package, Truck, CheckCircle2, Clock, AlertCircle } from 'lucide
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { supabase } from '@/lib/supabase';
 
 function TrackingContent() {
     const searchParams = useSearchParams();
@@ -24,17 +25,83 @@ function TrackingContent() {
         }
     }, [searchParams]);
 
-    const handleSearch = (id: string = searchId) => {
+    const handleSearch = async (id: string = searchId) => {
+        if (!id.trim()) return;
         setHasSearched(true);
-        const term = id.toLowerCase().trim();
-        const order = orders.find(o =>
-            (o.trackingNumber && o.trackingNumber.toLowerCase() === term) ||
-            o.id.toLowerCase() === term
-        );
-        setFoundOrder(order || null);
+        const term = id.trim();
+
+        if (!supabase) return;
+
+        try {
+            let { data, error } = await supabase
+                .from('orders')
+                .select('*')
+                .eq('tracking_number', term)
+                .single();
+
+            if (!data) {
+                const { data: idData } = await supabase
+                    .from('orders')
+                    .select('*')
+                    .eq('id', term)
+                    .single();
+                data = idData;
+            }
+
+            if (data) {
+                const mappedOrder = {
+                    id: data.id,
+                    trackingNumber: data.tracking_number,
+                    customerName: data.customer_name,
+                    email: data.customer_email,
+                    phone: data.customer_phone || '',
+                    address: data.customer_address,
+                    items: data.order_items || [],
+                    total: data.total_amount || 0,
+                    status: data.status,
+                    date: data.created_at,
+                    note: data.note,
+                    status_notes: data.status_notes
+                };
+                setFoundOrder(mappedOrder);
+            } else {
+                setFoundOrder(null);
+            }
+        } catch (error) {
+            console.error('Error fetching order', error);
+            setFoundOrder(null);
+        }
     };
 
-    const statusSteps = ['Recibido', 'Preparación', 'Enviado', 'Entregado'];
+    useEffect(() => {
+        if (!foundOrder?.id || !supabase) return;
+
+        const channel = supabase
+            .channel(`order_updates_${foundOrder.id}`)
+            .on(
+                'postgres_changes',
+                {
+                    event: 'UPDATE',
+                    schema: 'public',
+                    table: 'orders',
+                    filter: `id=eq.${foundOrder.id}`
+                },
+                (payload) => {
+                    const newStatus = payload.new.status;
+                    const newStatusNotes = payload.new.status_notes;
+                    setFoundOrder((prev: any) => prev ? { ...prev, status: newStatus, status_notes: newStatusNotes } : null);
+                }
+            )
+            .subscribe();
+
+        return () => {
+            if (supabase) {
+                supabase.removeChannel(channel);
+            }
+        };
+    }, [foundOrder?.id]);
+
+    const statusSteps = ['Orden Recibida', 'Asegurando su Pieza', 'Pieza en Camino', 'Pieza Llegó', 'Entregando', 'Entregada'];
     const currentStepIndex = foundOrder ? statusSteps.indexOf(foundOrder.status) : -1;
 
     return (
@@ -73,40 +140,49 @@ function TrackingContent() {
                     >
                         {/* Status Progress Bar */}
                         {foundOrder.status !== 'Cancelado' && (
-                            <div className="bg-white/5 border border-white/10 p-10 rounded-sm relative overflow-hidden">
-                                <div className="grid grid-cols-4 relative z-10">
+                            <div className="bg-[#000000] border border-white/10 p-10 rounded-sm relative">
+                                <h3 className="text-white text-sm font-bold tracking-[0.2em] uppercase mb-8">Live Vault</h3>
+                                <div className="relative space-y-8 pl-2">
+                                    {/* Vertical Connector Line */}
+                                    <div className="absolute top-4 bottom-6 left-[20px] w-[2px] bg-white/5 z-0 flex flex-col justify-start overflow-hidden">
+                                        <motion.div
+                                            initial={{ height: 0 }}
+                                            animate={{ height: `${currentStepIndex >= 0 ? (currentStepIndex / (statusSteps.length - 1)) * 100 : 0}%` }}
+                                            className="w-full bg-gold-500 shadow-[0_0_10px_#D4AF37]"
+                                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                                        />
+                                    </div>
+
                                     {statusSteps.map((step, index) => {
                                         const isCompleted = index <= currentStepIndex;
                                         const isActive = index === currentStepIndex;
                                         return (
-                                            <div key={step} className="flex flex-col items-center text-center space-y-4">
-                                                <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-500 ${isCompleted ? 'bg-gold-500 border-gold-500 text-black' : 'border-white/10 text-white/20'
-                                                    } ${isActive ? 'ring-4 ring-gold-500/20 scale-110' : ''}`}>
-                                                    {index === 0 && <Package className="w-5 h-5" />}
-                                                    {index === 1 && <Clock className="w-5 h-5" />}
-                                                    {index === 2 && <Truck className="w-5 h-5" />}
-                                                    {index === 3 && <CheckCircle2 className="w-5 h-5" />}
+                                            <div key={step} className="relative z-10 flex min-h-[4rem] items-start gap-6">
+                                                {/* Icon Column */}
+                                                <div className="flex-shrink-0 flex flex-col items-center">
+                                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center border-2 transition-all duration-500 bg-[#000000] ${isCompleted ? 'border-gold-500 text-gold-500' : 'border-white/10 text-transparent'} ${isActive ? 'scale-125 ring-4 ring-gold-500/30' : ''}`}>
+                                                        {isCompleted && !isActive ? (
+                                                            <CheckCircle2 className="w-4 h-4 text-gold-500 fill-gold-500 text-black" />
+                                                        ) : (
+                                                            <div className={`w-2 h-2 rounded-full transition-all duration-500 ${isCompleted ? 'bg-gold-500 shadow-[0_0_8px_#D4AF37]' : 'bg-transparent'} ${isActive ? 'animate-[pulse_1.5s_ease-in-out_infinite] scale-150' : ''}`}></div>
+                                                        )}
+                                                    </div>
                                                 </div>
-                                                <div className="space-y-1">
-                                                    <span className={`text-[10px] font-bold tracking-[0.2em] uppercase ${isCompleted ? 'text-white' : 'text-white/20'}`}>
+                                                {/* Text Column */}
+                                                <div className="space-y-2 pt-[2px]">
+                                                    <span className={`text-xs font-bold tracking-[0.2em] uppercase ${isCompleted ? 'text-white' : 'text-white/20'}`}>
                                                         {step}
                                                     </span>
                                                     {isActive && (
-                                                        <span className="block text-[9px] text-gold-500 animate-pulse">Estado Actual</span>
+                                                        <span className="block text-[10px] text-gold-500 animate-[pulse_2.5s_ease-in-out_infinite] tracking-widest uppercase">Actividad en progreso</span>
+                                                    )}
+                                                    {isActive && foundOrder.status_notes && (
+                                                        <p className="text-white/60 text-xs italic leading-relaxed max-w-sm bg-white/5 border border-white/10 p-3 rounded-sm mt-2">"{foundOrder.status_notes}"</p>
                                                     )}
                                                 </div>
                                             </div>
                                         );
                                     })}
-                                </div>
-                                {/* Connector Line */}
-                                <div className="absolute top-[64px] left-[12.5%] right-[12.5%] h-[2px] bg-white/5">
-                                    <motion.div
-                                        initial={{ width: 0 }}
-                                        animate={{ width: `${(currentStepIndex / 3) * 100}%` }}
-                                        className="h-full bg-gold-500/30"
-                                        transition={{ duration: 1, ease: "easeOut" }}
-                                    />
                                 </div>
                             </div>
                         )}
@@ -243,7 +319,7 @@ function TrackingContent() {
 
 export default function TrackingPage() {
     return (
-        <main className="min-h-screen bg-rich-black text-white pb-20">
+        <main className="min-h-screen bg-[#000000] text-white pb-20">
             <Navbar />
             <div className="container mx-auto px-6 pt-32">
                 <Suspense fallback={<div className="text-center py-20 text-white/40">Cargando rastreador...</div>}>

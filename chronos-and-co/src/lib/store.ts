@@ -7,7 +7,7 @@ export interface CartItem extends Watch {
     quantity: number;
 }
 
-export type OrderStatus = 'Recibido' | 'Preparación' | 'Enviado' | 'Entregado' | 'Cancelado';
+export type OrderStatus = 'Orden Recibida' | 'Asegurando su Pieza' | 'Pieza en Camino' | 'Pieza Llegó' | 'Entregando' | 'Entregada' | 'Cancelado';
 
 export interface Order {
     id: string; // Internal/Local ID
@@ -135,7 +135,7 @@ export const useStore = create<StoreState>()(
                         address: details.address,
                         items: [...state.cart],
                         total,
-                        status: 'Recibido',
+                        status: 'Orden Recibida',
                         date: new Date().toISOString(),
                     };
 

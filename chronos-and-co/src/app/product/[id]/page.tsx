@@ -4,7 +4,6 @@ import { Navbar } from '@/components/Navbar';
 import { CartDrawer } from '@/components/CartDrawer';
 import { ProductGallery } from '@/components/ProductGallery';
 import { ProductDetailView } from '@/components/ProductDetailView';
-import { AcquisitionProcess } from '@/components/AcquisitionProcess';
 import { createClient } from '@supabase/supabase-js';
 import { Watch } from '@/lib/seed-data';
 
@@ -44,7 +43,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             <CartDrawer />
 
             <div className="container mx-auto px-6 pt-32 pb-24">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-32">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     {/* Left: Product Gallery */}
                     <div className="relative lg:sticky lg:top-32">
                         <ProductGallery
@@ -57,9 +56,6 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                     {/* Right: Details (Reusable Component) */}
                     <ProductDetailView watch={watch} />
                 </div>
-
-                {/* Acquisition Process Section */}
-                <AcquisitionProcess />
             </div>
         </main>
     );

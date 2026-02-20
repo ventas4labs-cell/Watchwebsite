@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Minus, Plus, Trash2, CheckCircle2, ChevronLeft, Send, Package } from 'lucide-react';
 import { useStore } from '@/lib/store';
-import { sendOrderEmail } from '@/lib/email-actions';
 import { submitOrderToSupabase } from '@/lib/supabase';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
@@ -45,7 +44,21 @@ export function CartDrawer() {
 
                 // Fire and forget email sending (Real Service)
                 if (formData.email) {
-                    sendOrderEmail(formData.email, formData.name, newOrder.trackingNumber);
+                    fetch('/api/email/order-confirmation', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            customerName: newOrder.customerName,
+                            email: newOrder.email,
+                            phone: newOrder.phone,
+                            address: newOrder.address,
+                            trackingNumber: newOrder.trackingNumber,
+                            items: newOrder.items,
+                            total: newOrder.total
+                        }),
+                    }).catch(err => console.error("Error triggering confirmation email:", err));
                 }
             }
         }
