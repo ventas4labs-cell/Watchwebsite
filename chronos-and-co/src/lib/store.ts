@@ -120,10 +120,10 @@ export const useStore = create<StoreState>()(
                         0
                     );
 
-                    // Generate a better tracking number: CHR-7823-X92
+                    // Generate a better tracking number: TMW-7823-X92
                     const randomNum = Math.floor(1000 + Math.random() * 9000);
                     const randomSuffix = Math.random().toString(36).substring(2, 5).toUpperCase();
-                    const trackingNumber = `CHR-${randomNum}-${randomSuffix}`;
+                    const trackingNumber = `TMW-${randomNum}-${randomSuffix}`;
 
                     newOrder = {
                         id: Math.random().toString(36).substr(2, 9).toUpperCase(),

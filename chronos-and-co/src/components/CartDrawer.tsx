@@ -58,7 +58,14 @@ export function CartDrawer() {
                             items: newOrder.items,
                             total: newOrder.total
                         }),
-                    }).catch(err => console.error("Error triggering confirmation email:", err));
+                    }).then(async (res) => {
+                        if (!res.ok) {
+                            const errorData = await res.json().catch(() => ({}));
+                            console.error("Resend API Route Error:", res.status, errorData);
+                        } else {
+                            console.log("Confirmation email sent successfully!");
+                        }
+                    }).catch(err => console.error("Network Error triggering confirmation email:", err));
                 }
             }
         }
@@ -195,7 +202,7 @@ export function CartDrawer() {
                                 <form onSubmit={handleCheckout} className="p-8 space-y-8">
                                     <div className="space-y-1">
                                         <p className="text-white/60 text-sm font-light">
-                                            Un especialista de <span className="text-gold-500 font-medium">Chronos & Co.</span> se pondrá en contacto con usted para coordinar el pago y la entrega.
+                                            Un especialista de <span className="text-gold-500 font-medium">Timeless Watches</span> se pondrá en contacto con usted para coordinar el pago y la entrega.
                                         </p>
                                     </div>
 

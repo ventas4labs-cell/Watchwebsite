@@ -25,7 +25,7 @@ export function AdminSidebar() {
             {/* Logo Area */}
             <div className="h-20 flex items-center justify-center border-b border-white/10">
                 <Link href="/" className="text-xl font-display font-bold tracking-widest text-white">
-                    CHRONOS <span className="text-gold-500">& CO.</span>
+                    TIMELESS <span className="text-gold-500">WATCHES</span>
                 </Link>
             </div>
 
