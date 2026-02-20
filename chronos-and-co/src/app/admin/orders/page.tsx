@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useStore, OrderStatus } from '@/lib/store';
 import { supabase } from '@/lib/supabase';
-import { Package, Truck, CheckCircle2, Clock, Mail, Phone, MessageSquare, ChevronRight, Loader2 } from 'lucide-react';
+import { Package, Truck, CheckCircle2, Clock, Mail, Phone, MessageSquare, ChevronRight, Loader2, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 
 interface AdminOrder {
@@ -64,6 +64,25 @@ export default function OrdersPage() {
                 .from('orders')
                 .update({ status: newStatus })
                 .eq('id', orderId);
+        }
+    };
+
+    const handleDeleteOrder = async (orderId: string) => {
+        if (!window.confirm('¿Está seguro de que desea eliminar este pedido permanentemente? Esta acción no se puede deshacer.')) return;
+
+        // Optimistic update
+        setOrders(prev => prev.filter(o => o.id !== orderId));
+
+        if (supabase) {
+            const { error } = await supabase
+                .from('orders')
+                .delete()
+                .eq('id', orderId);
+
+            if (error) {
+                console.error('Error deleting order:', error);
+                alert('Hubo un error al eliminar el pedido.');
+            }
         }
     };
 
@@ -227,14 +246,21 @@ export default function OrdersPage() {
                                             </div>
                                         </div>
 
-                                        <div className="pt-6 border-t border-white/5">
+                                        <div className="pt-6 border-t border-white/5 flex items-center justify-between">
                                             <Link
                                                 href={`/track?id=${order.trackingNumber || order.id}`}
                                                 target="_blank"
-                                                className="flex items-center justify-between text-[10px] text-white/20 hover:text-gold-500 transition-colors uppercase font-bold tracking-widest"
+                                                className="flex items-center gap-2 text-[10px] text-white/20 hover:text-gold-500 transition-colors uppercase font-bold tracking-widest"
                                             >
                                                 Ver vista cliente <ChevronRight className="w-3 h-3" />
                                             </Link>
+                                            <button
+                                                onClick={() => handleDeleteOrder(order.id)}
+                                                className="p-2 text-white/20 hover:text-red-500 hover:bg-red-500/10 rounded-sm transition-all"
+                                                title="Eliminar Pedido"
+                                            >
+                                                <Trash2 className="w-4 h-4" />
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
