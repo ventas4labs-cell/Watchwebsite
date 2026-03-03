@@ -24,13 +24,19 @@ export function ProductGrid({ watches, title }: ProductGridProps) {
                 >
                     <Link href={`/product/${watch.id}`} className="block">
                         <div className="relative aspect-[3/4] bg-white/5 overflow-hidden mb-6">
-                            <Image
-                                src={watch.image}
-                                alt={watch.model}
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            />
+                            {watch.image ? (
+                                <Image
+                                    src={watch.image}
+                                    alt={watch.model}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
+                            ) : (
+                                <div className="absolute inset-0 flex items-center justify-center bg-transparent transition-colors duration-500">
+                                    <span className="text-white/20 tracking-widest uppercase text-sm">No Image</span>
+                                </div>
+                            )}
                             {/* Overlay */}
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
 

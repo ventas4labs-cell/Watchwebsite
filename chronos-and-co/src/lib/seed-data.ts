@@ -9,6 +9,8 @@ export interface Watch {
     is_featured?: boolean;
     availability?: 'in-stock' | 'pre-order';
     details: Record<string, string>;
+    discount_price?: number;
+    price_hidden?: boolean;
 }
 
 export const WATCHES: Watch[] = [

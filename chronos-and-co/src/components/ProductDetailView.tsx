@@ -26,10 +26,19 @@ export function ProductDetailView({ watch }: ProductDetailViewProps) {
             <div className="space-y-4 border-b border-white/10 pb-8">
                 <h2 className="text-gold-500 font-bold tracking-[0.2em] uppercase text-sm">{watch.brand}</h2>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display leading-tight">{watch.model}</h1>
-                {watch.brand.toLowerCase() === 'seiko' ? (
+                {watch.price_hidden ? (
                     <p className="text-xl md:text-2xl text-gold-500 font-light font-sans uppercase tracking-wider">
-                        Precio pronto disponible, consulta con tu asesor
+                        Precio Próximamente
                     </p>
+                ) : watch.discount_price ? (
+                    <div className="flex items-center gap-4">
+                        <p className="text-xl md:text-2xl text-white/30 font-light font-sans line-through">
+                            ${Number(watch.price).toLocaleString()}
+                        </p>
+                        <p className="text-3xl text-gold-500 font-bold font-sans">
+                            ${Number(watch.discount_price).toLocaleString()}
+                        </p>
+                    </div>
                 ) : (
                     <p className="text-3xl text-white/90 font-light font-sans">${Number(watch.price).toLocaleString()}</p>
                 )}

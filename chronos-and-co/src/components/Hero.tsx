@@ -2,24 +2,47 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, Plane, Truck, X } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
+const BACKGROUND_IMAGES = [
+    'https://images.unsplash.com/photo-1715776384730-4c6336bb6738?q=80&w=2000&auto=format&fit=crop', // Tissot
+    'https://images.unsplash.com/photo-1649768506760-0e351ecdd0dc?q=80&w=2000&auto=format&fit=crop', // Seiko
+    'https://images.unsplash.com/photo-1659780275421-aa3a263784ca?q=80&w=2000&auto=format&fit=crop', // Orient
+    'https://images.unsplash.com/photo-1735352245236-f1c12abe5a12?q=80&w=2000&auto=format&fit=crop', // Tissot
+    'https://images.unsplash.com/photo-1587541400752-f039557ea8c6?q=80&w=2000&auto=format&fit=crop', // Seiko
+    'https://images.unsplash.com/photo-1677251366324-3bfa6c03afe8?q=80&w=2000&auto=format&fit=crop'  // Orient
+];
 export function Hero() {
     const [isSelectionOpen, setIsSelectionOpen] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const brands = ['Tissot', 'Seiko', 'Orient'];
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % BACKGROUND_IMAGES.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, []);
 
     return (
         <section className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden">
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 overflow-hidden z-0">
-                <motion.div
-                    initial={{ scale: 1 }}
-                    animate={{ scale: 1.1 }}
-                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url('/hero-background.jpg')" }}
-                />
-                {/* Dark, Moody Overlay */}
+                <AnimatePresence mode="popLayout">
+                    <motion.div
+                        key={currentImageIndex}
+                        initial={{ opacity: 0, scale: 1.05 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{
+                            opacity: { duration: 1.5, ease: "easeInOut" },
+                            scale: { duration: 6, ease: "linear" }
+                        }}
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{ backgroundImage: `url('${BACKGROUND_IMAGES[currentImageIndex]}')` }}
+                    />
+                </AnimatePresence>
+
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-10" />
             </div>

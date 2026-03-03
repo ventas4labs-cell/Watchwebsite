@@ -6,11 +6,22 @@ import { motion } from 'framer-motion';
 export function AddToCartButton({ watch }: { watch: Watch }) {
     const addToCart = useStore((state) => state.addToCart);
 
+    if (watch.price_hidden) {
+        return (
+            <motion.a
+                href={`mailto:orders@tmlsswtchs.com?subject=Consulta%20por%20Reloj:%20${watch.brand}%20${watch.model}`}
+                className="block text-center w-full bg-transparent border border-white/20 text-white font-bold py-5 hover:bg-white/5 hover:border-white/40 transition-colors uppercase tracking-widest text-sm"
+            >
+                Consultar Disponibilidad
+            </motion.a>
+        );
+    }
+
     return (
         <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => addToCart(watch)}
+            onClick={() => addToCart({ ...watch, price: watch.discount_price || watch.price })}
             className="w-full bg-gold-500 text-black font-bold py-5 hover:bg-gold-400 transition-colors uppercase tracking-widest text-sm shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
         >
             Add to Collection

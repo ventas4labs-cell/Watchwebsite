@@ -153,18 +153,29 @@ export function CartDrawer() {
                                                 animate={{ opacity: 1, x: 0 }}
                                                 className="flex gap-6 items-start group"
                                             >
-                                                <div className="relative w-24 h-32 bg-white/5 rounded-sm overflow-hidden flex-shrink-0 border border-white/10">
-                                                    <Image
-                                                        src={item.image}
-                                                        alt={item.model}
-                                                        fill
-                                                        className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                                                    />
+                                                <div className="relative w-24 h-32 bg-white/5 rounded-sm overflow-hidden flex-shrink-0 border border-white/10 flex items-center justify-center">
+                                                    {item.image ? (
+                                                        <Image
+                                                            src={item.image}
+                                                            alt={item.model}
+                                                            fill
+                                                            className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                                                        />
+                                                    ) : (
+                                                        <span className="text-white/20 text-[10px] uppercase tracking-widest leading-none text-center">No Img</span>
+                                                    )}
                                                 </div>
                                                 <div className="flex-1 min-w-0 py-1">
                                                     <h4 className="text-[10px] text-gold-500 font-bold tracking-[0.2em] uppercase mb-1">{item.brand}</h4>
                                                     <h3 className="text-white font-medium text-lg leading-tight mb-2 truncate">{item.model}</h3>
-                                                    <p className="text-white/60 font-light text-sm mb-4">${item.price.toLocaleString()}</p>
+                                                    <div className="flex items-center gap-2 mb-4">
+                                                        <p className="text-white/90 font-light text-sm">${item.price.toLocaleString()}</p>
+                                                        {item.discount_price && item.discount_price === item.price && (
+                                                            <span className="text-[9px] uppercase tracking-widest bg-gold-500/10 text-gold-500 px-2 py-0.5 rounded-full border border-gold-500/20">
+                                                                Oferta
+                                                            </span>
+                                                        )}
+                                                    </div>
 
                                                     <div className="flex items-center justify-between">
                                                         <div className="flex items-center gap-1 bg-white/5 rounded-full p-1 border border-white/10">

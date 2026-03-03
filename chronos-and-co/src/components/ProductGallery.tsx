@@ -40,14 +40,20 @@ export function ProductGallery({ mainImage, gallery = [], model }: ProductGaller
                 className="relative aspect-[3/4] lg:h-[70vh] w-full bg-white/5 rounded-sm overflow-hidden cursor-zoom-in group"
                 onClick={() => openLightbox(allImages.indexOf(selectedImage))}
             >
-                <Image
-                    src={selectedImage}
-                    alt={model}
-                    fill
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                    priority
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                />
+                {selectedImage ? (
+                    <Image
+                        src={selectedImage}
+                        alt={model}
+                        fill
+                        className="object-cover transition-transform duration-700 hover:scale-105"
+                        priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                ) : (
+                    <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
+                        <span className="text-white/20 tracking-widest uppercase text-sm">No Image</span>
+                    </div>
+                )}
 
                 {/* Zoom Indicator */}
                 <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -64,13 +70,19 @@ export function ProductGallery({ mainImage, gallery = [], model }: ProductGaller
                         className={`relative aspect-square bg-white/5 rounded-sm overflow-hidden transition-all duration-300 ${selectedImage === img ? 'ring-2 ring-gold-500 opacity-100' : 'opacity-60 hover:opacity-100'
                             }`}
                     >
-                        <Image
-                            src={img}
-                            alt={`${model} View ${idx + 1}`}
-                            fill
-                            className="object-cover"
-                            sizes="10vw"
-                        />
+                        {img ? (
+                            <Image
+                                src={img}
+                                alt={`${model} View ${idx + 1}`}
+                                fill
+                                className="object-cover"
+                                sizes="10vw"
+                            />
+                        ) : (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <span className="text-white/20 text-[10px] tracking-wider uppercase">No Img</span>
+                            </div>
+                        )}
                     </button>
                 ))}
             </div>
@@ -88,12 +100,18 @@ export function ProductGallery({ mainImage, gallery = [], model }: ProductGaller
                             className={`relative flex-shrink-0 w-20 h-20 snap-start bg-white/5 rounded-sm overflow-hidden ${selectedImage === img ? 'ring-1 ring-gold-500' : 'opacity-70'
                                 }`}
                         >
-                            <Image
-                                src={img}
-                                alt={`${model} thumb ${idx}`}
-                                fill
-                                className="object-cover"
-                            />
+                            {img ? (
+                                <Image
+                                    src={img}
+                                    alt={`${model} thumb ${idx}`}
+                                    fill
+                                    className="object-cover"
+                                />
+                            ) : (
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <span className="text-white/20 text-[10px] tracking-wider uppercase">No Img</span>
+                                </div>
+                            )}
                         </button>
                     ))}
                 </div>
@@ -149,14 +167,20 @@ export function ProductGallery({ mainImage, gallery = [], model }: ProductGaller
                                 transition={{ duration: 0.3 }}
                                 className="relative w-full h-full"
                             >
-                                <Image
-                                    src={allImages[currentLightboxIndex]}
-                                    alt={model}
-                                    fill
-                                    className="object-contain"
-                                    sizes="100vw"
-                                    priority
-                                />
+                                {allImages[currentLightboxIndex] ? (
+                                    <Image
+                                        src={allImages[currentLightboxIndex]}
+                                        alt={model}
+                                        fill
+                                        className="object-contain"
+                                        sizes="100vw"
+                                        priority
+                                    />
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <span className="text-white/20 font-display text-2xl uppercase tracking-widest">No Image Available</span>
+                                    </div>
+                                )}
                             </motion.div>
                         </div>
 

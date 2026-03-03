@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'www.stauer.com' },
       { protocol: 'https', hostname: 'www.timex.com' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'cdn.shopify.com' },
     ],
   },
 };

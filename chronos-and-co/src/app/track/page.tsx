@@ -206,8 +206,12 @@ function TrackingContent() {
                                     <div className="space-y-6">
                                         {foundOrder.items.map((item: any) => (
                                             <div key={item.id} className="flex gap-4">
-                                                <div className="relative w-16 h-20 bg-white/5 border border-white/10 rounded-sm flex-shrink-0">
-                                                    <Image src={item.image} alt={item.model} fill className="object-cover opacity-80" />
+                                                <div className="relative w-16 h-20 bg-white/5 border border-white/10 rounded-sm flex-shrink-0 flex items-center justify-center">
+                                                    {item.image ? (
+                                                        <Image src={item.image} alt={item.model} fill className="object-cover opacity-80" />
+                                                    ) : (
+                                                        <span className="text-white/20 text-[8px] uppercase tracking-widest leading-none text-center">No Img</span>
+                                                    )}
                                                 </div>
                                                 <div className="flex-1">
                                                     <h4 className="text-gold-500 text-[10px] font-bold tracking-widest uppercase">{item.brand}</h4>

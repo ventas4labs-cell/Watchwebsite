@@ -6,6 +6,7 @@ import { X, Upload, Save, Loader2, GripVertical } from 'lucide-react';
 import { toast } from 'sonner';
 import clsx from 'clsx';
 import Image from 'next/image';
+import { supabase, uploadWatchImage } from '@/lib/supabase';
 
 import {
     WATCH_BRANDS as BRANDS,
@@ -27,8 +28,11 @@ export function AddTimepieceForm() {
     const [brand, setBrand] = useState<string>(BRANDS[0]);
     const [model, setModel] = useState('');
     const [price, setPrice] = useState('');
+    const [discountPrice, setDiscountPrice] = useState('');
+    const [priceHidden, setPriceHidden] = useState(false);
     const [status, setStatus] = useState<string>('Available');
     const [isFeatured, setIsFeatured] = useState(false);
+    const [description, setDescription] = useState('');
 
     const [details, setDetails] = useState({
         "Movimiento": "",
@@ -75,30 +79,79 @@ export function AddTimepieceForm() {
         e.preventDefault();
         setIsLoading(true);
 
-        // Simulation of API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            if (!supabase) throw new Error('Supabase client is not initialized');
 
-        toast.success(`Timepiece ${brand} ${model} is Live`, {
-            description: 'Inventory updated successfully.'
-        });
+            // Upload images
+            const finalUrls: string[] = [];
+            let imageIndex = 0;
+            for (const url of previewUrls) {
+                if (url.startsWith('blob:') && images[imageIndex]) {
+                    const uploadedUrl = await uploadWatchImage(images[imageIndex]);
+                    if (uploadedUrl) {
+                        finalUrls.push(uploadedUrl);
+                    }
+                    imageIndex++;
+                } else {
+                    finalUrls.push(url);
+                }
+            }
 
-        // Reset Form
-        setBrand(BRANDS[0]);
-        setModel('');
-        setPrice('');
-        setStatus('Available');
+            const mainImage = finalUrls.length > 0 ? finalUrls[0] : '';
+            const gallery = finalUrls.slice(1);
 
-        setDetails({
-            "Movimiento": "",
-            "Tamaño de Caja": "",
-            "Resistencia al Agua": "",
-            "Cristal": "",
-            "Material de la Caja": ""
-        });
-        setSelectedCollections([]);
-        setImages([]);
-        setPreviewUrls([]);
-        setIsLoading(false);
+            const watchId = `${brand.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${model.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${Date.now()}`;
+
+            const payload = {
+                id: watchId,
+                brand,
+                model,
+                price: parseFloat(price) || 0,
+                description,
+                image: mainImage,
+                gallery,
+                is_featured: isFeatured,
+                availability: status === 'Available' ? 'in-stock' : 'pre-order',
+                details,
+                discount_price: discountPrice ? parseFloat(discountPrice) : null,
+                price_hidden: priceHidden
+            };
+
+            const { error } = await supabase.from('watches').insert([payload]);
+
+            if (error) throw error;
+
+            toast.success(`Timepiece ${brand} ${model} is Live`, {
+                description: 'Inventory updated successfully.'
+            });
+
+            // Reset Form
+            setBrand(BRANDS[0]);
+            setModel('');
+            setPrice('');
+            setDiscountPrice('');
+            setDescription('');
+            setPriceHidden(false);
+            setStatus('Available');
+
+            setDetails({
+                "Movimiento": "",
+                "Tamaño de Caja": "",
+                "Resistencia al Agua": "",
+                "Cristal": "",
+                "Material de la Caja": ""
+            });
+            setSelectedCollections([]);
+            setImages([]);
+            setPreviewUrls([]);
+        } catch (error: any) {
+            console.error('Error adding watch:', error);
+            toast.error('Error', {
+                description: error.message || 'Error occurred while saving.'
+            });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -130,35 +183,75 @@ export function AddTimepieceForm() {
                             className="w-full bg-white/5 border border-white/10 rounded-sm py-3 px-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors"
                         />
                     </div>
+                    <div>
+                        <label className="block text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Descripción</label>
+                        <textarea
+                            placeholder="Detailed description of the timepiece..."
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            required
+                            rows={4}
+                            className="w-full bg-white/5 border border-white/10 rounded-sm py-3 px-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors resize-none"
+                        />
+                    </div>
                 </div>
 
                 <div className="space-y-6">
-                    <div>
-                        <label className="block text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Precio (USD)</label>
-                        <div className="relative">
-                            <span className="absolute left-4 top-3 text-white/40">$</span>
-                            <input
-                                type="number"
-                                placeholder="0.00"
-                                value={price}
-                                onChange={(e) => setPrice(e.target.value)}
-                                required
-                                className="w-full bg-white/5 border border-white/10 rounded-sm py-3 pl-8 px-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors font-mono"
-                            />
+                    <div className="grid grid-cols-2 gap-4">
+                        <div>
+                            <label className="block text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Precio (USD)</label>
+                            <div className="relative">
+                                <span className="absolute left-4 top-3 text-white/40">$</span>
+                                <input
+                                    type="number"
+                                    placeholder="0.00"
+                                    value={price}
+                                    onChange={(e) => setPrice(e.target.value)}
+                                    required
+                                    className="w-full bg-white/5 border border-white/10 rounded-sm py-3 pl-8 px-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors font-mono"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label className="block text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Precio Dcto.</label>
+                            <div className="relative">
+                                <span className="absolute left-4 top-3 text-white/40">$</span>
+                                <input
+                                    type="number"
+                                    placeholder="Opcional"
+                                    value={discountPrice}
+                                    onChange={(e) => setDiscountPrice(e.target.value)}
+                                    className="w-full bg-white/5 border border-white/10 rounded-sm py-3 pl-8 px-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors font-mono"
+                                />
+                            </div>
                         </div>
                     </div>
 
-                    <div>
-                        <label className="block text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Estado</label>
-                        <select
-                            value={status}
-                            onChange={(e) => setStatus(e.target.value)}
-                            className="w-full bg-white/5 border border-white/10 rounded-sm py-3 px-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
-                        >
-                            {STATUSES.map(s => (
-                                <option key={s} value={s} className="bg-rich-black">{s}</option>
-                            ))}
-                        </select>
+                    <div className="grid grid-cols-2 gap-4">
+                        <div>
+                            <label className="block text-xs uppercase tracking-widest text-white/40 font-bold mb-2">Estado</label>
+                            <select
+                                value={status}
+                                onChange={(e) => setStatus(e.target.value)}
+                                className="w-full bg-white/5 border border-white/10 rounded-sm py-3 px-4 text-white focus:outline-none focus:border-gold-500/50 transition-colors appearance-none"
+                            >
+                                {STATUSES.map(s => (
+                                    <option key={s} value={s} className="bg-rich-black">{s}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="flex items-center gap-3 bg-white/5 p-3 rounded-sm border border-white/10 h-[50px] mt-6">
+                            <input
+                                type="checkbox"
+                                id="price_hidden"
+                                checked={priceHidden}
+                                onChange={(e) => setPriceHidden(e.target.checked)}
+                                className="w-4 h-4 rounded-sm bg-black border border-white/20 checked:bg-gold-500 checked:border-gold-500 focus:ring-gold-500/50 transition-colors cursor-pointer appearance-none relative checked:after:content-['✓'] checked:after:absolute checked:after:text-black checked:after:text-[10px] checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 checked:after:font-bold"
+                            />
+                            <label htmlFor="price_hidden" className="text-xs text-white cursor-pointer select-none">
+                                <span className="font-bold text-white/80 uppercase tracking-wider">Ocultar Precio</span>
+                            </label>
+                        </div>
                     </div>
 
                     <div className="flex items-center gap-3 bg-white/5 p-3 rounded-sm border border-white/10 h-[50px] mt-auto">

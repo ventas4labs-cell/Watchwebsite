@@ -89,6 +89,8 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                 brand: watch.brand,
                 model: watch.model,
                 price: watch.price,
+                discount_price: watch.discount_price,
+                price_hidden: watch.price_hidden,
                 availability: watch.availability,
                 description: watch.description,
                 details: watch.details || {},
@@ -187,7 +189,7 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                                                 <label className="text-[10px] text-white/40 uppercase tracking-widest">Marca</label>
                                                 <input
                                                     type="text"
-                                                    value={formData.brand}
+                                                    value={formData.brand || ''}
                                                     onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
                                                     className="w-full bg-white/5 border border-white/10 rounded-sm p-2 text-sm text-white focus:border-gold-500/50 outline-none transition-colors"
                                                 />
@@ -196,7 +198,7 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                                                 <label className="text-[10px] text-white/40 uppercase tracking-widest">Modelo</label>
                                                 <input
                                                     type="text"
-                                                    value={formData.model}
+                                                    value={formData.model || ''}
                                                     onChange={(e) => setFormData({ ...formData, model: e.target.value })}
                                                     className="w-full bg-white/5 border border-white/10 rounded-sm p-2 text-sm text-white focus:border-gold-500/50 outline-none transition-colors"
                                                 />
@@ -206,15 +208,27 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                                                     <label className="text-[10px] text-white/40 uppercase tracking-widest">Precio</label>
                                                     <input
                                                         type="number"
-                                                        value={formData.price}
+                                                        value={formData.price || 0}
                                                         onChange={(e) => setFormData({ ...formData, price: Number(e.target.value) })}
                                                         className="w-full bg-white/5 border border-white/10 rounded-sm p-2 text-sm text-white focus:border-gold-500/50 outline-none transition-colors"
                                                     />
                                                 </div>
                                                 <div className="space-y-1">
+                                                    <label className="text-[10px] text-white/40 uppercase tracking-widest">Precio Dcto.</label>
+                                                    <input
+                                                        type="number"
+                                                        value={formData.discount_price || ''}
+                                                        onChange={(e) => setFormData({ ...formData, discount_price: e.target.value ? Number(e.target.value) : undefined })}
+                                                        placeholder="Opcional"
+                                                        className="w-full bg-white/5 border border-white/10 rounded-sm p-2 text-sm text-white focus:border-gold-500/50 outline-none transition-colors"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="grid grid-cols-2 gap-4">
+                                                <div className="space-y-1">
                                                     <label className="text-[10px] text-white/40 uppercase tracking-widest">Estado</label>
                                                     <select
-                                                        value={formData.availability}
+                                                        value={formData.availability || 'in-stock'}
                                                         onChange={(e) => setFormData({ ...formData, availability: e.target.value as any })}
                                                         className="w-full bg-white/5 border border-white/10 rounded-sm p-2 text-sm text-white focus:border-gold-500/50 outline-none transition-colors"
                                                     >
@@ -222,6 +236,20 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
                                                         <option value="pre-order">Reserved</option>
                                                         <option value="sold">Sold</option>
                                                     </select>
+                                                </div>
+                                                <div className="flex flex-col justify-end pb-2">
+                                                    <label className="flex items-center gap-2 cursor-pointer group">
+                                                        <div className={`w-4 h-4 rounded-sm border flex items-center justify-center transition-colors ${formData.price_hidden ? 'bg-gold-500 border-gold-500' : 'border-white/20 group-hover:border-white/50'}`}>
+                                                            {formData.price_hidden && <span className="text-black text-[10px]">✓</span>}
+                                                        </div>
+                                                        <span className="text-[10px] text-white/40 uppercase tracking-widest group-hover:text-white/80 transition-colors">Ocultar Precio</span>
+                                                        <input
+                                                            type="checkbox"
+                                                            className="hidden"
+                                                            checked={!!formData.price_hidden}
+                                                            onChange={(e) => setFormData({ ...formData, price_hidden: e.target.checked })}
+                                                        />
+                                                    </label>
                                                 </div>
                                             </div>
                                             <div className="space-y-1">
@@ -319,17 +347,103 @@ export function EditWatchModal({ watch, isOpen, onClose }: EditWatchModalProps) 
 
                                     {/* Images */}
                                     {/* ... (Omitted full image gallery logic here for brevity, keeping it simple or reusing existing logic if needed, but for now I will rely on the previous implementation's logic if I can copy it, or just simplify) ... */}
-                                    {/* For this specific task, I'll include the basic image input */}
                                     <div className="space-y-4">
                                         <h4 className="text-xs text-gold-500 font-bold uppercase tracking-widest border-b border-white/5 pb-2">Multimedia</h4>
-                                        <div className="space-y-2">
-                                            <label className="text-[10px] text-white/40 uppercase tracking-widest ml-1">Url Imagen</label>
-                                            <input
-                                                type="text"
-                                                value={formData.image || ''}
-                                                onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                                                className="w-full bg-white/5 border border-white/10 rounded-sm p-2 text-xs text-white/60 focus:outline-none focus:border-gold-500/50 transition-colors font-mono"
-                                            />
+                                        <div className="space-y-6">
+                                            {/* Main Image */}
+                                            <div className="space-y-2">
+                                                <label className="text-[10px] text-white/40 uppercase tracking-widest ml-1">Imagen Principal</label>
+                                                {formData.image ? (
+                                                    <div className="relative aspect-video w-full bg-white/5 rounded-sm overflow-hidden border border-white/10 group">
+                                                        <Image src={formData.image} alt="Main" fill className="object-cover" />
+                                                        <button
+                                                            type="button"
+                                                            onClick={(e) => {
+                                                                e.preventDefault();
+                                                                setFormData({ ...formData, image: '' });
+                                                            }}
+                                                            className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                                        >
+                                                            <span className="text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                                                                <X className="w-4 h-4" /> Quitar Imagen
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                ) : (
+                                                    <ImageUploadDropbox
+                                                        label="Subir Portada"
+                                                        onUpload={(url) => setFormData({ ...formData, image: url })}
+                                                    />
+                                                )}
+                                                <input
+                                                    type="text"
+                                                    value={formData.image || ''}
+                                                    onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                                                    placeholder="O ingrese URL manual..."
+                                                    className="w-full bg-black/40 border-b border-white/5 p-2 text-[10px] text-white/40 focus:outline-none focus:border-gold-500/50 transition-colors font-mono mt-1"
+                                                />
+                                            </div>
+
+                                            {/* Gallery Images */}
+                                            <div className="space-y-3 pt-4 border-t border-white/5">
+                                                <label className="text-[10px] text-white/40 uppercase tracking-widest ml-1">Recursos Adicionales (Galería)</label>
+                                                <div className="grid grid-cols-4 gap-2">
+                                                    {formData.gallery?.map((url, idx) => (
+                                                        <div key={`${url}-${idx}`} className="relative aspect-square group bg-white/5 rounded-sm overflow-hidden border border-white/10">
+                                                            <Image src={url} alt={`Gallery ${idx}`} fill className="object-cover" />
+                                                            <button
+                                                                type="button"
+                                                                onClick={(e) => {
+                                                                    e.preventDefault();
+                                                                    const newGallery = [...(formData.gallery || [])];
+                                                                    newGallery.splice(idx, 1);
+                                                                    setFormData({ ...formData, gallery: newGallery });
+                                                                }}
+                                                                className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                                            >
+                                                                <X className="w-4 h-4 text-white" />
+                                                            </button>
+                                                        </div>
+                                                    ))}
+                                                    <ImageUploadDropbox
+                                                        compact
+                                                        label="+"
+                                                        onUpload={(url) => {
+                                                            setFormData({ ...formData, gallery: [...(formData.gallery || []), url] });
+                                                        }}
+                                                    />
+                                                </div>
+                                                <div className="flex gap-2 pt-2">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="O añadir URL de imagen..."
+                                                        className="flex-1 bg-black/40 border-b border-white/5 p-2 text-[10px] text-white/40 focus:outline-none focus:border-gold-500/50 transition-colors font-mono"
+                                                        onKeyDown={(e) => {
+                                                            if (e.key === 'Enter') {
+                                                                e.preventDefault();
+                                                                const input = e.currentTarget;
+                                                                if (input.value) {
+                                                                    setFormData({ ...formData, gallery: [...(formData.gallery || []), input.value] });
+                                                                    input.value = '';
+                                                                }
+                                                            }
+                                                        }}
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        onClick={(e) => {
+                                                            const input = e.currentTarget.previousElementSibling as HTMLInputElement;
+                                                            if (input.value) {
+                                                                setFormData({ ...formData, gallery: [...(formData.gallery || []), input.value] });
+                                                                input.value = '';
+                                                            }
+                                                        }}
+                                                        className="px-4 bg-white/10 hover:bg-gold-500 hover:text-black text-white rounded-sm transition-colors font-bold text-sm flex items-center justify-center"
+                                                    >
+                                                        +
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 

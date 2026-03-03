@@ -126,22 +126,36 @@ export function InventoryVault() {
                                         className="bg-white/[0.02] border border-white/5 rounded-sm overflow-hidden group hover:border-white/20 transition-all duration-300 hover:bg-white/[0.04]"
                                     >
                                         {/* Main Image Area */}
-                                        <div className="relative aspect-[4/3] w-full border-b border-white/5 bg-black/20">
-                                            <Image
-                                                src={item.image}
-                                                alt={item.model}
-                                                fill
-                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                            />
+                                        <div className="relative aspect-[4/3] w-full border-b border-white/5 bg-black/20 flex items-center justify-center">
+                                            {item.image ? (
+                                                <Image
+                                                    src={item.image}
+                                                    alt={item.model}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                />
+                                            ) : (
+                                                <span className="text-white/20 text-xs tracking-widest uppercase">No Image</span>
+                                            )}
 
                                             {/* Status Badge */}
-                                            <div className="absolute top-4 right-4 z-10">
+                                            <div className="absolute top-4 right-4 z-10 flex flex-col gap-2 items-end">
                                                 <span className={clsx(
                                                     "inline-flex items-center px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest border backdrop-blur-md shadow-lg",
                                                     getStatusColor(item.availability)
                                                 )}>
                                                     {getStatusLabel(item.availability)}
                                                 </span>
+                                                {item.price_hidden && (
+                                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest border backdrop-blur-md shadow-lg bg-black/60 text-white/80 border-white/20">
+                                                        Oculto (Próximamente)
+                                                    </span>
+                                                )}
+                                                {item.discount_price && (
+                                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest border backdrop-blur-md shadow-lg bg-gold-500/20 text-gold-500 border-gold-500/30">
+                                                        Oferta: ${item.discount_price.toLocaleString()}
+                                                    </span>
+                                                )}
                                             </div>
 
                                             {/* Action Buttons Overlay */}
@@ -167,9 +181,16 @@ export function InventoryVault() {
                                         <div className="p-6 space-y-4">
                                             <div className="space-y-1">
                                                 <h3 className="text-white font-bold text-lg leading-tight">{item.model}</h3>
-                                                <p className="font-mono text-gold-500 text-sm tracking-wider">
-                                                    ${item.price.toLocaleString()}
-                                                </p>
+                                                <div className="flex items-center gap-2">
+                                                    <p className={clsx("font-mono text-sm tracking-wider", item.discount_price ? "text-white/30 line-through" : "text-gold-500")}>
+                                                        ${item.price.toLocaleString()}
+                                                    </p>
+                                                    {item.discount_price && (
+                                                        <p className="font-mono text-gold-500 font-bold text-sm tracking-wider">
+                                                            ${item.discount_price.toLocaleString()}
+                                                        </p>
+                                                    )}
+                                                </div>
                                             </div>
 
                                             {/* Gallery Preview */}
