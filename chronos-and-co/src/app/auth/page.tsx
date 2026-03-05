@@ -52,7 +52,8 @@ export default function AuthPage() {
                 options: {
                     data: {
                         full_name: fullName,
-                    }
+                    },
+                    emailRedirectTo: 'https://tmlsswtchs.com/portal',
                 }
             });
             if (error) {
