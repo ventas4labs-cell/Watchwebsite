@@ -1,9 +1,10 @@
 'use client';
 
 import { useStore } from '@/lib/store';
-import { Mail, Phone, MapPin, Calendar, Search, Sparkles, Loader2, CheckCircle2 } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, Search, Sparkles, Loader2, CheckCircle2, Award, Clock } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
+import Link from 'next/link';
 
 export default function CustomersPage() {
     const { orders } = useStore();
@@ -12,36 +13,33 @@ export default function CustomersPage() {
     const [isGenerating, setIsGenerating] = useState(false);
     const [couponResult, setCouponResult] = useState<{ success: boolean; message: string; code?: string } | null>(null);
 
-    // Deduplicate customers from orders
-    const customersMap = new Map();
-    orders.forEach(order => {
-        if (!customersMap.has(order.email)) {
-            customersMap.set(order.email, {
-                id: order.id, // using first order id as temp customer id
-                name: order.customerName,
-                email: order.email,
-                phone: order.phone,
-                address: order.address,
-                firstOrderDate: order.date,
-                totalOrders: 1,
-                totalSpent: order.total
-            });
-        } else {
-            const customer = customersMap.get(order.email);
-            customer.totalOrders += 1;
-            customer.totalSpent += order.total;
-            // keep earliest date
-            if (new Date(order.date) < new Date(customer.firstOrderDate)) {
-                customer.firstOrderDate = order.date;
-            }
-        }
-    });
+    const [customers, setCustomers] = useState<any[]>([]);
+    const [isLoadingCustomers, setIsLoadingCustomers] = useState(true);
 
-    const customers = Array.from(customersMap.values());
+    useEffect(() => {
+        const fetchCustomers = async () => {
+            if (!supabase) {
+                setIsLoadingCustomers(false);
+                return;
+            }
+
+            try {
+                const { data, error } = await supabase.rpc('admin_get_all_customers');
+                if (error) throw error;
+                if (data) setCustomers(data);
+            } catch (err) {
+                console.error("Error fetching customers:", err);
+            } finally {
+                setIsLoadingCustomers(false);
+            }
+        };
+
+        fetchCustomers();
+    }, []);
 
     const filteredCustomers = customers.filter(customer =>
-        customer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        customer.email.toLowerCase().includes(searchTerm.toLowerCase())
+        (customer.full_name || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (customer.email || '').toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     const handleGenerateCoupon = async (e: React.FormEvent) => {
@@ -60,9 +58,9 @@ export default function CustomersPage() {
             if (rpcError) throw new Error(rpcError.message);
             if (!code) throw new Error('No se pudo generar el código');
 
-            // 2. Fetch Customer Name from auth (simulated via stored order if exists, or just send 'Cliente')
-            const existingCustomer = customers.find(c => c.email.toLowerCase() === couponEmail.toLowerCase().trim());
-            const customerName = existingCustomer?.name || 'Cliente';
+            // 2. Fetch Customer Name from auth
+            const existingCustomer = customers.find(c => (c.email || '').toLowerCase() === couponEmail.toLowerCase().trim());
+            const customerName = existingCustomer?.full_name || 'Cliente';
 
             // 3. Dispatch Email automatically
             const response = await fetch('/api/email/welcome', {
@@ -152,43 +150,48 @@ export default function CustomersPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredCustomers.map((customer) => (
-                    <div key={customer.email} className="bg-white/5 border border-white/10 rounded-sm p-6 hover:border-white/20 transition-all group">
-                        <div className="flex justify-between items-start mb-6">
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold-500/20 to-transparent border border-gold-500/20 flex items-center justify-center text-gold-500 font-display text-xl">
-                                {customer.name.charAt(0)}
-                            </div>
-                            <div className="text-right">
-                                <span className="text-[10px] uppercase tracking-widest text-white/40 block mb-1">Total Gastado</span>
-                                <span className="text-gold-500 font-bold">${customer.totalSpent.toLocaleString()}</span>
-                            </div>
-                        </div>
-
-                        <h3 className="text-lg font-display text-white mb-4">{customer.name}</h3>
-
-                        <div className="space-y-3 text-sm">
-                            <div className="flex items-center gap-3 text-white/40 group-hover:text-white/60 transition-colors">
-                                <Mail className="w-4 h-4 text-gold-500/50" />
-                                <span className="truncate">{customer.email}</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-white/40 group-hover:text-white/60 transition-colors">
-                                <Phone className="w-4 h-4 text-gold-500/50" />
-                                <span>{customer.phone}</span>
-                            </div>
-                            <div className="flex items-start gap-3 text-white/40 group-hover:text-white/60 transition-colors">
-                                <MapPin className="w-4 h-4 text-gold-500/50 mt-0.5" />
-                                <span className="line-clamp-2">{customer.address}</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-white/40 group-hover:text-white/60 transition-colors pt-4 border-t border-white/5 mt-4">
-                                <Calendar className="w-4 h-4 text-gold-500/50" />
-                                <span className="text-xs">Cliente desde {new Date(customer.firstOrderDate).toLocaleDateString()}</span>
-                            </div>
-                        </div>
+                {isLoadingCustomers ? (
+                    <div className="col-span-full py-20 flex flex-col items-center justify-center text-white/40">
+                        <Loader2 className="w-8 h-8 animate-spin text-gold-500 mb-4" />
+                        <p>Cargando clientes de la bóveda...</p>
                     </div>
+                ) : filteredCustomers.map((customer) => (
+                    <Link key={customer.id} href={`/admin/customers/${customer.id}`} className="block">
+                        <div className="bg-white/5 border border-white/10 rounded-sm p-6 hover:border-gold-500/50 hover:bg-gold-500/5 transition-all group h-full cursor-pointer">
+                            <div className="flex justify-between items-start mb-6">
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold-500/20 to-transparent border border-gold-500/20 flex items-center justify-center text-gold-500 font-display text-xl">
+                                    {(customer.full_name || 'C').charAt(0)}
+                                </div>
+                                <div className="text-right">
+                                    <span className="text-[10px] uppercase tracking-widest text-white/40 block mb-1">Nivel</span>
+                                    <span className={`font-bold text-sm ${customer.tier_level === 'Curator' ? 'text-white' : customer.tier_level === 'Collector' ? 'text-white/80' : 'text-gold-500'}`}>
+                                        {customer.tier_level || 'Member'}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <h3 className="text-lg font-display text-white mb-4 line-clamp-1">{customer.full_name || 'Cliente Sin Nombre'}</h3>
+
+                            <div className="space-y-3 text-sm">
+                                <div className="flex items-center gap-3 text-white/40 group-hover:text-white/70 transition-colors">
+                                    <Mail className="w-4 h-4 text-gold-500/50" />
+                                    <span className="truncate">{customer.email}</span>
+                                </div>
+                                <div className="flex items-center gap-3 text-white/40 group-hover:text-white/70 transition-colors">
+                                    <Award className="w-4 h-4 text-gold-500/50" />
+                                    <span>{customer.completed_orders_count || 0} compras exitosas</span>
+                                </div>
+                                <div className="flex items-center gap-3 text-white/40 group-hover:text-white/70 transition-colors pt-4 border-t border-white/5 mt-4">
+                                    <Clock className="w-4 h-4 text-gold-500/50" />
+                                    <span className="text-xs">Registrado el {new Date(customer.created_at).toLocaleDateString()}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
                 ))}
             </div>
 
-            {filteredCustomers.length === 0 && (
+            {!isLoadingCustomers && filteredCustomers.length === 0 && (
                 <div className="text-center py-20 text-white/40">
                     <p>No se encontraron clientes.</p>
                 </div>
