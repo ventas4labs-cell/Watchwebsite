@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'www.timex.com' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'cdn.shopify.com' },
+      { protocol: 'https', hostname: 'www.watchesandcrystals.com' },
+      { protocol: 'https', hostname: 'www.bosshunting.com.au' },
+      { protocol: 'https', hostname: 'noahsfinejewelry.com' },
+      { protocol: 'https', hostname: 'timeandtidewatches.com' },
     ],
   },
 };
