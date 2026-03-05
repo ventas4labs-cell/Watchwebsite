@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'www.bosshunting.com.au' },
       { protocol: 'https', hostname: 'noahsfinejewelry.com' },
       { protocol: 'https', hostname: 'timeandtidewatches.com' },
+      { protocol: 'https', hostname: 'www.danwerkejewelers.com' },
+      { protocol: 'https', hostname: 'storage.seikowatches.com' },
     ],
   },
 };
