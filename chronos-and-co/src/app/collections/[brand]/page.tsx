@@ -25,10 +25,11 @@ const BRAND_DESCRIPTIONS: Record<string, string> = {
 
 const BRAND_SLIDER_IMAGES: Record<string, string[]> = {
     tissot: [
-        "/brand-assets/tissot-hero.jpg",
-        "https://www.tissotwatches.com/media/home/TISSOT_PRX_35_MM_ICE_BLUE_D_BANNER.jpg",
-        "https://www.tissotwatches.com/media/home/Tissot_Chemin_des_Tourelles_D_Banner.jpg",
-        "https://www.tissotwatches.com/media/home/Tissot_Seastar_1000_D_Banner.jpg"
+        "https://images.unsplash.com/photo-1715776384730-4c6336bb6738?q=80&w=1920&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1735352245236-f1c12abe5a12?q=80&w=1920&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1735352245262-eca0bb804b40?q=80&w=1920&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1589553532505-324885dc1b9a?q=80&w=1920&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1556578330-d5b56c2d8104?q=80&w=1920&fit=max&fm=jpg"
     ],
     seiko: [
         "https://www.danwerkejewelers.com/cdn/shop/files/PSX_sje099_seikotop_pc_2.jpg?v=1726008488&width=1920",
