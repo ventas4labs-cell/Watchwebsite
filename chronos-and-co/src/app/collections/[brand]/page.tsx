@@ -25,11 +25,10 @@ const BRAND_DESCRIPTIONS: Record<string, string> = {
 
 const BRAND_SLIDER_IMAGES: Record<string, string[]> = {
     tissot: [
-        "https://images.unsplash.com/photo-1715776384730-4c6336bb6738?q=80&w=1920&fit=max&fm=jpg",
-        "https://images.unsplash.com/photo-1735352245236-f1c12abe5a12?q=80&w=1920&fit=max&fm=jpg",
-        "https://images.unsplash.com/photo-1735352245262-eca0bb804b40?q=80&w=1920&fit=max&fm=jpg",
-        "https://images.unsplash.com/photo-1589553532505-324885dc1b9a?q=80&w=1920&fit=max&fm=jpg",
-        "https://images.unsplash.com/photo-1556578330-d5b56c2d8104?q=80&w=1920&fit=max&fm=jpg"
+        "https://www.watchesandcrystals.com/cdn/shop/articles/Untitled_design_-_2024-12-16T192628.780_86f046c5-d694-47b8-9faa-f42406d13fde.jpg?v=1750677198",
+        "https://www.bosshunting.com.au/wp-content/uploads/2023/10/best-tissot-watches-1200x900.jpg",
+        "https://noahsfinejewelry.com/cdn/shop/articles/R6115751.jpg?crop=center&height=1687&v=1750778992&width=3000",
+        "https://timeandtidewatches.com/wp-content/uploads/2024/10/tissot-prx-powermatic-80-carbon-feature.jpg"
     ],
     seiko: [
         "https://www.danwerkejewelers.com/cdn/shop/files/PSX_sje099_seikotop_pc_2.jpg?v=1726008488&width=1920",
