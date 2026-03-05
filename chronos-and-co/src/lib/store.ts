@@ -7,7 +7,7 @@ export interface CartItem extends Watch {
     quantity: number;
 }
 
-export type OrderStatus = 'Orden Recibida' | 'Asegurando su Pieza' | 'Pieza en Camino' | 'Pieza Llegó' | 'Entregando' | 'Entregada' | 'Cancelado';
+export type OrderStatus = 'Orden Recibida' | 'Asegurando su Pieza' | 'Pieza en Camino' | 'Pieza Llegó' | 'Entregando' | 'Entregado' | 'Cancelado';
 
 export interface Order {
     id: string; // Internal/Local ID

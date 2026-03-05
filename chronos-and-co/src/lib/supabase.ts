@@ -18,6 +18,7 @@ export interface SupabaseOrder {
     order_items: any[];
     total_amount: number;
     status: string;
+    coupon_used?: boolean;
 }
 
 export const submitOrderToSupabase = async (order: SupabaseOrder) => {

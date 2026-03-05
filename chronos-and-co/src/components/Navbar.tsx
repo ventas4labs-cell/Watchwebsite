@@ -6,6 +6,7 @@ import { ShoppingBag, Search, User, Menu, ChevronDown, Truck } from 'lucide-reac
 import { useStore } from '@/lib/store';
 import { MobileMenu } from './MobileMenu';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BenefitBar } from './BenefitBar';
 
 const BRANDS = ['Tissot', 'Seiko', 'Orient'];
 
@@ -25,11 +26,12 @@ export function Navbar() {
     }, []);
 
     return (
-        <>
+        <div className="fixed top-0 left-0 right-0 z-40 flex flex-col">
+            <BenefitBar />
             <nav
-                className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 border-b ${isScrolled
-                    ? 'bg-black/80 backdrop-blur-md border-white/10 h-20'
-                    : 'bg-transparent border-transparent h-24'
+                className={`w-full transition-all duration-500 border-b relative ${isScrolled
+                    ? 'bg-black/90 backdrop-blur-md border-white/10 h-20'
+                    : 'bg-black/40 backdrop-blur-sm border-transparent h-24'
                     }`}
             >
                 <div className="container mx-auto px-6 h-full flex items-center justify-between">
@@ -100,7 +102,7 @@ export function Navbar() {
                                 <Truck className="w-5 h-5" />
                                 <span className="hidden lg:inline text-[10px] uppercase font-bold tracking-widest">Rastrear</span>
                             </Link>
-                            <Link href="/admin" className="hover:text-gold-500 transition-colors">
+                            <Link href="/portal" className="hover:text-gold-500 transition-colors">
                                 <User className="w-5 h-5" />
                             </Link>
                             <button
@@ -132,6 +134,6 @@ export function Navbar() {
                 onClose={() => setIsMobileMenuOpen(false)}
                 brands={BRANDS}
             />
-        </>
+        </div>
     );
 }

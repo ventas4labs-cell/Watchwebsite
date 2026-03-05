@@ -1,6 +1,7 @@
 
 import { Watch } from '@/lib/seed-data';
 import { AddToCartButton } from '@/components/AddToCartButton';
+import { SaveToVaultButton } from '@/components/SaveToVaultButton';
 
 interface ProductDetailViewProps {
     watch: Watch;
@@ -69,9 +70,10 @@ export function ProductDetailView({ watch }: ProductDetailViewProps) {
                 </dl>
             </div>
 
-            <div className="pt-8 border-t border-white/10">
+            <div className="pt-8 border-t border-white/10 space-y-4">
                 <AddToCartButton watch={watch} />
-                <p className="text-center text-white/40 text-xs mt-4 uppercase tracking-widest">
+                <SaveToVaultButton productId={watch.id} />
+                <p className="text-center text-white/40 text-xs pt-4 uppercase tracking-widest">
                     Envío Asegurado • Garantía Oficial • Devolución Gratuita
                 </p>
             </div>

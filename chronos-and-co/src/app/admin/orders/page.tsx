@@ -60,10 +60,63 @@ export default function OrdersPage() {
         setOrders(prev => prev.map(o => o.id === orderId ? { ...o, status: newStatus } : o));
 
         if (supabase) {
+            // Find the order to get the email
+            const targetOrder = orders.find(o => o.id === orderId);
+            let prevTier = 'Member';
+            let profileId = null;
+            let firstName = targetOrder?.customerName?.split(' ')[0] || 'Member';
+
+            if (targetOrder?.email) {
+                // Check current tier before update
+                const { data } = await supabase
+                    .from('profiles')
+                    .select('id, tier_level')
+                    .eq('email', targetOrder.email)
+                    .single();
+
+                if (data) {
+                    prevTier = data.tier_level || 'Member';
+                    profileId = data.id;
+                }
+            }
+
+            // Update the order status
             await supabase
                 .from('orders')
                 .update({ status: newStatus })
                 .eq('id', orderId);
+
+            // If updating to Entregado, check for tier elevation
+            if (newStatus === 'Entregado' && targetOrder?.email && profileId) {
+                // Wait a moment for the DB trigger to recount and update profile
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+                const { data: newProfile } = await supabase
+                    .from('profiles')
+                    .select('tier_level')
+                    .eq('id', profileId)
+                    .single();
+
+                const newTier = newProfile?.tier_level || 'Member';
+
+                // Did they elevate?
+                if (prevTier !== newTier && (newTier === 'Collector' || newTier === 'Curator')) {
+                    console.log(`User elevated from ${prevTier} to ${newTier}! Triggering email...`);
+                    try {
+                        await fetch('/api/email/elevation', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email: targetOrder.email,
+                                firstName,
+                                tierLevel: newTier
+                            })
+                        });
+                    } catch (error) {
+                        console.error('Failed to trigger elevation email:', error);
+                    }
+                }
+            }
         }
     };
 
@@ -92,11 +145,11 @@ export default function OrdersPage() {
         'Pieza en Camino': { color: 'text-purple-400 bg-purple-900/20 border-purple-500/30', icon: Truck },
         'Pieza Llegó': { color: 'text-orange-400 bg-orange-900/20 border-orange-500/30', icon: CheckCircle2 },
         'Entregando': { color: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30', icon: Truck },
-        'Entregada': { color: 'bg-green-500/10 text-green-500 border-green-500/30', icon: CheckCircle2 },
+        'Entregado': { color: 'bg-green-500/10 text-green-500 border-green-500/30', icon: CheckCircle2 },
         'Cancelado': { color: 'bg-red-500/10 text-red-500 border-red-500/30', icon: Clock },
     };
 
-    const statusOrder: OrderStatus[] = ['Orden Recibida', 'Asegurando su Pieza', 'Pieza en Camino', 'Pieza Llegó', 'Entregando', 'Entregada', 'Cancelado'];
+    const statusOrder: OrderStatus[] = ['Orden Recibida', 'Asegurando su Pieza', 'Pieza en Camino', 'Pieza Llegó', 'Entregando', 'Entregado', 'Cancelado'];
 
     const isValidStatus = (status: any): status is OrderStatus => {
         return statusOrder.includes(status);

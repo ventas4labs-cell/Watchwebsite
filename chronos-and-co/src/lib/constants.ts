@@ -58,3 +58,12 @@ export const WATCH_CRYSTAL_TYPES = [
     'Zafiro resistente a rayones',
     'Zafiro resistente a rayones +antireflejante'
 ] as const;
+
+export const ORDER_STATUS_STEPS = [
+    { status: 'Orden Recibida' },
+    { status: 'Asegurando su Pieza' },
+    { status: 'Pieza en Camino' },
+    { status: 'Pieza Llegó' },
+    { status: 'Entregando' },
+    { status: 'Entregada' }
+] as const;
