@@ -17,6 +17,8 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'timeandtidewatches.com' },
       { protocol: 'https', hostname: 'www.danwerkejewelers.com' },
       { protocol: 'https', hostname: 'storage.seikowatches.com' },
+      { protocol: 'https', hostname: 'media.beaverbrooks.co.uk' },
+      { protocol: 'https', hostname: 'iflwatches.eu' },
     ],
   },
 };

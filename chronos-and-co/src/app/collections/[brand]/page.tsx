@@ -31,9 +31,9 @@ const BRAND_SLIDER_IMAGES: Record<string, string[]> = {
         "https://timeandtidewatches.com/wp-content/uploads/2024/10/tissot-prx-powermatic-80-carbon-feature.jpg"
     ],
     seiko: [
-        "https://www.danwerkejewelers.com/cdn/shop/files/PSX_sje099_seikotop_pc_2.jpg?v=1726008488&width=1920",
-        "https://storage.seikowatches.com/production/images/2024/02/100th_Special_Prospex_1920x848_tcm22-123456.jpg",
-        "https://storage.seikowatches.com/production/images/2023/10/Presage_Craftsmanship_1920x848_tcm22-123456.jpg"
+        "https://media.beaverbrooks.co.uk/i/beaverbrooks/seiko-new-in-desktop-0824?fmt=jpg&fmt.jpeg.interlaced=true&img404=default-404",
+        "https://iflwatches.eu/cdn/shop/collections/iflw_custom_seiko_sports_5_GMT_gravity_concept_banner.jpg?v=1753864799",
+        "https://cdn.shopify.com/s/files/1/0278/9723/3501/files/Seiko_Prospex_SBDY025__Save_the_Ocean__Edition_2048x2048.jpg?v=1731607055"
     ],
     orient: [
         "https://cdn.shopify.com/s/files/1/0026/4978/4385/files/Jan_Desktop.png?v=1767204777",
