@@ -1,5 +1,5 @@
 import { WATCHES } from '@/lib/seed-data';
-import { BrandHero } from '@/components/BrandHero';
+import { HeroSlider } from '@/components/HeroSlider';
 import { WatchGrid } from '@/components/WatchGrid';
 import { WatchCategoryGrid } from '@/components/WatchCategoryGrid';
 import { Navbar } from '@/components/Navbar';
@@ -23,18 +23,23 @@ const BRAND_DESCRIPTIONS: Record<string, string> = {
     timex: "Diseño honrado por el tiempo. Duradero, icónico y decididamente clásico, contando la historia de la relojería estadounidense.",
 };
 
-const BRAND_IMAGES: Record<string, string> = {
-    tissot: "/brand-assets/tissot-hero.jpg",
-    seiko: "https://www.danwerkejewelers.com/cdn/shop/files/PSX_sje099_seikotop_pc_2.jpg?v=1726008488&width=1920",
-    orient: "https://cdn.shopify.com/s/files/1/0026/4978/4385/files/Jan_Desktop.png?v=1767204777",
-    // Fallbacks or generic images for others if specific high-res ones aren't perfect hero material
-    // but we can try to find some.
-};
-
-const BRAND_BG_SIZES: Record<string, string> = {
-    tissot: 'contain',
-    seiko: 'contain',
-    orient: 'contain',
+const BRAND_SLIDER_IMAGES: Record<string, string[]> = {
+    tissot: [
+        "/brand-assets/tissot-hero.jpg",
+        "https://www.tissotwatches.com/media/home/TISSOT_PRX_35_MM_ICE_BLUE_D_BANNER.jpg",
+        "https://www.tissotwatches.com/media/home/Tissot_Chemin_des_Tourelles_D_Banner.jpg",
+        "https://www.tissotwatches.com/media/home/Tissot_Seastar_1000_D_Banner.jpg"
+    ],
+    seiko: [
+        "https://www.danwerkejewelers.com/cdn/shop/files/PSX_sje099_seikotop_pc_2.jpg?v=1726008488&width=1920",
+        "https://storage.seikowatches.com/production/images/2024/02/100th_Special_Prospex_1920x848_tcm22-123456.jpg",
+        "https://storage.seikowatches.com/production/images/2023/10/Presage_Craftsmanship_1920x848_tcm22-123456.jpg"
+    ],
+    orient: [
+        "https://cdn.shopify.com/s/files/1/0026/4978/4385/files/Jan_Desktop.png?v=1767204777",
+        "https://cdn.shopify.com/s/files/1/0026/4978/4385/files/Bambino_Desktop_Banner.jpg?v=1680189498",
+        "https://cdn.shopify.com/s/files/1/0026/4978/4385/files/Kamasu_Desktop_Banner.jpg?v=1680189498"
+    ],
 };
 
 export default async function BrandPage({ params }: { params: Promise<{ brand: string }> }) {
@@ -44,8 +49,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
     const brandName = brand.charAt(0).toUpperCase() + brand.slice(1);
     const watches = WATCHES.filter((w) => w.brand.toLowerCase() === brand.toLowerCase());
     const description = BRAND_DESCRIPTIONS[brand.toLowerCase()] || `Explora la exquisita colección de ${brandName}.`;
-    const backgroundImage = BRAND_IMAGES[brand.toLowerCase()];
-    const backgroundSize = BRAND_BG_SIZES[brand.toLowerCase()] || 'cover';
+    const brandImages = BRAND_SLIDER_IMAGES[brand.toLowerCase()] || ["/brand-assets/tissot-hero.jpg"];
 
     if (watches.length === 0) {
         // Optional: Handle unknown brands gracefully or 404
@@ -80,7 +84,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
                 <Navbar />
                 <CartDrawer />
 
-                <BrandHero brand={brandName} description={description} backgroundImage={backgroundImage} backgroundSize={backgroundSize} />
+                <HeroSlider brand={brandName} description={description} images={brandImages} />
 
                 <section className="container mx-auto px-6 py-20">
                     {sortedKeys.map((title) => (
@@ -128,7 +132,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
                 <Navbar />
                 <CartDrawer />
 
-                <BrandHero brand={brandName} description={description} backgroundImage={backgroundImage} backgroundSize={backgroundSize} />
+                <HeroSlider brand={brandName} description={description} images={brandImages} />
 
                 <section className="container mx-auto px-6 py-20">
                     {Object.entries(categories).map(([title, group]) => (
@@ -176,7 +180,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
                 <Navbar />
                 <CartDrawer />
 
-                <BrandHero brand={brandName} description={description} backgroundImage={backgroundImage} backgroundSize={backgroundSize} />
+                <HeroSlider brand={brandName} description={description} images={brandImages} />
 
                 <CategoryNav categories={validCategories} />
 
@@ -211,7 +215,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
             <Navbar />
             <CartDrawer />
 
-            <BrandHero brand={brandName} description={description} backgroundImage={backgroundImage} backgroundSize={backgroundSize} />
+            <HeroSlider brand={brandName} description={description} images={brandImages} />
             <WatchGrid watches={watches} />
 
             <footer className="py-20 border-t border-white/10 text-center">
