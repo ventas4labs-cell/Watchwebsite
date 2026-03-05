@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'storage.seikowatches.com' },
       { protocol: 'https', hostname: 'media.beaverbrooks.co.uk' },
       { protocol: 'https', hostname: 'iflwatches.eu' },
+      { protocol: 'https', hostname: 'i8.amplience.net' },
+      { protocol: 'https', hostname: 'monochrome-watches.com' },
+      { protocol: 'https', hostname: 'hodinkee.imgix.net' },
     ],
   },
 };

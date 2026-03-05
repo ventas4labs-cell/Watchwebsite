@@ -36,9 +36,9 @@ const BRAND_SLIDER_IMAGES: Record<string, string[]> = {
         "https://cdn.shopify.com/s/files/1/0278/9723/3501/files/Seiko_Prospex_SBDY025__Save_the_Ocean__Edition_2048x2048.jpg?v=1731607055"
     ],
     orient: [
-        "https://cdn.shopify.com/s/files/1/0026/4978/4385/files/Jan_Desktop.png?v=1767204777",
-        "https://cdn.shopify.com/s/files/1/0026/4978/4385/files/Bambino_Desktop_Banner.jpg?v=1680189498",
-        "https://cdn.shopify.com/s/files/1/0026/4978/4385/files/Kamasu_Desktop_Banner.jpg?v=1680189498"
+        "https://i8.amplience.net/i/epsonemear/Orient%20site%20teaser%201200%20x%20627",
+        "https://monochrome-watches.com/app/uploads/2025/04/Orient-Star-Layered-Skeleton-RE-AV0B10G-RE-AV0B11E-7.jpg",
+        "https://hodinkee.imgix.net/uploads/images/134626ca-283f-40bd-a1ee-09d7b45530b3/L1090246.jpg?ixlib=rails-1.1.0&fm=jpg&q=55&auto=format&usm=12"
     ],
 };
 
