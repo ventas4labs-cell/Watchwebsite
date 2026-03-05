@@ -45,3 +45,9 @@ BEGIN
     WHERE user_id = target_user_id AND product_id = target_product_id;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
+
+
+-- 4. Explicitly grant execute permission to the authenticated role for the API to access these RPCs
+GRANT EXECUTE ON FUNCTION public.admin_get_all_customers() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.admin_add_to_vault(uuid, text) TO authenticated;
+GRANT EXECUTE ON FUNCTION public.admin_remove_from_vault(uuid, text) TO authenticated;
