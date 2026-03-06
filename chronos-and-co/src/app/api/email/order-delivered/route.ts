@@ -1,58 +1,119 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
-    try {
-        const { email, firstName } = await req.json();
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+        console.error('RESEND_API_KEY is missing from environment variables');
+        return NextResponse.json(
+            { error: 'Server misconfiguration: RESEND_API_KEY is missing.' },
+            { status: 500 }
+        );
+    }
 
-        if (!email || !firstName) {
+    const resend = new Resend(apiKey);
+
+    try {
+        const body = await req.json();
+        const { customerName, email, trackingNumber, items, total, address, phone } = body;
+
+        if (!email || !customerName || !items || !trackingNumber) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
         }
 
-        const data = await resend.emails.send({
-            from: 'Timeless Watches <concierge@tmlsswtchs.com>',
+        const itemsHtml = items.map((item: any) => `
+            <tr>
+                <td style="padding: 16px 0; border-bottom: 1px solid #333333; color: #ffffff;">
+                    <strong>${item.brand}</strong><br/>
+                    <span style="color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">${item.model}</span>
+                </td>
+                <td style="padding: 16px 0; border-bottom: 1px solid #333333; color: #D4AF37; text-align: center; font-weight: bold;">
+                    x${item.quantity}
+                </td>
+                <td style="padding: 16px 0; border-bottom: 1px solid #333333; color: #ffffff; text-align: right;">
+                    $${(item.price * item.quantity).toLocaleString()}
+                </td>
+            </tr>
+        `).join('');
+
+        const htmlContent = `
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <meta charset="utf-8">
+                    <title>Pieza Entregada</title>
+                </head>
+                <body style="margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #000000;">
+                        <tr>
+                            <td align="center" style="padding: 40px 20px;">
+                                <table width="600" border="0" cellspacing="0" cellpadding="0" style="background-color: #111111; border: 1px solid #333333; border-radius: 4px;">
+                                    <!-- Header -->
+                                    <tr>
+                                        <td align="center" style="padding: 40px 0 20px 0; border-bottom: 1px solid #333333;">
+                                            <h1 style="color: #D4AF37; margin: 0; font-size: 24px; letter-spacing: 4px; text-transform: uppercase;">Timeless Watches</h1>
+                                            <p style="color: #888888; letter-spacing: 2px; text-transform: uppercase; font-size: 10px; margin-top: 10px;">Exclusive Timepieces</p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Content -->
+                                    <tr>
+                                        <td style="padding: 40px 40px;">
+                                            <h2 style="color: #ffffff; font-size: 20px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px;">Pieza Entregada</h2>
+                                            <p style="color: #cccccc; font-size: 14px; line-height: 1.6;">Estimado/a <strong>${customerName}</strong>,</p>
+                                            <p style="color: #cccccc; font-size: 14px; line-height: 1.6;">Gracias por su compra. Nos complace informarle que su(s) pieza(s) ha(n) sido entregada(s) exitosamente.</p>
+                                            <p style="color: #cccccc; font-size: 14px; line-height: 1.6;">Como parte de nuestro compromiso con su legado relojero, hemos registrado digitalmente la(s) pieza(s) en su <strong>Bóveda Personal</strong> (My Vault). Puede acceder a los detalles en cualquier momento iniciando sesión en nuestro portal.</p>
+                                            
+                                            <p style="text-align: center; margin: 30px 0;">
+                                                <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://chronos-co.vercel.app'}/portal" style="background-color: #D4AF37; color: #000000; text-decoration: none; padding: 15px 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; border-radius: 2px; display: inline-block;">Acceder a mi Bóveda</a>
+                                            </p>
+
+                                            <h3 style="color: #ffffff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid #333333; padding-bottom: 10px;">Resumen del Pedido</h3>
+                                            
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                ${itemsHtml}
+                                                <tr>
+                                                    <td colspan="2" style="padding: 20px 0 0 0; color: #888888; text-transform: uppercase; letter-spacing: 1px; font-size: 12px;">Total de Inversión</td>
+                                                    <td style="padding: 20px 0 0 0; color: #D4AF37; text-align: right; font-size: 18px; font-weight: bold;">$${total.toLocaleString()}</td>
+                                                </tr>
+                                            </table>
+
+                                            <h3 style="color: #ffffff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid #333333; padding-bottom: 10px;">Detalles de Entrega</h3>
+                                            <p style="color: #cccccc; font-size: 12px; margin: 5px 0;"><strong>Contacto:</strong> ${email} | ${phone}</p>
+                                            ${address ? `<p style="color: #cccccc; font-size: 12px; margin: 5px 0;"><strong>Dirección:</strong> ${address}</p>` : ''}
+
+                                        </td>
+                                    </tr>
+
+                                    <!-- Footer -->
+                                    <tr>
+                                        <td align="center" style="padding: 30px 40px; background-color: #0a0a0a; border-top: 1px solid #333333;">
+                                            <p style="color: #666666; font-size: 10px; line-height: 1.5; margin: 0;">Este es un mensaje automático generado por Timeless Watches.<br/>Para asistencia personalizada, responda a este correo o contacte a su asesor asignado.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </body>
+            </html>
+        `;
+
+        const { data, error } = await resend.emails.send({
+            from: 'Timeless Watches <orders@tmlsswtchs.com>',
             to: [email],
-            subject: 'Su pieza ha sido asegurada en su Bóveda 🔒 | Timeless Watches',
-            html: `
-                <div style="font-family: Arial, sans-serif; max-w-xl mx-auto; background-color: #000; color: #fff; padding: 40px; border: 1px solid #333 text-align: center;">
-                    <div style="text-align: center; margin-bottom: 30px;">
-                        <h1 style="color: #D4AF37; letter-spacing: 2px; text-transform: uppercase; font-size: 24px; margin: 0;">Timeless Watches</h1>
-                        <p style="color: #888; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; margin-top: 5px;">Digital Vault Registration</p>
-                    </div>
-
-                    <h2 style="font-size: 20px; font-weight: normal; margin-bottom: 20px;">Estimado/a ${firstName},</h2>
-
-                    <p style="color: #ccc; line-height: 1.6; margin-bottom: 20px;">
-                        Nos complace informarle que su reloj ha sido entregado exitosamente. 
-                    </p>
-
-                    <p style="color: #ccc; line-height: 1.6; margin-bottom: 30px;">
-                        Como parte de nuestro compromiso con su legado relojero, hemos registrado digitalmente esta pieza en su <strong>Bóveda Personal</strong> (My Vault). Puede acceder a los detalles en cualquier momento iniciando sesión en nuestro portal.
-                    </p>
-
-                    <div style="background-color: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); padding: 20px; text-align: center; margin-bottom: 30px;">
-                        <p style="color: #D4AF37; margin: 0; font-weight: bold; font-size: 14px; letter-spacing: 1px;">PIEZA ASEGURADA Y REGISTRADA</p>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 40px;">
-                        <a href="https://tmlsswtchs.com/portal" style="background-color: #D4AF37; color: #000; padding: 12px 30px; text-decoration: none; font-weight: bold; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">
-                            Acceder a mi Bóveda
-                        </a>
-                    </div>
-
-                    <div style="margin-top: 50px; text-align: center; border-top: 1px solid #333; padding-top: 20px;">
-                        <p style="color: #666; font-size: 11px; margin-bottom: 5px;">Atentamente,</p>
-                        <p style="color: #D4AF37; font-size: 11px; margin: 0; text-transform: uppercase;">Concierge • Timeless Watches</p>
-                    </div>
-                </div>
-            `
+            subject: `Su pieza ha sido asegurada en su Bóveda 🔒 | ${trackingNumber}`,
+            html: htmlContent,
         });
 
+        if (error) {
+            console.error('Resend SDK returned an error:', JSON.stringify(error, null, 2));
+            return NextResponse.json({ error }, { status: 400 });
+        }
+
         return NextResponse.json({ success: true, data });
-    } catch (error) {
-        console.error('Error sending order delivered email:', error);
-        return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+    } catch (err: any) {
+        console.error('Server side exception throwing confirmation email:', err);
+        return NextResponse.json({ error: err.message || 'Failed to send email' }, { status: 500 });
     }
 }

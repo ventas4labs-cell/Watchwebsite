@@ -97,8 +97,13 @@ export default function OrdersPage() {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
+                            customerName: targetOrder.customerName,
                             email: targetOrder.email,
-                            firstName
+                            trackingNumber: targetOrder.trackingNumber,
+                            items: targetOrder.items,
+                            total: targetOrder.total,
+                            address: targetOrder.address,
+                            phone: targetOrder.phone
                         })
                     });
                 } catch (error) {
