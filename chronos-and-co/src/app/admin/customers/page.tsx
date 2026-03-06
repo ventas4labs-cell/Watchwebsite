@@ -25,10 +25,14 @@ export default function CustomersPage() {
 
             try {
                 const { data, error } = await supabase.rpc('admin_get_all_customers');
-                if (error) throw error;
+                if (error) {
+                    console.error("Supabase RPC Error:", error);
+                    throw error;
+                }
                 if (data) setCustomers(data);
-            } catch (err) {
+            } catch (err: any) {
                 console.error("Error fetching customers:", err);
+                console.error("Error details:", err?.message || err?.details || err?.hint || JSON.stringify(err));
             } finally {
                 setIsLoadingCustomers(false);
             }
