@@ -1,5 +1,9 @@
 -- Migration for Admin Customer Vault Management
 
+-- 0. Ensure required columns exist on profiles table (carryover from Loyalty System)
+ALTER TABLE public.profiles 
+ADD COLUMN IF NOT EXISTS tier_level text DEFAULT 'Member',
+ADD COLUMN IF NOT EXISTS completed_orders_count integer DEFAULT 0;
 -- 1. Create a secure RPC to fetch all customers (joined auth.users and profiles)
 CREATE OR REPLACE FUNCTION public.admin_get_all_customers()
 RETURNS TABLE (
