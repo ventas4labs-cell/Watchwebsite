@@ -24,14 +24,17 @@ export async function POST(req: Request) {
 
         const itemsHtml = items.map((item: any) => `
             <tr>
-                <td style="padding: 16px 0; border-bottom: 1px solid #333333; color: #ffffff;">
+                <td style="padding: 16px 0; border-bottom: 1px solid #333333; width: 80px;">
+                    ${item.image ? `<img src="${item.image}" alt="${item.model}" style="width: 60px; height: auto; display: block; background-color: #1a1a1a; pading: 5px;" />` : `<div style="width: 60px; height: 80px; background-color: #1a1a1a;"></div>`}
+                </td>
+                <td style="padding: 16px 0; border-bottom: 1px solid #333333; color: #ffffff; padding-left: 15px;">
                     <strong>${item.brand}</strong><br/>
                     <span style="color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">${item.model}</span>
                 </td>
-                <td style="padding: 16px 0; border-bottom: 1px solid #333333; color: #D4AF37; text-align: center; font-weight: bold;">
+                <td style="padding: 16px 0; border-bottom: 1px solid #333333; color: #D4AF37; text-align: center; font-weight: bold; width: 50px;">
                     x${item.quantity}
                 </td>
-                <td style="padding: 16px 0; border-bottom: 1px solid #333333; color: #ffffff; text-align: right;">
+                <td style="padding: 16px 0; border-bottom: 1px solid #333333; color: #ffffff; text-align: right; width: 100px;">
                     $${(item.price * item.quantity).toLocaleString()}
                 </td>
             </tr>
@@ -63,13 +66,10 @@ export async function POST(req: Request) {
                                             <h2 style="color: #ffffff; font-size: 20px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px;">Pieza Entregada</h2>
                                             <p style="color: #cccccc; font-size: 14px; line-height: 1.6;">Estimado/a <strong>${customerName}</strong>,</p>
                                             <p style="color: #cccccc; font-size: 14px; line-height: 1.6;">Gracias por su compra. Nos complace informarle que su(s) pieza(s) ha(n) sido entregada(s) exitosamente.</p>
-                                            <p style="color: #cccccc; font-size: 14px; line-height: 1.6;">Como parte de nuestro compromiso con su legado relojero, hemos registrado digitalmente la(s) pieza(s) en su <strong>Bóveda Personal</strong> (My Vault). Puede acceder a los detalles en cualquier momento iniciando sesión en nuestro portal.</p>
+                                            <p style="color: #cccccc; font-size: 14px; line-height: 1.6;">Como parte de nuestro compromiso con su legado relojero, hemos registrado digitalmente la(s) pieza(s) en su <strong>Bóveda Personal</strong> (My Vault). Ya puede acceder a su bóveda desde nuestro portal para visualizar su pieza y revisar su progreso en nuestro programa de lealtad Timeless Circle.</p>
                                             
-                                            <p style="text-align: center; margin: 30px 0;">
-                                                <a href="${siteUrl}/portal" style="background-color: #D4AF37; color: #000000; text-decoration: none; padding: 15px 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; border-radius: 2px; display: inline-block;">Acceder a mi Bóveda</a>
-                                            </p>
+                                            <h3 style="color: #ffffff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid #333333; padding-bottom: 10px;">Resumen de Entrega</h3>
 
-                                            <h3 style="color: #ffffff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid #333333; padding-bottom: 10px;">Resumen del Pedido</h3>
                                             
                                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                 ${itemsHtml}
