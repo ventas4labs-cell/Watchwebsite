@@ -35,6 +35,7 @@ export const submitOrderToSupabase = async (order: SupabaseOrder) => {
 
         if (error) {
             console.error('Error inserting order into Supabase:', error);
+            console.error('Full Error Details:', JSON.stringify(error, null, 2));
             return { success: false, error };
         }
 

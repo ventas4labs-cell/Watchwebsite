@@ -48,14 +48,23 @@ $$ LANGUAGE plpgsql SECURITY DEFINER;
 -- 3. Create the Trigger Function
 CREATE OR REPLACE FUNCTION public.trigger_recalculate_tier_on_order_update()
 RETURNS trigger AS $$
-BEGIN
-  -- Only recalculate if the status changed to or from 'Entregado'
-  IF (TG_OP = 'UPDATE' AND (NEW.status = 'Entregado' OR OLD.status = 'Entregado') AND NEW.status IS DISTINCT FROM OLD.status) 
-     OR (TG_OP = 'INSERT' AND NEW.status = 'Entregado') THEN
-     
-     -- We use the customer_email from the order to link to the profile
-     PERFORM public.recalculate_user_tier(NEW.customer_email);
-  END IF;
+  DECLARE
+    should_recalc boolean := false;
+  BEGIN
+    IF TG_OP = 'INSERT' THEN
+      IF NEW.status = 'Entregado' THEN
+        should_recalc := true;
+      END IF;
+    ELSIF TG_OP = 'UPDATE' THEN
+      IF (NEW.status = 'Entregado' OR OLD.status = 'Entregado') AND NEW.status IS DISTINCT FROM OLD.status THEN
+        should_recalc := true;
+      END IF;
+    END IF;
+
+    IF should_recalc THEN
+       -- We use the customer_email from the order to link to the profile
+       PERFORM public.recalculate_user_tier(NEW.customer_email);
+    END IF;
   
   RETURN NEW;
 END;

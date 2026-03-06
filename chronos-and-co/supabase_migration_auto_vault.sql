@@ -5,24 +5,34 @@ RETURNS trigger AS $$
 DECLARE
   target_user_id uuid;
   item jsonb;
-BEGIN
-  -- Only trigger when status changes specifically TO 'Entregado'
-  IF (TG_OP = 'UPDATE' AND NEW.status = 'Entregado' AND OLD.status IS DISTINCT FROM 'Entregado') 
-     OR (TG_OP = 'INSERT' AND NEW.status = 'Entregado') THEN
-     
-     -- Find the user ID based on the exact email
-     SELECT id INTO target_user_id FROM auth.users WHERE email = NEW.customer_email;
-     
-     IF target_user_id IS NOT NULL THEN
-       -- Iterate through order_items jsonb array
-       FOR item IN SELECT * FROM jsonb_array_elements(NEW.order_items)
-       LOOP
-         INSERT INTO public.wishlist (user_id, product_id)
-         VALUES (target_user_id, item->>'id')
-         ON CONFLICT (user_id, product_id) DO NOTHING;
-       END LOOP;
-     END IF;
-  END IF;
+  -- Determine if we should process
+  DECLARE
+    should_process boolean := false;
+  BEGIN
+    IF TG_OP = 'INSERT' THEN
+      IF NEW.status = 'Entregado' THEN
+        should_process := true;
+      END IF;
+    ELSIF TG_OP = 'UPDATE' THEN
+      IF NEW.status = 'Entregado' AND OLD.status IS DISTINCT FROM 'Entregado' THEN
+        should_process := true;
+      END IF;
+    END IF;
+
+    IF should_process THEN
+       -- Find the user ID based on the exact email
+       SELECT id INTO target_user_id FROM auth.users WHERE email = NEW.customer_email;
+       
+       IF target_user_id IS NOT NULL THEN
+         -- Iterate through order_items jsonb array
+         FOR item IN SELECT * FROM jsonb_array_elements(NEW.order_items)
+         LOOP
+           INSERT INTO public.wishlist (user_id, product_id)
+           VALUES (target_user_id, item->>'id')
+           ON CONFLICT (user_id, product_id) DO NOTHING;
+         END LOOP;
+       END IF;
+    END IF;
   
   RETURN NEW;
 END;
