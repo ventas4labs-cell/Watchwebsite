@@ -101,7 +101,8 @@ export default function OrdersPage() {
                             items: targetOrder.items,
                             total: targetOrder.total,
                             address: targetOrder.address,
-                            phone: targetOrder.phone
+                            phone: targetOrder.phone,
+                            origin: typeof window !== 'undefined' ? window.location.origin : ''
                         })
                     });
 

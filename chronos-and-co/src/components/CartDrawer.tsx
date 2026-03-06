@@ -102,7 +102,8 @@ export function CartDrawer() {
                             address: newOrder.address,
                             trackingNumber: newOrder.trackingNumber,
                             items: newOrder.items,
-                            total: newOrder.total
+                            total: newOrder.total,
+                            origin: typeof window !== 'undefined' ? window.location.origin : ''
                         }),
                     }).then(async (res) => {
                         if (!res.ok) {

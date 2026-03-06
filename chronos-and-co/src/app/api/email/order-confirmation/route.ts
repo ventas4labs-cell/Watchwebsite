@@ -15,7 +15,8 @@ export async function POST(req: Request) {
 
     try {
         const body = await req.json();
-        const { customerName, email, trackingNumber, items, total, address, phone } = body;
+        const { customerName, email, trackingNumber, items, total, address, phone, origin } = body;
+        const siteUrl = origin || process.env.NEXT_PUBLIC_SITE_URL || 'https://chronos-co.vercel.app';
 
         if (!email || !customerName || !items || !trackingNumber) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -69,7 +70,7 @@ export async function POST(req: Request) {
                                             </div>
 
                                             <p style="text-align: center; margin: 40px 0;">
-                                                <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://chronos-co.vercel.app'}/track?id=${trackingNumber}" style="background-color: #D4AF37; color: #000000; text-decoration: none; padding: 15px 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; border-radius: 2px; display: inline-block;">Rastrear en Vivo</a>
+                                                <a href="${siteUrl}/track?id=${trackingNumber}" style="background-color: #D4AF37; color: #000000; text-decoration: none; padding: 15px 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; border-radius: 2px; display: inline-block;">Rastrear en Vivo</a>
                                             </p>
 
                                             <h3 style="color: #ffffff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid #333333; padding-bottom: 10px;">Resumen del Pedido</h3>

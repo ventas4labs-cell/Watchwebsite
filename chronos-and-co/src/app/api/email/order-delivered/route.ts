@@ -15,7 +15,8 @@ export async function POST(req: Request) {
 
     try {
         const body = await req.json();
-        const { customerName, email, trackingNumber, items, total, address, phone } = body;
+        const { customerName, email, trackingNumber, items, total, address, phone, origin } = body;
+        const siteUrl = origin || process.env.NEXT_PUBLIC_SITE_URL || 'https://chronos-co.vercel.app';
 
         if (!email || !customerName || !items || !trackingNumber) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -65,7 +66,7 @@ export async function POST(req: Request) {
                                             <p style="color: #cccccc; font-size: 14px; line-height: 1.6;">Como parte de nuestro compromiso con su legado relojero, hemos registrado digitalmente la(s) pieza(s) en su <strong>Bóveda Personal</strong> (My Vault). Puede acceder a los detalles en cualquier momento iniciando sesión en nuestro portal.</p>
                                             
                                             <p style="text-align: center; margin: 30px 0;">
-                                                <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://chronos-co.vercel.app'}/portal" style="background-color: #D4AF37; color: #000000; text-decoration: none; padding: 15px 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; border-radius: 2px; display: inline-block;">Acceder a mi Bóveda</a>
+                                                <a href="${siteUrl}/portal" style="background-color: #D4AF37; color: #000000; text-decoration: none; padding: 15px 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; border-radius: 2px; display: inline-block;">Acceder a mi Bóveda</a>
                                             </p>
 
                                             <h3 style="color: #ffffff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid #333333; padding-bottom: 10px;">Resumen del Pedido</h3>
