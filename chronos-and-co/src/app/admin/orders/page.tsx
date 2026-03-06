@@ -86,14 +86,12 @@ export default function OrdersPage() {
                 .update({ status: newStatus })
                 .eq('id', orderId);
 
-            // If updating to Entregado, check for tier elevation
-            if (newStatus === 'Entregado' && targetOrder?.email && profileId) {
-                // Wait a moment for the DB trigger to recount and update profile
-                await new Promise(resolve => setTimeout(resolve, 500));
-
-                // Trigger vault delivery email
+            // If updating to Entregado, send delivery email and check for tier elevation
+            if (newStatus === 'Entregado' && targetOrder?.email) {
+                // Trigger vault delivery email for ALL customers (even guests)
                 try {
-                    await fetch('/api/email/order-delivered', {
+                    console.log('Triggering delivery email for order:', targetOrder.trackingNumber);
+                    const response = await fetch('/api/email/order-delivered', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
@@ -106,33 +104,46 @@ export default function OrdersPage() {
                             phone: targetOrder.phone
                         })
                     });
+
+                    const resData = await response.json();
+                    if (!response.ok) {
+                        console.error('Email API returned an error:', resData);
+                    } else {
+                        console.log('Email sent successfully:', resData);
+                    }
                 } catch (error) {
-                    console.error('Failed to trigger vault delivery email:', error);
+                    console.error('Failed to trigger vault delivery email fetch request:', error);
                 }
 
-                const { data: newProfile } = await supabase
-                    .from('profiles')
-                    .select('tier_level')
-                    .eq('id', profileId)
-                    .single();
+                // Only check for Loyalty Tier elevation if they are a registered user
+                if (profileId) {
+                    // Wait a moment for the DB trigger to recount and update profile
+                    await new Promise(resolve => setTimeout(resolve, 500));
 
-                const newTier = newProfile?.tier_level || 'Member';
+                    const { data: newProfile } = await supabase
+                        .from('profiles')
+                        .select('tier_level')
+                        .eq('id', profileId)
+                        .single();
 
-                // Did they elevate?
-                if (prevTier !== newTier && (newTier === 'Collector' || newTier === 'Curator')) {
-                    console.log(`User elevated from ${prevTier} to ${newTier}! Triggering email...`);
-                    try {
-                        await fetch('/api/email/elevation', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                email: targetOrder.email,
-                                firstName,
-                                tierLevel: newTier
-                            })
-                        });
-                    } catch (error) {
-                        console.error('Failed to trigger elevation email:', error);
+                    const newTier = newProfile?.tier_level || 'Member';
+
+                    // Did they elevate?
+                    if (prevTier !== newTier && (newTier === 'Collector' || newTier === 'Curator')) {
+                        console.log(`User elevated from ${prevTier} to ${newTier}! Triggering email...`);
+                        try {
+                            await fetch('/api/email/elevation', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    email: targetOrder.email,
+                                    firstName,
+                                    tierLevel: newTier
+                                })
+                            });
+                        } catch (error) {
+                            console.error('Failed to trigger elevation email:', error);
+                        }
                     }
                 }
             }
