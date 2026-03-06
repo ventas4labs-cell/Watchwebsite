@@ -91,6 +91,20 @@ export default function OrdersPage() {
                 // Wait a moment for the DB trigger to recount and update profile
                 await new Promise(resolve => setTimeout(resolve, 500));
 
+                // Trigger vault delivery email
+                try {
+                    await fetch('/api/email/order-delivered', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            email: targetOrder.email,
+                            firstName
+                        })
+                    });
+                } catch (error) {
+                    console.error('Failed to trigger vault delivery email:', error);
+                }
+
                 const { data: newProfile } = await supabase
                     .from('profiles')
                     .select('tier_level')
